@@ -97,35 +97,31 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabItemCell> 
     
     override func viewDidLoad() {
         // change selected bar color
-        settings.style.buttonBarBackgroundColor = redColor
+        settings.style.buttonBarBackgroundColor = .white
         settings.style.buttonBarItemBackgroundColor = .clear
-        settings.style.selectedBarBackgroundColor = UIColor(red: 234/255.0, green: 234/255.0, blue: 234/255.0, alpha: 1.0)
-        settings.style.selectedBarHeight = 4.0
-        settings.style.buttonBarMinimumLineSpacing = 0
+        settings.style.selectedBarBackgroundColor = .clear
         settings.style.buttonBarItemTitleColor = .black
-        settings.style.buttonBarItemsShouldFillAvailiableWidth = true
-        settings.style.buttonBarLeftContentInset = 0
-        settings.style.buttonBarRightContentInset = 0
+        settings.style.buttonBarItemsShouldFillAvailiableWidth = false
+        settings.style.buttonBarMinimumLineSpacing = 100
+        settings.style.buttonBarLeftContentInset = 150
+        settings.style.buttonBarRightContentInset = 150
+        settings.style.buttonBarItemLeftRightMargin = 0
         
-        
-        
-        //        changeCurrentIndexProgressive = { [weak self] (oldCell: YoutubeIconCell?, newCell: YoutubeIconCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
-        //            guard changeCurrentIndex == true else { return }
-        //            oldCell?.iconImage.tintColor = self?.unselectedIconColor
-        //            newCell?.iconImage.tintColor = .white
-        //
-        //        }
+        changeCurrentIndexProgressive = {(oldCell: TabItemCell?, newCell: TabItemCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+                guard changeCurrentIndex == true else { return }
+                oldCell?.imageView.tintColor = .gray
+                newCell?.imageView.tintColor = .red
+    
+        }
         super.viewDidLoad()
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
     
     // MARK: - PagerTabStripDataSource
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let child_1 = ChildExampleViewController(itemInfo: IndicatorInfo(title: "HOME", image: UIImage(named: "ball")))
-        let child_2 = ChildExampleViewController(itemInfo: IndicatorInfo(title: "TRENDING", image: UIImage(named: "ball")))
-        let child_3 = ChildExampleViewController(itemInfo: IndicatorInfo(title: "ACCOUNT", image: UIImage(named: "ball")))
+        let child_1 = ChildExampleViewController(itemInfo: IndicatorInfo(title: "profile", image: UIImage(named: "profile")))
+        let child_2 = ChildExampleViewController(itemInfo: IndicatorInfo(title: "fire", image: UIImage(named: "fire")))
+        let child_3 = ChildExampleViewController(itemInfo: IndicatorInfo(title: "message", image: UIImage(named: "message")))
         return [child_1, child_2, child_3]
     }
     
@@ -144,12 +140,6 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabItemCell> 
     //            })
     //        }
     //    }
-    
-    // MARK: - Actions
-    
-    @IBAction func closeAction(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
 }
 
 

@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _ = MainViewController(nibName: nil, bundle: nil)
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarViewController = sb.instantiateViewController(withIdentifier: "Main")
+        let mainViewController = sb.instantiateViewController(withIdentifier: "Main")
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = tabBarViewController
+        window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()
         
         return true
