@@ -1,0 +1,6 @@
+framework module Pods_Tindest {
+  umbrella header "Pods-Tindest-umbrella.h"
+
+  export *
+  module * { export * }
+}

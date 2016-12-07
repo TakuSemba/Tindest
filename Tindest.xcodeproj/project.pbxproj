@@ -14,6 +14,7 @@
 		13DE7D1C1DF7D91E006C07C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D1A1DF7D91E006C07C5 /* LaunchScreen.storyboard */; };
 		13DE7D271DF7D91F006C07C5 /* TindestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D261DF7D91F006C07C5 /* TindestTests.swift */; };
 		13DE7D321DF7D91F006C07C5 /* TindestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D311DF7D91F006C07C5 /* TindestUITests.swift */; };
+		49FFA0CE1CA71531EB1E8106 /* Pods_Tindest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		13DE7D2D1DF7D91F006C07C5 /* TindestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TindestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DE7D311DF7D91F006C07C5 /* TindestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TindestUITests.swift; sourceTree = "<group>"; };
 		13DE7D331DF7D91F006C07C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDE0E4EB18B390D8F8A50AC7 /* Pods-Tindest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.release.xcconfig"; sourceTree = "<group>"; };
+		F45F37F78CF7F5F37003FA2B /* Pods-Tindest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FFA0CE1CA71531EB1E8106 /* Pods_Tindest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				13DE7D251DF7D91F006C07C5 /* TindestTests */,
 				13DE7D301DF7D91F006C07C5 /* TindestUITests */,
 				13DE7D0F1DF7D91E006C07C5 /* Products */,
+				36F75EFFA009CD0AA85DBD55 /* Pods */,
+				6B79CF4F16F61DA6D4A2CF48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = TindestUITests;
 			sourceTree = "<group>";
 		};
+		36F75EFFA009CD0AA85DBD55 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F45F37F78CF7F5F37003FA2B /* Pods-Tindest.debug.xcconfig */,
+				BDE0E4EB18B390D8F8A50AC7 /* Pods-Tindest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6B79CF4F16F61DA6D4A2CF48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13DE7D361DF7D91F006C07C5 /* Build configuration list for PBXNativeTarget "Tindest" */;
 			buildPhases = (
+				AC19E738BE7248F9485CFC1B /* [CP] Check Pods Manifest.lock */,
 				13DE7D0A1DF7D91E006C07C5 /* Sources */,
 				13DE7D0B1DF7D91E006C07C5 /* Frameworks */,
 				13DE7D0C1DF7D91E006C07C5 /* Resources */,
+				0F8A758B22CF963BA9998221 /* [CP] Embed Pods Frameworks */,
+				CD6711C28ADDC974338AECD5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +283,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F8A758B22CF963BA9998221 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tindest/Pods-Tindest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC19E738BE7248F9485CFC1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CD6711C28ADDC974338AECD5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tindest/Pods-Tindest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13DE7D0A1DF7D91E006C07C5 /* Sources */ = {
@@ -413,6 +488,7 @@
 		};
 		13DE7D371DF7D91F006C07C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F45F37F78CF7F5F37003FA2B /* Pods-Tindest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TK2RZGFK7Y;
@@ -426,6 +502,7 @@
 		};
 		13DE7D381DF7D91F006C07C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDE0E4EB18B390D8F8A50AC7 /* Pods-Tindest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TK2RZGFK7Y;
