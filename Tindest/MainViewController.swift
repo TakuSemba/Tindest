@@ -9,19 +9,17 @@
 import UIKit
 import PagingMenuController
 
-class MainViewController: PagingMenuController {
+
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.white
-        
-        view.frame.origin.y += 64
-        view.frame.size.height += 164
+        view.backgroundColor = UIColor.black
         
         let options = PagingMenuOptions()
-        setup(options)
-        onMove = { state in
+        let pagingMenuController = PagingMenuController(options: options)
+        pagingMenuController.onMove = { state in
             switch state {
             case let .willMoveController(menuController, previousMenuController):
                 print(previousMenuController)
@@ -37,6 +35,10 @@ class MainViewController: PagingMenuController {
                 print(menuItemView)
             }
         }
+        
+        addChildViewController(pagingMenuController)
+        view.addSubview(pagingMenuController.view)
+        pagingMenuController.didMove(toParentViewController: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,12 +47,20 @@ class MainViewController: PagingMenuController {
 }
 
 private struct PagingMenuOptions: PagingMenuControllerCustomizable {
-    private let myPageViewController = MyPageViewController()
-    private let swipeViewController = SwipeViewController()
-    private let messageViewController = MessageViewController()
+    private let myPageViewController = MyPageViewController.instantiateFromStoryboard()
+    private let swipeViewController = SwipeViewController.instantiateFromStoryboard()
+    private let messageViewController = MessageViewController.instantiateFromStoryboard()
     
     fileprivate var componentType: ComponentType {
         return .all(menuOptions: MenuOptions(), pagingControllers: pagingControllers)
+    }
+    
+    fileprivate var defaultPage: Int {
+        return 1
+    }
+    
+    fileprivate var animationDuration: TimeInterval {
+        return 0.000001
     }
     
     fileprivate var pagingControllers: [UIViewController] {
@@ -59,7 +69,10 @@ private struct PagingMenuOptions: PagingMenuControllerCustomizable {
     
     fileprivate struct MenuOptions: MenuViewCustomizable {
         var displayMode: MenuDisplayMode {
-            return .segmentedControl
+            return .standard(widthMode: .flexible, centerItem: true, scrollingMode: .pagingEnabled)
+        }
+        var focusMode: MenuFocusMode {
+            return .none
         }
         var itemsOptions: [MenuItemViewCustomizable] {
             return [MenuItem1(), MenuItem2(), MenuItem3()]
@@ -68,17 +81,27 @@ private struct PagingMenuOptions: PagingMenuControllerCustomizable {
     
     fileprivate struct MenuItem1: MenuItemViewCustomizable {
         var displayMode: MenuItemDisplayMode {
-            return .text(title: MenuItemText(text: "First Menu"))
+            return .image(image: UIImage(named: "ball")!, selectedImage: UIImage(named: "ball"))
+        }
+        
+        var horizontalMargin: CGFloat {
+            return 30
         }
     }
     fileprivate struct MenuItem2: MenuItemViewCustomizable {
         var displayMode: MenuItemDisplayMode {
-            return .text(title: MenuItemText(text: "Second Menu"))
+            return .image(image: UIImage(named: "ball")!, selectedImage: UIImage(named: "ball"))
+        }
+        var horizontalMargin: CGFloat {
+            return 30
         }
     }
     fileprivate struct MenuItem3: MenuItemViewCustomizable {
         var displayMode: MenuItemDisplayMode {
-            return .text(title: MenuItemText(text: "Third Menu"))
+            return .image(image: UIImage(named: "ball")!, selectedImage: UIImage(named: "ball"))
+        }
+        var horizontalMargin: CGFloat {
+            return 30
         }
     }
 }

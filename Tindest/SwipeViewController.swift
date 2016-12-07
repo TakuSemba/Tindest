@@ -9,6 +9,11 @@
 import UIKit
 
 class SwipeViewController: UIViewController {
+    
+    class func instantiateFromStoryboard() -> SwipeViewController {
+        let storyboard = UIStoryboard(name: "Swipe", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! SwipeViewController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

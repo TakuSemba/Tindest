@@ -12,7 +12,7 @@
         <!--Message View Controller-->
         <scene sceneID="zOc-ce-SPk">
             <objects>
-                <viewController id="LzM-sX-mts" customClass="MessageViewController" customModule="Tindest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LzM-sX-mts" customClass="MessageViewController" customModule="Tindest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="swf-XQ-BEs"/>
                         <viewControllerLayoutGuide type="bottom" id="c7I-1q-NMP"/>

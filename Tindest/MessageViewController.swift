@@ -9,6 +9,11 @@
 import UIKit
 
 class MessageViewController: UIViewController {
+    
+    class func instantiateFromStoryboard() -> MessageViewController {
+        let storyboard = UIStoryboard(name: "Message", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! MessageViewController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

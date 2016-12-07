@@ -1,12 +1,15 @@
 PODS:
   - PagingMenuController (2.1.1)
+  - XLPagerTabStrip (5.1.0)
 
 DEPENDENCIES:
   - PagingMenuController
+  - XLPagerTabStrip (~> 5.0)
 
 SPEC CHECKSUMS:
   PagingMenuController: 394af0edd93ae6d574e138df0bb458f81b355646
+  XLPagerTabStrip: 9191deaa2336735b7c47beb21e42be537fa4242a
 
-PODFILE CHECKSUM: bc08877ef093dd9e95a8b66ce7f07d854954f4f6
+PODFILE CHECKSUM: 54bb904efef84a009ec01fd097ecb33298dbc052
 
 COCOAPODS: 1.1.1

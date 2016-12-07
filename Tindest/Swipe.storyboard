@@ -12,7 +12,7 @@
         <!--Swipe View Controller-->
         <scene sceneID="JRi-Wf-3tU">
             <objects>
-                <viewController id="aaP-bl-TfZ" customClass="SwipeViewController" customModule="Tindest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SwipeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aaP-bl-TfZ" customClass="SwipeViewController" customModule="Tindest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xPI-iE-IoM"/>
                         <viewControllerLayoutGuide type="bottom" id="Jpp-fB-BF9"/>

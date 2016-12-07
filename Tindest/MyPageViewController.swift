@@ -9,6 +9,11 @@
 import UIKit
 
 class MyPageViewController: UIViewController {
+    
+    class func instantiateFromStoryboard() -> MyPageViewController {
+        let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! MyPageViewController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
