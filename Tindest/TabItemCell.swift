@@ -6,11 +6,13 @@
 //  Copyright © 2016年 TakuSemba. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class TabItemCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageIcon: UIImageView!
+    
+    @IBOutlet weak var imageView: UIImageView!
     
     /*
     // Only override draw() if you perform custom drawing.

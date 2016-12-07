@@ -35,6 +35,6 @@ class SwipeViewController: UIViewController, IndicatorInfoProvider {
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "ball")
+        return IndicatorInfo(title: "ball", image: UIImage(named: "ball"))
     }
 }

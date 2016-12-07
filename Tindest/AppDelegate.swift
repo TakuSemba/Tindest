@@ -15,10 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        UITabBar.appearance().tintColor = UIColor.init(red: 0.027, green: 0.725, blue: 0.608, alpha: 1)
-        UIApplication.shared.statusBarStyle = .lightContent
+        // Override point for customization after application launch.    
         let _ = MainViewController(nibName: nil, bundle: nil)
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarViewController = sb.instantiateViewController(withIdentifier: "Main")
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = tabBarViewController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

@@ -4,12 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PagingMenuController.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-Tindest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>42ACD3563763D64D1278981AE6005B30</key>
+		<key>0D05637080ED3A03B8B5419F1331E185</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4EB68D4C8E84332E61308D63FDE593CF</key>
+		<key>161CB255CB9B3DDD86B7D7A9B8AC34B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6ADB3656BDFD85FB77E0CAB44BFF61E6</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9053151C85255EA69874658E2E7DEBAB</key>
+		<key>B43918AB915242B851ABEFB5D70BE0AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C089AD9F7FF7A13834A33BBC39455CDD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD6B88EDD0E6440E9A83EF036AD789BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E7EB4EB368558FDB4C5A7140562AF4E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
