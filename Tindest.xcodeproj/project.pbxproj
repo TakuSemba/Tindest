@@ -20,6 +20,8 @@
 		13DE7D4B1DF80082006C07C5 /* Swipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */; };
 		13DE7D4D1DF8008A006C07C5 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4C1DF8008A006C07C5 /* MyPage.storyboard */; };
 		13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4E1DF80091006C07C5 /* Message.storyboard */; };
+		13DE7D531DF8388F006C07C5 /* TabItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D521DF8388F006C07C5 /* TabItemCell.xib */; };
+		13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D541DF8391D006C07C5 /* TabItemCell.swift */; };
 		49FFA0CE1CA71531EB1E8106 /* Pods_Tindest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Swipe.storyboard; sourceTree = "<group>"; };
 		13DE7D4C1DF8008A006C07C5 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		13DE7D4E1DF80091006C07C5 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		13DE7D521DF8388F006C07C5 /* TabItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabItemCell.xib; sourceTree = "<group>"; };
+		13DE7D541DF8391D006C07C5 /* TabItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemCell.swift; sourceTree = "<group>"; };
 		AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE0E4EB18B390D8F8A50AC7 /* Pods-Tindest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.release.xcconfig"; sourceTree = "<group>"; };
 		F45F37F78CF7F5F37003FA2B /* Pods-Tindest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 		13DE7D401DF7FEBC006C07C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				13DE7D521DF8388F006C07C5 /* TabItemCell.xib */,
+				13DE7D541DF8391D006C07C5 /* TabItemCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */,
 				13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */,
 				13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */,
+				13DE7D531DF8388F006C07C5 /* TabItemCell.xib in Resources */,
 				13DE7D4B1DF80082006C07C5 /* Swipe.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +385,7 @@
 				13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */,
 				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
 				13DE7D461DF7FF97006C07C5 /* MyPageViewController.swift in Sources */,
+				13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */,
 				13DE7D481DF7FFA0006C07C5 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +459,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -501,6 +510,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -530,6 +540,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F45F37F78CF7F5F37003FA2B /* Pods-Tindest.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 85HF529P6T;
@@ -546,6 +557,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDE0E4EB18B390D8F8A50AC7 /* Pods-Tindest.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 85HF529P6T;

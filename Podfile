@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'Tindest' do
 pod "PagingMenuController"
-pod 'XLPagerTabStrip', '~> 5.0'
+pod 'XLPagerTabStrip'
 end
 
 post_install do |installer|

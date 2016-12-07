@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class SwipeViewController: UIViewController {
-    
+class SwipeViewController: UIViewController, IndicatorInfoProvider {
+        
     class func instantiateFromStoryboard() -> SwipeViewController {
         let storyboard = UIStoryboard(name: "Swipe", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! SwipeViewController
@@ -33,15 +34,7 @@ class SwipeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "ball")
     }
-    */
-
 }

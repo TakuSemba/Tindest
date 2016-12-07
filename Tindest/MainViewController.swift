@@ -7,101 +7,37 @@
 //
 
 import UIKit
-import PagingMenuController
+import XLPagerTabStrip
 
-
-class MainViewController: UIViewController {
-
+class MainViewController: ButtonBarPagerTabStripViewController {
+    
+    let redColor = UIColor(red: 221/255.0, green: 0/255.0, blue: 19/255.0, alpha: 1.0)
+    let unselectedIconColor = UIColor(red: 73/255.0, green: 8/255.0, blue: 10/255.0, alpha: 1.0)
+    
     override func viewDidLoad() {
+        // change selected bar color
+        settings.style.buttonBarBackgroundColor = redColor
+        settings.style.buttonBarItemBackgroundColor = .clear
+        settings.style.selectedBarBackgroundColor = UIColor(red: 234/255.0, green: 234/255.0, blue: 234/255.0, alpha: 1.0)
+        settings.style.selectedBarHeight = 4.0
+        settings.style.buttonBarMinimumLineSpacing = 0
+        settings.style.buttonBarItemTitleColor = .black
+        settings.style.buttonBarItemsShouldFillAvailiableWidth = true
+        settings.style.buttonBarLeftContentInset = 0
+        settings.style.buttonBarRightContentInset = 0
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.black
-        
-        let options = PagingMenuOptions()
-        let pagingMenuController = PagingMenuController(options: options)
-        pagingMenuController.onMove = { state in
-            switch state {
-            case let .willMoveController(menuController, previousMenuController):
-                print(previousMenuController)
-                print(menuController)
-            case let .didMoveController(menuController, previousMenuController):
-                print(previousMenuController)
-                print(menuController)
-            case let .willMoveItem(menuItemView, previousMenuItemView):
-                print(previousMenuItemView)
-                print(menuItemView)
-            case let .didMoveItem(menuItemView, previousMenuItemView):
-                print(previousMenuItemView)
-                print(menuItemView)
-            }
-        }
-        
-        addChildViewController(pagingMenuController)
-        view.addSubview(pagingMenuController.view)
-        pagingMenuController.didMove(toParentViewController: self)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
-
+    
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        let child_1 = SwipeViewController.instantiateFromStoryboard()
+        let child_2 = SwipeViewController.instantiateFromStoryboard()
+        let child_3 = SwipeViewController.instantiateFromStoryboard()
+        return [child_1, child_2, child_3]
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-}
-
-private struct PagingMenuOptions: PagingMenuControllerCustomizable {
-    private let myPageViewController = MyPageViewController.instantiateFromStoryboard()
-    private let swipeViewController = SwipeViewController.instantiateFromStoryboard()
-    private let messageViewController = MessageViewController.instantiateFromStoryboard()
-    
-    fileprivate var componentType: ComponentType {
-        return .all(menuOptions: MenuOptions(), pagingControllers: pagingControllers)
-    }
-    
-    fileprivate var defaultPage: Int {
-        return 1
-    }
-    
-    fileprivate var animationDuration: TimeInterval {
-        return 0.000001
-    }
-    
-    fileprivate var pagingControllers: [UIViewController] {
-        return [myPageViewController, swipeViewController, messageViewController]
-    }
-    
-    fileprivate struct MenuOptions: MenuViewCustomizable {
-        var displayMode: MenuDisplayMode {
-            return .standard(widthMode: .flexible, centerItem: true, scrollingMode: .pagingEnabled)
-        }
-        var focusMode: MenuFocusMode {
-            return .none
-        }
-        var itemsOptions: [MenuItemViewCustomizable] {
-            return [MenuItem1(), MenuItem2(), MenuItem3()]
-        }
-    }
-    
-    fileprivate struct MenuItem1: MenuItemViewCustomizable {
-        var displayMode: MenuItemDisplayMode {
-            return .image(image: UIImage(named: "ball")!, selectedImage: UIImage(named: "ball"))
-        }
-        
-        var horizontalMargin: CGFloat {
-            return 30
-        }
-    }
-    fileprivate struct MenuItem2: MenuItemViewCustomizable {
-        var displayMode: MenuItemDisplayMode {
-            return .image(image: UIImage(named: "ball")!, selectedImage: UIImage(named: "ball"))
-        }
-        var horizontalMargin: CGFloat {
-            return 30
-        }
-    }
-    fileprivate struct MenuItem3: MenuItemViewCustomizable {
-        var displayMode: MenuItemDisplayMode {
-            return .image(image: UIImage(named: "ball")!, selectedImage: UIImage(named: "ball"))
-        }
-        var horizontalMargin: CGFloat {
-            return 30
-        }
     }
 }

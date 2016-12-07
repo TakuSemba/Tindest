@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class MyPageViewController: UIViewController {
-    
+class MyPageViewController: UIViewController, IndicatorInfoProvider {
+        
     class func instantiateFromStoryboard() -> MyPageViewController {
         let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! MyPageViewController
@@ -27,14 +28,8 @@ class MyPageViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "ball")
     }
-    */
 
 }
