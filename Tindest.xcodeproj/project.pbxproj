@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
-		13DE7D141DF7D91E006C07C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D131DF7D91E006C07C5 /* ViewController.swift */; };
 		13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D151DF7D91E006C07C5 /* Main.storyboard */; };
 		13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D181DF7D91E006C07C5 /* Assets.xcassets */; };
 		13DE7D1C1DF7D91E006C07C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D1A1DF7D91E006C07C5 /* LaunchScreen.storyboard */; };
 		13DE7D271DF7D91F006C07C5 /* TindestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D261DF7D91F006C07C5 /* TindestTests.swift */; };
 		13DE7D321DF7D91F006C07C5 /* TindestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D311DF7D91F006C07C5 /* TindestUITests.swift */; };
+		13DE7D421DF7FF2C006C07C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D411DF7FF2C006C07C5 /* MainViewController.swift */; };
+		13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */; };
+		13DE7D461DF7FF97006C07C5 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D451DF7FF97006C07C5 /* MyPageViewController.swift */; };
+		13DE7D481DF7FFA0006C07C5 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */; };
+		13DE7D4B1DF80082006C07C5 /* Swipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */; };
+		13DE7D4D1DF8008A006C07C5 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4C1DF8008A006C07C5 /* MyPage.storyboard */; };
+		13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4E1DF80091006C07C5 /* Message.storyboard */; };
 		49FFA0CE1CA71531EB1E8106 /* Pods_Tindest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +43,6 @@
 /* Begin PBXFileReference section */
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13DE7D131DF7D91E006C07C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		13DE7D161DF7D91E006C07C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13DE7D181DF7D91E006C07C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13DE7D1B1DF7D91E006C07C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +53,13 @@
 		13DE7D2D1DF7D91F006C07C5 /* TindestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TindestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DE7D311DF7D91F006C07C5 /* TindestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TindestUITests.swift; sourceTree = "<group>"; };
 		13DE7D331DF7D91F006C07C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13DE7D411DF7FF2C006C07C5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		13DE7D451DF7FF97006C07C5 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Swipe.storyboard; sourceTree = "<group>"; };
+		13DE7D4C1DF8008A006C07C5 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		13DE7D4E1DF80091006C07C5 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE0E4EB18B390D8F8A50AC7 /* Pods-Tindest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.release.xcconfig"; sourceTree = "<group>"; };
 		F45F37F78CF7F5F37003FA2B /* Pods-Tindest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,9 +116,9 @@
 		13DE7D101DF7D91E006C07C5 /* Tindest */ = {
 			isa = PBXGroup;
 			children = (
+				13DE7D401DF7FEBC006C07C5 /* View */,
+				13DE7D3F1DF7FEAE006C07C5 /* Controller */,
 				13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */,
-				13DE7D131DF7D91E006C07C5 /* ViewController.swift */,
-				13DE7D151DF7D91E006C07C5 /* Main.storyboard */,
 				13DE7D181DF7D91E006C07C5 /* Assets.xcassets */,
 				13DE7D1A1DF7D91E006C07C5 /* LaunchScreen.storyboard */,
 				13DE7D1D1DF7D91E006C07C5 /* Info.plist */,
@@ -130,6 +142,28 @@
 				13DE7D331DF7D91F006C07C5 /* Info.plist */,
 			);
 			path = TindestUITests;
+			sourceTree = "<group>";
+		};
+		13DE7D3F1DF7FEAE006C07C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13DE7D151DF7D91E006C07C5 /* Main.storyboard */,
+				13DE7D411DF7FF2C006C07C5 /* MainViewController.swift */,
+				13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */,
+				13DE7D451DF7FF97006C07C5 /* MyPageViewController.swift */,
+				13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */,
+				13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */,
+				13DE7D4C1DF8008A006C07C5 /* MyPage.storyboard */,
+				13DE7D4E1DF80091006C07C5 /* Message.storyboard */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		13DE7D401DF7FEBC006C07C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		36F75EFFA009CD0AA85DBD55 /* Pods */ = {
@@ -220,7 +254,7 @@
 				TargetAttributes = {
 					13DE7D0D1DF7D91E006C07C5 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = TK2RZGFK7Y;
+						DevelopmentTeam = 85HF529P6T;
 						ProvisioningStyle = Automatic;
 					};
 					13DE7D211DF7D91E006C07C5 = {
@@ -263,8 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DE7D1C1DF7D91E006C07C5 /* LaunchScreen.storyboard in Resources */,
+				13DE7D4D1DF8008A006C07C5 /* MyPage.storyboard in Resources */,
 				13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */,
 				13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */,
+				13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */,
+				13DE7D4B1DF80082006C07C5 /* Swipe.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,8 +374,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13DE7D141DF7D91E006C07C5 /* ViewController.swift in Sources */,
+				13DE7D421DF7FF2C006C07C5 /* MainViewController.swift in Sources */,
 				13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */,
+				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
+				13DE7D461DF7FF97006C07C5 /* MyPageViewController.swift in Sources */,
+				13DE7D481DF7FFA0006C07C5 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -477,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -491,10 +531,12 @@
 			baseConfigurationReference = F45F37F78CF7F5F37003FA2B /* Pods-Tindest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TK2RZGFK7Y;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 85HF529P6T;
 				INFOPLIST_FILE = Tindest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = takusemba.Tindest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takusemba.Tindest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -505,10 +547,12 @@
 			baseConfigurationReference = BDE0E4EB18B390D8F8A50AC7 /* Pods-Tindest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TK2RZGFK7Y;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 85HF529P6T;
 				INFOPLIST_FILE = Tindest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = takusemba.Tindest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takusemba.Tindest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -591,6 +635,7 @@
 				13DE7D381DF7D91F006C07C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13DE7D391DF7D91F006C07C5 /* Build configuration list for PBXNativeTarget "TindestTests" */ = {
 			isa = XCConfigurationList;
@@ -599,6 +644,7 @@
 				13DE7D3B1DF7D91F006C07C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13DE7D3C1DF7D91F006C07C5 /* Build configuration list for PBXNativeTarget "TindestUITests" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +653,7 @@
 				13DE7D3E1DF7D91F006C07C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
