@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class MessageViewController: UIViewController, IndicatorInfoProvider {
+class MessageViewController: UIViewController {
     
     class func instantiateFromStoryboard() -> MessageViewController {
         let storyboard = UIStoryboard(name: "Message", bundle: nil)
@@ -27,8 +27,11 @@ class MessageViewController: UIViewController, IndicatorInfoProvider {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+extension MessageViewController: IndicatorInfoProvider{
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "ball", image: UIImage(named: "ball"))
+        return IndicatorInfo(title: "message", image: UIImage(named: "message"))
     }
 }

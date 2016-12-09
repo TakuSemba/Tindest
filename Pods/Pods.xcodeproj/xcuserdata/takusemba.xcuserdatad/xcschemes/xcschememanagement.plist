@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Koloda.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,15 +44,30 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>pop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0D05637080ED3A03B8B5419F1331E185</key>
+		<key>0F2C9EC9804C2CC2A0CCF9F62FF75C46</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>161CB255CB9B3DDD86B7D7A9B8AC34B9</key>
+		<key>1706CA2D0BB30FC7B4A669E5B8789AD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20151774CE2F5FA6B8126D4F5ED1C5FE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>33B70A4D0BEB9FEFAD8133A870EA8195</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,22 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9BDD0E42347ED8EDEA19928B85B79254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A31AC46252CB8DE01508CFDE9D0F37DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B43918AB915242B851ABEFB5D70BE0AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C089AD9F7FF7A13834A33BBC39455CDD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DD6B88EDD0E6440E9A83EF036AD789BF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E7EB4EB368558FDB4C5A7140562AF4E2</key>
+		<key>FFF79320BAB42173DDCD2B55F3AB5ED7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

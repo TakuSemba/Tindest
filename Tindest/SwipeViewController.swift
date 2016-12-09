@@ -8,9 +8,12 @@
 
 import UIKit
 import XLPagerTabStrip
+import Koloda
 
-class SwipeViewController: UIViewController, IndicatorInfoProvider {
-        
+class SwipeViewController: UIViewController {
+    
+    @IBOutlet var kolodaView: KolodaView!
+    
     class func instantiateFromStoryboard() -> SwipeViewController {
         let storyboard = UIStoryboard(name: "Swipe", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! SwipeViewController
@@ -19,12 +22,9 @@ class SwipeViewController: UIViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
-        textLabel.center = view.center
-        textLabel.textAlignment = .center
-        textLabel.font = UIFont.systemFont(ofSize: 24)
-        textLabel.text = "View Controller 1"
-        view.addSubview(textLabel)
+        view.backgroundColor = UIColor.lightGray
+        
+        kolodaView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -33,8 +33,20 @@ class SwipeViewController: UIViewController, IndicatorInfoProvider {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+extension SwipeViewController: IndicatorInfoProvider {
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "ball", image: UIImage(named: "ball"))
+        return IndicatorInfo(title: "swipe", image: UIImage(named: "fire"))
+    }
+}
+
+extension SwipeViewController: KolodaViewDataSource {
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        return 10
+    }
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        return UINib(nibName: "CardView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
 }

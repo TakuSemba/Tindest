@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E1C1DFAE08600E0CC6B /* UIColorExtension.swift */; };
+		13558E201DFAFF8300E0CC6B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E1F1DFAFF8300E0CC6B /* CardView.swift */; };
+		13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13558E211DFAFF9100E0CC6B /* CardView.xib */; };
 		13754AFD1DF85D1F00DCB93C /* ChildExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13754AFC1DF85D1F00DCB93C /* ChildExampleViewController.swift */; };
-		13754B001DF85DA100DCB93C /* YoutubeIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13754AFE1DF85DA100DCB93C /* YoutubeIconCell.swift */; };
-		13754B011DF85DA100DCB93C /* YoutubeIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13754AFF1DF85DA100DCB93C /* YoutubeIconCell.xib */; };
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
 		13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D151DF7D91E006C07C5 /* Main.storyboard */; };
 		13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D181DF7D91E006C07C5 /* Assets.xcassets */; };
@@ -18,10 +19,10 @@
 		13DE7D321DF7D91F006C07C5 /* TindestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D311DF7D91F006C07C5 /* TindestUITests.swift */; };
 		13DE7D421DF7FF2C006C07C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D411DF7FF2C006C07C5 /* MainViewController.swift */; };
 		13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */; };
-		13DE7D461DF7FF97006C07C5 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D451DF7FF97006C07C5 /* MyPageViewController.swift */; };
+		13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D451DF7FF97006C07C5 /* ProfileViewController.swift */; };
 		13DE7D481DF7FFA0006C07C5 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */; };
 		13DE7D4B1DF80082006C07C5 /* Swipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */; };
-		13DE7D4D1DF8008A006C07C5 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4C1DF8008A006C07C5 /* MyPage.storyboard */; };
+		13DE7D4D1DF8008A006C07C5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4C1DF8008A006C07C5 /* Profile.storyboard */; };
 		13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4E1DF80091006C07C5 /* Message.storyboard */; };
 		13DE7D531DF8388F006C07C5 /* TabItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D521DF8388F006C07C5 /* TabItemCell.xib */; };
 		13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D541DF8391D006C07C5 /* TabItemCell.swift */; };
@@ -46,9 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13558E1C1DFAE08600E0CC6B /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		13558E1F1DFAFF8300E0CC6B /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		13558E211DFAFF9100E0CC6B /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		13754AFC1DF85D1F00DCB93C /* ChildExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildExampleViewController.swift; sourceTree = "<group>"; };
-		13754AFE1DF85DA100DCB93C /* YoutubeIconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YoutubeIconCell.swift; path = ../../XLPagerTabStrip/Example/Example/Youtube/YoutubeIconCell.swift; sourceTree = "<group>"; };
-		13754AFF1DF85DA100DCB93C /* YoutubeIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YoutubeIconCell.xib; path = ../../XLPagerTabStrip/Example/Example/Youtube/YoutubeIconCell.xib; sourceTree = "<group>"; };
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13DE7D161DF7D91E006C07C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,10 +65,10 @@
 		13DE7D331DF7D91F006C07C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13DE7D411DF7FF2C006C07C5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
-		13DE7D451DF7FF97006C07C5 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		13DE7D451DF7FF97006C07C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Swipe.storyboard; sourceTree = "<group>"; };
-		13DE7D4C1DF8008A006C07C5 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		13DE7D4C1DF8008A006C07C5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		13DE7D4E1DF80091006C07C5 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		13DE7D521DF8388F006C07C5 /* TabItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabItemCell.xib; sourceTree = "<group>"; };
 		13DE7D541DF8391D006C07C5 /* TabItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemCell.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13558E191DFAE05500E0CC6B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				13558E1C1DFAE08600E0CC6B /* UIColorExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		13DE7D051DF7D91E006C07C5 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 		13DE7D101DF7D91E006C07C5 /* Tindest */ = {
 			isa = PBXGroup;
 			children = (
+				13558E191DFAE05500E0CC6B /* Extensions */,
 				13DE7D401DF7FEBC006C07C5 /* View */,
 				13DE7D3F1DF7FEAE006C07C5 /* Controller */,
 				13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */,
@@ -160,10 +171,10 @@
 				13DE7D151DF7D91E006C07C5 /* Main.storyboard */,
 				13DE7D411DF7FF2C006C07C5 /* MainViewController.swift */,
 				13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */,
-				13DE7D451DF7FF97006C07C5 /* MyPageViewController.swift */,
+				13DE7D451DF7FF97006C07C5 /* ProfileViewController.swift */,
 				13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */,
 				13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */,
-				13DE7D4C1DF8008A006C07C5 /* MyPage.storyboard */,
+				13DE7D4C1DF8008A006C07C5 /* Profile.storyboard */,
 				13DE7D4E1DF80091006C07C5 /* Message.storyboard */,
 				13754AFC1DF85D1F00DCB93C /* ChildExampleViewController.swift */,
 			);
@@ -173,10 +184,10 @@
 		13DE7D401DF7FEBC006C07C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				13754AFE1DF85DA100DCB93C /* YoutubeIconCell.swift */,
-				13754AFF1DF85DA100DCB93C /* YoutubeIconCell.xib */,
 				13DE7D521DF8388F006C07C5 /* TabItemCell.xib */,
 				13DE7D541DF8391D006C07C5 /* TabItemCell.swift */,
+				13558E1F1DFAFF8300E0CC6B /* CardView.swift */,
+				13558E211DFAFF9100E0CC6B /* CardView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -312,8 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DE7D1C1DF7D91E006C07C5 /* LaunchScreen.storyboard in Resources */,
-				13DE7D4D1DF8008A006C07C5 /* MyPage.storyboard in Resources */,
-				13754B011DF85DA100DCB93C /* YoutubeIconCell.xib in Resources */,
+				13DE7D4D1DF8008A006C07C5 /* Profile.storyboard in Resources */,
+				13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */,
 				13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */,
 				13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */,
 				13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */,
@@ -392,12 +403,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DE7D421DF7FF2C006C07C5 /* MainViewController.swift in Sources */,
+				13558E201DFAFF8300E0CC6B /* CardView.swift in Sources */,
 				13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */,
 				13754AFD1DF85D1F00DCB93C /* ChildExampleViewController.swift in Sources */,
 				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
-				13DE7D461DF7FF97006C07C5 /* MyPageViewController.swift in Sources */,
+				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,
+				13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */,
 				13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */,
-				13754B001DF85DA100DCB93C /* YoutubeIconCell.swift in Sources */,
 				13DE7D481DF7FFA0006C07C5 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

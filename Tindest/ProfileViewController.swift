@@ -1,5 +1,5 @@
 //
-//  MyPageViewController.swift
+//  ProfileViewController.swift
 //  Tindest
 //
 //  Created by TakuSemba on 2016/12/07.
@@ -9,11 +9,11 @@
 import UIKit
 import XLPagerTabStrip
 
-class MyPageViewController: UIViewController, IndicatorInfoProvider {
+class ProfileViewController: UIViewController {
         
-    class func instantiateFromStoryboard() -> MyPageViewController {
-        let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! MyPageViewController
+    class func instantiateFromStoryboard() -> ProfileViewController {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! ProfileViewController
     }
 
     override func viewDidLoad() {
@@ -26,10 +26,12 @@ class MyPageViewController: UIViewController, IndicatorInfoProvider {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+
+extension ProfileViewController: IndicatorInfoProvider {
     
-
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "ball", image: UIImage(named: "ball"))
+        return IndicatorInfo(title: "profile", image: UIImage(named: "profile"))
     }
-
 }

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,19 +20,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe view controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iY2-Ze-DWy">
-                                <rect key="frame" x="107.5" y="323" width="160.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-2q-MJ6" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="20" y="40" width="335" height="500"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="VOp-lv-bEX"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93758095854922274" green="0.93758095854922274" blue="0.93758095854922274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iY2-Ze-DWy" firstAttribute="centerY" secondItem="ZaC-rt-BCy" secondAttribute="centerY" id="J6y-NQ-zrs"/>
-                            <constraint firstItem="iY2-Ze-DWy" firstAttribute="centerX" secondItem="ZaC-rt-BCy" secondAttribute="centerX" id="Oyw-5s-dqw"/>
+                            <constraint firstItem="0Oa-2q-MJ6" firstAttribute="top" secondItem="xPI-iE-IoM" secondAttribute="bottom" constant="20" id="All-Mw-Whf"/>
+                            <constraint firstItem="0Oa-2q-MJ6" firstAttribute="leading" secondItem="ZaC-rt-BCy" secondAttribute="leading" constant="20" id="GPZ-rO-r2Q"/>
+                            <constraint firstAttribute="trailing" secondItem="0Oa-2q-MJ6" secondAttribute="trailing" constant="20" id="MIp-K3-GM5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="kolodaView" destination="0Oa-2q-MJ6" id="xtc-nt-86w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnO-bP-IwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

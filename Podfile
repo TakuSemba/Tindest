@@ -7,6 +7,7 @@ pod 'RxSwift',    '~> 3.0.0-beta.1'
 pod 'ObjectMapper'
 pod 'SDWebImage'
 pod 'XLPagerTabStrip'
+pod 'Koloda', :git => 'https://github.com/Yalantis/Koloda.git', :branch => 'swift-3'
 end
 
 post_install do |installer|
