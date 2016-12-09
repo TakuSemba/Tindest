@@ -21,18 +21,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-2q-MJ6" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="20" y="40" width="335" height="500"/>
+                                <rect key="frame" x="10" y="30" width="355" height="480"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="VOp-lv-bEX"/>
+                                    <constraint firstAttribute="height" constant="480" id="VOp-lv-bEX"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93758095854922274" green="0.93758095854922274" blue="0.93758095854922274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0Oa-2q-MJ6" firstAttribute="top" secondItem="xPI-iE-IoM" secondAttribute="bottom" constant="20" id="All-Mw-Whf"/>
-                            <constraint firstItem="0Oa-2q-MJ6" firstAttribute="leading" secondItem="ZaC-rt-BCy" secondAttribute="leading" constant="20" id="GPZ-rO-r2Q"/>
-                            <constraint firstAttribute="trailing" secondItem="0Oa-2q-MJ6" secondAttribute="trailing" constant="20" id="MIp-K3-GM5"/>
+                            <constraint firstItem="0Oa-2q-MJ6" firstAttribute="top" secondItem="xPI-iE-IoM" secondAttribute="bottom" constant="10" id="All-Mw-Whf"/>
+                            <constraint firstItem="0Oa-2q-MJ6" firstAttribute="leading" secondItem="ZaC-rt-BCy" secondAttribute="leading" constant="10" id="GPZ-rO-r2Q"/>
+                            <constraint firstAttribute="trailing" secondItem="0Oa-2q-MJ6" secondAttribute="trailing" constant="10" id="MIp-K3-GM5"/>
                         </constraints>
                     </view>
                     <connections>

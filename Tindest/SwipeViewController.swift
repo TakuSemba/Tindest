@@ -22,8 +22,8 @@ class SwipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.lightGray
-        
+        view.backgroundColor = UIColor.TindestColor.lightGray
+        kolodaView.backgroundColor = UIColor.TindestColor.lightGray
         kolodaView.dataSource = self
 
         // Do any additional setup after loading the view.
