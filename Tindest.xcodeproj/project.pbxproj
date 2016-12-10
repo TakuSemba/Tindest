@@ -10,6 +10,7 @@
 		13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E1C1DFAE08600E0CC6B /* UIColorExtension.swift */; };
 		13558E201DFAFF8300E0CC6B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E1F1DFAFF8300E0CC6B /* CardView.swift */; };
 		13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13558E211DFAFF9100E0CC6B /* CardView.xib */; };
+		13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E231DFB182800E0CC6B /* CustomKolodaView.swift */; };
 		13754AFD1DF85D1F00DCB93C /* ChildExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13754AFC1DF85D1F00DCB93C /* ChildExampleViewController.swift */; };
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
 		13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D151DF7D91E006C07C5 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		13558E1C1DFAE08600E0CC6B /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		13558E1F1DFAFF8300E0CC6B /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		13558E211DFAFF9100E0CC6B /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		13558E231DFB182800E0CC6B /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
 		13754AFC1DF85D1F00DCB93C /* ChildExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildExampleViewController.swift; sourceTree = "<group>"; };
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				13DE7D541DF8391D006C07C5 /* TabItemCell.swift */,
 				13558E1F1DFAFF8300E0CC6B /* CardView.swift */,
 				13558E211DFAFF9100E0CC6B /* CardView.xib */,
+				13558E231DFB182800E0CC6B /* CustomKolodaView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				13DE7D421DF7FF2C006C07C5 /* MainViewController.swift in Sources */,
 				13558E201DFAFF8300E0CC6B /* CardView.swift in Sources */,
 				13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */,
+				13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */,
 				13754AFD1DF85D1F00DCB93C /* ChildExampleViewController.swift in Sources */,
 				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
 				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,

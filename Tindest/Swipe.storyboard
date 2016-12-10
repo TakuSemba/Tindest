@@ -36,7 +36,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="kolodaView" destination="0Oa-2q-MJ6" id="xtc-nt-86w"/>
+                        <outlet property="kolodaView" destination="0Oa-2q-MJ6" id="vb6-As-9hg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnO-bP-IwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
