@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		132AF6151DFDA250005B549E /* MatchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132AF6141DFDA250005B549E /* MatchCollectionViewCell.xib */; };
+		132AF6171DFDAA25005B549E /* MatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132AF6161DFDAA25005B549E /* MatchCollectionViewCell.swift */; };
+		132AF61A1DFDC465005B549E /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132AF6181DFDC465005B549E /* MessageTableViewCell.swift */; };
+		132AF61B1DFDC465005B549E /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132AF6191DFDC465005B549E /* MessageTableViewCell.xib */; };
 		13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E1C1DFAE08600E0CC6B /* UIColorExtension.swift */; };
 		13558E201DFAFF8300E0CC6B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E1F1DFAFF8300E0CC6B /* CardView.swift */; };
 		13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13558E211DFAFF9100E0CC6B /* CardView.xib */; };
 		13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E231DFB182800E0CC6B /* CustomKolodaView.swift */; };
-		13754AFD1DF85D1F00DCB93C /* ChildExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13754AFC1DF85D1F00DCB93C /* ChildExampleViewController.swift */; };
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
 		13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D151DF7D91E006C07C5 /* Main.storyboard */; };
 		13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D181DF7D91E006C07C5 /* Assets.xcassets */; };
@@ -48,11 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		132AF6141DFDA250005B549E /* MatchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchCollectionViewCell.xib; sourceTree = "<group>"; };
+		132AF6161DFDAA25005B549E /* MatchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		132AF6181DFDC465005B549E /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		132AF6191DFDC465005B549E /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		13558E1C1DFAE08600E0CC6B /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		13558E1F1DFAFF8300E0CC6B /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		13558E211DFAFF9100E0CC6B /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		13558E231DFB182800E0CC6B /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
-		13754AFC1DF85D1F00DCB93C /* ChildExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildExampleViewController.swift; sourceTree = "<group>"; };
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13DE7D161DF7D91E006C07C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -178,7 +184,6 @@
 				13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */,
 				13DE7D4C1DF8008A006C07C5 /* Profile.storyboard */,
 				13DE7D4E1DF80091006C07C5 /* Message.storyboard */,
-				13754AFC1DF85D1F00DCB93C /* ChildExampleViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -191,6 +196,10 @@
 				13558E1F1DFAFF8300E0CC6B /* CardView.swift */,
 				13558E211DFAFF9100E0CC6B /* CardView.xib */,
 				13558E231DFB182800E0CC6B /* CustomKolodaView.swift */,
+				132AF6141DFDA250005B549E /* MatchCollectionViewCell.xib */,
+				132AF6161DFDAA25005B549E /* MatchCollectionViewCell.swift */,
+				132AF6181DFDC465005B549E /* MessageTableViewCell.swift */,
+				132AF6191DFDC465005B549E /* MessageTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -325,12 +334,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				132AF6151DFDA250005B549E /* MatchCollectionViewCell.xib in Resources */,
 				13DE7D1C1DF7D91E006C07C5 /* LaunchScreen.storyboard in Resources */,
 				13DE7D4D1DF8008A006C07C5 /* Profile.storyboard in Resources */,
 				13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */,
 				13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */,
 				13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */,
 				13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */,
+				132AF61B1DFDC465005B549E /* MessageTableViewCell.xib in Resources */,
 				13DE7D531DF8388F006C07C5 /* TabItemCell.xib in Resources */,
 				13DE7D4B1DF80082006C07C5 /* Swipe.storyboard in Resources */,
 			);
@@ -405,11 +416,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				132AF6171DFDAA25005B549E /* MatchCollectionViewCell.swift in Sources */,
 				13DE7D421DF7FF2C006C07C5 /* MainViewController.swift in Sources */,
 				13558E201DFAFF8300E0CC6B /* CardView.swift in Sources */,
 				13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */,
+				132AF61A1DFDC465005B549E /* MessageTableViewCell.swift in Sources */,
 				13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */,
-				13754AFD1DF85D1F00DCB93C /* ChildExampleViewController.swift in Sources */,
 				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
 				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,
 				13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */,
