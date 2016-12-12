@@ -23,10 +23,9 @@ class MessageViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
-        tableView.sectionFooterHeight = 0.0
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, -20, 0);
     }
 
 }

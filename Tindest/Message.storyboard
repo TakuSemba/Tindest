@@ -11,7 +11,7 @@
         <!--Message View Controller-->
         <scene sceneID="zOc-ce-SPk">
             <objects>
-                <viewController storyboardIdentifier="MessageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LzM-sX-mts" customClass="MessageViewController" customModule="Tindest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageViewController" wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LzM-sX-mts" customClass="MessageViewController" customModule="Tindest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="swf-XQ-BEs"/>
                         <viewControllerLayoutGuide type="bottom" id="c7I-1q-NMP"/>
@@ -20,15 +20,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="100" sectionHeaderHeight="30" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="beJ-Vh-p9O">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView contentMode="scaleAspectFit" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="beJ-Vh-p9O">
+                                <rect key="frame" x="0.0" y="20" width="375" height="645"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Kim-kh-gbF">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="1"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kim-kh-gbF" id="Lxi-it-fz5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="beJ-Vh-p9O" firstAttribute="top" secondItem="swf-XQ-BEs" secondAttribute="bottom" id="2qo-Bm-9FT"/>
+                            <constraint firstItem="beJ-Vh-p9O" firstAttribute="leading" secondItem="OPS-uJ-Mue" secondAttribute="leading" id="Ouo-qu-Uvb"/>
+                            <constraint firstAttribute="trailing" secondItem="beJ-Vh-p9O" secondAttribute="trailing" id="UUe-Ad-ljj"/>
+                            <constraint firstItem="c7I-1q-NMP" firstAttribute="top" secondItem="beJ-Vh-p9O" secondAttribute="bottom" constant="2" id="d7W-IA-aZi"/>
+                        </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="hUh-Ha-U9V" id="qlY-1Q-GWr"/>
                         <outlet property="tableView" destination="beJ-Vh-p9O" id="eTv-Yy-6GG"/>
