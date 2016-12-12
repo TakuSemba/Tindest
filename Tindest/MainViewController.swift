@@ -31,8 +31,8 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabItemCell> 
         settings.style.buttonBarItemTitleColor = .black
         settings.style.buttonBarItemsShouldFillAvailiableWidth = false
         settings.style.buttonBarMinimumLineSpacing = 100
-        settings.style.buttonBarLeftContentInset = 150
-        settings.style.buttonBarRightContentInset = 150
+        settings.style.buttonBarLeftContentInset = 200
+        settings.style.buttonBarRightContentInset = 200
         settings.style.buttonBarItemLeftRightMargin = 0
         
         changeCurrentIndexProgressive = {(oldCell: TabItemCell?, newCell: TabItemCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
