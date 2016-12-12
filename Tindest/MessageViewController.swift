@@ -18,8 +18,6 @@ class MessageViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -27,6 +25,7 @@ class MessageViewController: UIViewController {
         
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.sectionFooterHeight = 0.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
 }
@@ -47,7 +46,7 @@ extension MessageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MatchCollectionViewCell", for: indexPath as IndexPath) as! MatchCollectionViewCell
-                
+        
         return cell
     }
 }
@@ -67,13 +66,18 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        var cell: UITableViewCell? = nil
         if indexPath.section == 0 {
-            cell = Bundle.main.loadNibNamed("MessageCollectionView", owner: self, options: nil)?.first as! MessageCollectionView
-        } else if indexPath.section == 1 {
-            cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
+            let cell: MessageCollectionView = Bundle.main.loadNibNamed("MessageCollectionView", owner: self, options: nil)?.first as! MessageCollectionView
+            cell.collectionView.dataSource = self
+            
+            let nib = UINib(nibName: "MatchCollectionViewCell", bundle: nil)
+            cell.collectionView.register(nib, forCellWithReuseIdentifier: "MatchCollectionViewCell")
+            return cell
+            
+        } else{
+            let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
+            return cell
         }
-        return cell!
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

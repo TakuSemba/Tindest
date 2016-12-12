@@ -16,5 +16,4 @@ class MessageCollectionView: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
 }
