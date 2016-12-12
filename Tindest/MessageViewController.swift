@@ -18,10 +18,15 @@ class MessageViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.sectionFooterHeight = 0.0
     }
 
 }
@@ -50,36 +55,45 @@ extension MessageViewController: UICollectionViewDataSource {
 extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int{
-        return 10
+        var sectionNum: Int = 0
+        
+        if section == 0 {
+            sectionNum = 1
+        } else if section == 1{
+            sectionNum = 10
+        }
+        
+        return sectionNum
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
-        return cell
+        var cell: UITableViewCell? = nil
+        if indexPath.section == 0 {
+            cell = Bundle.main.loadNibNamed("MessageCollectionView", owner: self, options: nil)?.first as! MessageCollectionView
+        } else if indexPath.section == 1 {
+            cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
+        }
+        return cell!
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = UIColor.TindestColor.mainRed
+        let view = Bundle.main.loadNibNamed("MessageSectionHeaderView", owner: self, options: nil)?.first as! MessageSectionHeaderView
         
-        let image = UIImageView(image: #imageLiteral(resourceName: "edit_button"))
-        image.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
-        view.addSubview(image)
-        
-        let label = UILabel()
-        label.text = "hogehgoe"
-        image.frame = CGRect(x: 45, y: 5, width: 100, height: 35)
-        view.addSubview(label)
+        if section == 0 {
+            view.title.text = "New Matches"
+        } else if section == 1 {
+         view.title.text = "Messages"
+        }
         
         return view
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 45
+        return 30
     }
     
 }

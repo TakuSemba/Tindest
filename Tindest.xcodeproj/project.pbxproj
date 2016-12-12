@@ -15,6 +15,10 @@
 		13558E201DFAFF8300E0CC6B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E1F1DFAFF8300E0CC6B /* CardView.swift */; };
 		13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13558E211DFAFF9100E0CC6B /* CardView.xib */; };
 		13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E231DFB182800E0CC6B /* CustomKolodaView.swift */; };
+		1357FC8B1DFEB98400DAD45E /* MessageSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357FC8A1DFEB98400DAD45E /* MessageSectionHeaderView.swift */; };
+		1357FC8D1DFEB99100DAD45E /* MessageSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357FC8C1DFEB99100DAD45E /* MessageSectionHeaderView.xib */; };
+		13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */; };
+		13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */; };
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
 		13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D151DF7D91E006C07C5 /* Main.storyboard */; };
 		13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D181DF7D91E006C07C5 /* Assets.xcassets */; };
@@ -59,6 +63,10 @@
 		13558E1F1DFAFF8300E0CC6B /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		13558E211DFAFF9100E0CC6B /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		13558E231DFB182800E0CC6B /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
+		1357FC8A1DFEB98400DAD45E /* MessageSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSectionHeaderView.swift; sourceTree = "<group>"; };
+		1357FC8C1DFEB99100DAD45E /* MessageSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageSectionHeaderView.xib; sourceTree = "<group>"; };
+		13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCollectionView.swift; sourceTree = "<group>"; };
+		13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCollectionView.xib; sourceTree = "<group>"; };
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13DE7D161DF7D91E006C07C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,6 +125,65 @@
 				13558E1C1DFAE08600E0CC6B /* UIColorExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		1357FC841DFEB89100DAD45E /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */,
+				13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */,
+			);
+			name = Swipe;
+			sourceTree = "<group>";
+		};
+		1357FC851DFEB8AA00DAD45E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				13DE7D451DF7FF97006C07C5 /* ProfileViewController.swift */,
+				13DE7D4C1DF8008A006C07C5 /* Profile.storyboard */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		1357FC861DFEB8C900DAD45E /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */,
+				13DE7D4E1DF80091006C07C5 /* Message.storyboard */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		1357FC871DFEB8DE00DAD45E /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				13558E231DFB182800E0CC6B /* CustomKolodaView.swift */,
+				13558E1F1DFAFF8300E0CC6B /* CardView.swift */,
+				13558E211DFAFF9100E0CC6B /* CardView.xib */,
+			);
+			name = Swipe;
+			sourceTree = "<group>";
+		};
+		1357FC881DFEB8EB00DAD45E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		1357FC891DFEB8F600DAD45E /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				132AF6141DFDA250005B549E /* MatchCollectionViewCell.xib */,
+				132AF6161DFDAA25005B549E /* MatchCollectionViewCell.swift */,
+				132AF6181DFDC465005B549E /* MessageTableViewCell.swift */,
+				132AF6191DFDC465005B549E /* MessageTableViewCell.xib */,
+				1357FC8A1DFEB98400DAD45E /* MessageSectionHeaderView.swift */,
+				1357FC8C1DFEB99100DAD45E /* MessageSectionHeaderView.xib */,
+				13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */,
+				13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */,
+			);
+			name = Message;
 			sourceTree = "<group>";
 		};
 		13DE7D051DF7D91E006C07C5 = {
@@ -178,12 +245,9 @@
 			children = (
 				13DE7D151DF7D91E006C07C5 /* Main.storyboard */,
 				13DE7D411DF7FF2C006C07C5 /* MainViewController.swift */,
-				13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */,
-				13DE7D451DF7FF97006C07C5 /* ProfileViewController.swift */,
-				13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */,
-				13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */,
-				13DE7D4C1DF8008A006C07C5 /* Profile.storyboard */,
-				13DE7D4E1DF80091006C07C5 /* Message.storyboard */,
+				1357FC861DFEB8C900DAD45E /* Message */,
+				1357FC851DFEB8AA00DAD45E /* Profile */,
+				1357FC841DFEB89100DAD45E /* Swipe */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -193,13 +257,9 @@
 			children = (
 				13DE7D521DF8388F006C07C5 /* TabItemCell.xib */,
 				13DE7D541DF8391D006C07C5 /* TabItemCell.swift */,
-				13558E1F1DFAFF8300E0CC6B /* CardView.swift */,
-				13558E211DFAFF9100E0CC6B /* CardView.xib */,
-				13558E231DFB182800E0CC6B /* CustomKolodaView.swift */,
-				132AF6141DFDA250005B549E /* MatchCollectionViewCell.xib */,
-				132AF6161DFDAA25005B549E /* MatchCollectionViewCell.swift */,
-				132AF6181DFDC465005B549E /* MessageTableViewCell.swift */,
-				132AF6191DFDC465005B549E /* MessageTableViewCell.xib */,
+				1357FC891DFEB8F600DAD45E /* Message */,
+				1357FC881DFEB8EB00DAD45E /* Profile */,
+				1357FC871DFEB8DE00DAD45E /* Swipe */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -336,6 +396,7 @@
 			files = (
 				132AF6151DFDA250005B549E /* MatchCollectionViewCell.xib in Resources */,
 				13DE7D1C1DF7D91E006C07C5 /* LaunchScreen.storyboard in Resources */,
+				1357FC8D1DFEB99100DAD45E /* MessageSectionHeaderView.xib in Resources */,
 				13DE7D4D1DF8008A006C07C5 /* Profile.storyboard in Resources */,
 				13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */,
 				13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */,
@@ -343,6 +404,7 @@
 				13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */,
 				132AF61B1DFDC465005B549E /* MessageTableViewCell.xib in Resources */,
 				13DE7D531DF8388F006C07C5 /* TabItemCell.xib in Resources */,
+				13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */,
 				13DE7D4B1DF80082006C07C5 /* Swipe.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,10 +485,12 @@
 				132AF61A1DFDC465005B549E /* MessageTableViewCell.swift in Sources */,
 				13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */,
 				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
+				1357FC8B1DFEB98400DAD45E /* MessageSectionHeaderView.swift in Sources */,
 				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,
 				13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */,
 				13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */,
 				13DE7D481DF7FFA0006C07C5 /* MessageViewController.swift in Sources */,
+				13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
