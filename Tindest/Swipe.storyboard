@@ -21,17 +21,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-2q-MJ6" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="10" y="30" width="355" height="480"/>
+                                <rect key="frame" x="10" y="10" width="355" height="480"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="480" id="VOp-lv-bEX"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XKN-R9-K8Z">
-                                <rect key="frame" x="0.0" y="510" width="375" height="157"/>
+                                <rect key="frame" x="0.0" y="490" width="375" height="177"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idi-sx-tQ0">
-                                        <rect key="frame" x="0.0" y="14.5" width="94" height="128"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="94" height="128"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="return_button" translatesAutoresizingMaskIntoConstraints="NO" id="iWe-BR-1bp">
                                                 <rect key="frame" x="17" y="34" width="60" height="60"/>
@@ -47,7 +47,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tsx-VO-92H">
-                                        <rect key="frame" x="94" y="14.5" width="93.5" height="128"/>
+                                        <rect key="frame" x="94" y="24.5" width="93.5" height="128"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nope_button" translatesAutoresizingMaskIntoConstraints="NO" id="63o-8A-B5b">
                                                 <rect key="frame" x="11.5" y="28.5" width="70.5" height="70"/>
@@ -63,7 +63,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diu-c2-6WS">
-                                        <rect key="frame" x="187.5" y="14.5" width="94" height="128"/>
+                                        <rect key="frame" x="187.5" y="24.5" width="94" height="128"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like_button" translatesAutoresizingMaskIntoConstraints="NO" id="b4Z-ew-ZDZ">
                                                 <rect key="frame" x="12" y="28.5" width="70" height="70"/>
@@ -79,7 +79,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rs7-gX-n1S">
-                                        <rect key="frame" x="281.5" y="48.5" width="93.5" height="60"/>
+                                        <rect key="frame" x="281.5" y="58.5" width="93.5" height="60"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="super_like_button" translatesAutoresizingMaskIntoConstraints="NO" id="nzV-O1-P8U">
                                                 <rect key="frame" x="16.5" y="0.0" width="60.5" height="60"/>
@@ -108,6 +108,7 @@
                             <constraint firstItem="XKN-R9-K8Z" firstAttribute="leading" secondItem="ZaC-rt-BCy" secondAttribute="leading" id="wBp-gB-A8e"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="kolodaView" destination="0Oa-2q-MJ6" id="vb6-As-9hg"/>
                     </connections>

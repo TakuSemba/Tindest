@@ -22,27 +22,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_round_view" translatesAutoresizingMaskIntoConstraints="NO" id="gTE-77-eWQ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="iaa-Fm-8MJ"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_picture" translatesAutoresizingMaskIntoConstraints="NO" id="A2I-Jd-fi1">
-                                <rect key="frame" x="112" y="30" width="150" height="150"/>
+                                <rect key="frame" x="112" y="10" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="4gC-3n-fDk"/>
                                     <constraint firstAttribute="width" constant="150" id="f3M-K1-scf"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_button" translatesAutoresizingMaskIntoConstraints="NO" id="bYn-0J-m0c">
-                                <rect key="frame" x="209" y="130" width="50" height="50"/>
+                                <rect key="frame" x="209" y="110" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="MWi-HJ-tg1"/>
                                     <constraint firstAttribute="height" constant="50" id="cSh-TB-1a7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marian, 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeD-br-Qhb">
-                                <rect key="frame" x="0.0" y="190" width="375" height="35"/>
+                                <rect key="frame" x="0.0" y="170" width="375" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="jSD-Mo-K8M"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Gd9-Ba-gtr">
-                                <rect key="frame" x="0.0" y="240" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="220" width="375" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWI-Ca-y0r">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
@@ -132,28 +132,28 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_friend" translatesAutoresizingMaskIntoConstraints="NO" id="nM6-Aa-TWt">
-                                <rect key="frame" x="31" y="320" width="80" height="80"/>
+                                <rect key="frame" x="31" y="300" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="oKh-un-2bi"/>
                                     <constraint firstAttribute="width" constant="80" id="xjL-75-hbo"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_friend" translatesAutoresizingMaskIntoConstraints="NO" id="O71-rh-c0u">
-                                <rect key="frame" x="147" y="340" width="80" height="80"/>
+                                <rect key="frame" x="147" y="320" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="3XY-eN-NNH"/>
                                     <constraint firstAttribute="width" constant="80" id="8vM-WB-xeT"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_friend" translatesAutoresizingMaskIntoConstraints="NO" id="qqy-Uz-r4U">
-                                <rect key="frame" x="264" y="320" width="80" height="80"/>
+                                <rect key="frame" x="264" y="300" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="ZK6-Mc-lko"/>
                                     <constraint firstAttribute="width" constant="80" id="n9v-bf-xoY"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe with Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icK-4G-Qcx">
-                                <rect key="frame" x="0.0" y="430" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="410" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nbH-ur-aGV"/>
                                 </constraints>
@@ -162,7 +162,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Match with groups of friends nearby." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4G-28-hz9">
-                                <rect key="frame" x="0.0" y="480" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="460" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ALE-Jl-PAg"/>
                                 </constraints>
@@ -171,13 +171,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="make_group" translatesAutoresizingMaskIntoConstraints="NO" id="Wdk-ET-gwi">
-                                <rect key="frame" x="61" y="530" width="253" height="50"/>
+                                <rect key="frame" x="61" y="510" width="253" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eAW-dV-jCH"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE YOUR GROUP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l29-Gs-aII">
-                                <rect key="frame" x="61" y="530" width="253" height="50"/>
+                                <rect key="frame" x="61" y="510" width="253" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Kxr-Ln-EG1"/>
                                 </constraints>
@@ -221,6 +221,7 @@
                             <constraint firstItem="gTE-77-eWQ" firstAttribute="leading" secondItem="knj-f9-I3K" secondAttribute="leading" id="yXX-EF-rGz"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsc-m2-bWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

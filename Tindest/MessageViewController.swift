@@ -16,18 +16,12 @@ class MessageViewController: UIViewController {
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! MessageViewController
     }
     
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.dataSource = self
         tableView.dataSource = self
-        collectionView.register(UINib(nibName: "MatchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MatchCollectionViewCell")
+        tableView.delegate = self
     }
 
 }
@@ -53,7 +47,7 @@ extension MessageViewController: UICollectionViewDataSource {
     }
 }
 
-extension MessageViewController : UITableViewDataSource {
+extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int{
         return 10
@@ -62,6 +56,30 @@ extension MessageViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
         return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.TindestColor.mainRed
+        
+        let image = UIImageView(image: #imageLiteral(resourceName: "edit_button"))
+        image.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
+        view.addSubview(image)
+        
+        let label = UILabel()
+        label.text = "hogehgoe"
+        image.frame = CGRect(x: 45, y: 5, width: 100, height: 35)
+        view.addSubview(label)
+        
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45
     }
     
 }
