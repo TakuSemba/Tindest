@@ -17,6 +17,8 @@
 		13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13558E231DFB182800E0CC6B /* CustomKolodaView.swift */; };
 		1357FC8B1DFEB98400DAD45E /* MessageSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357FC8A1DFEB98400DAD45E /* MessageSectionHeaderView.swift */; };
 		1357FC8D1DFEB99100DAD45E /* MessageSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357FC8C1DFEB99100DAD45E /* MessageSectionHeaderView.xib */; };
+		13A576921DFFFC7800A9515B /* SwipeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */; };
+		13A576941DFFFCFB00A9515B /* SwipeOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */; };
 		13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */; };
 		13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */; };
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
@@ -65,6 +67,8 @@
 		13558E231DFB182800E0CC6B /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
 		1357FC8A1DFEB98400DAD45E /* MessageSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSectionHeaderView.swift; sourceTree = "<group>"; };
 		1357FC8C1DFEB99100DAD45E /* MessageSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageSectionHeaderView.xib; sourceTree = "<group>"; };
+		13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOverlayView.swift; sourceTree = "<group>"; };
+		13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeOverlayView.xib; sourceTree = "<group>"; };
 		13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCollectionView.swift; sourceTree = "<group>"; };
 		13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCollectionView.xib; sourceTree = "<group>"; };
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +164,8 @@
 				13558E231DFB182800E0CC6B /* CustomKolodaView.swift */,
 				13558E1F1DFAFF8300E0CC6B /* CardView.swift */,
 				13558E211DFAFF9100E0CC6B /* CardView.xib */,
+				13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */,
+				13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */,
 			);
 			name = Swipe;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				1357FC8D1DFEB99100DAD45E /* MessageSectionHeaderView.xib in Resources */,
 				13DE7D4D1DF8008A006C07C5 /* Profile.storyboard in Resources */,
 				13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */,
+				13A576941DFFFCFB00A9515B /* SwipeOverlayView.xib in Resources */,
 				13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */,
 				13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */,
 				13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */,
@@ -484,6 +491,7 @@
 				13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */,
 				132AF61A1DFDC465005B549E /* MessageTableViewCell.swift in Sources */,
 				13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */,
+				13A576921DFFFC7800A9515B /* SwipeOverlayView.swift in Sources */,
 				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
 				1357FC8B1DFEB98400DAD45E /* MessageSectionHeaderView.swift in Sources */,
 				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,

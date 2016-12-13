@@ -10,10 +10,10 @@ import UIKit
 import XLPagerTabStrip
 import Koloda
 
-class SwipeViewController: UIViewController {
+class SwipeViewController: UIViewController{
     
     @IBOutlet var kolodaView: KolodaView!
-    
+
     class func instantiateFromStoryboard() -> SwipeViewController {
         let storyboard = UIStoryboard(name: "Swipe", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! SwipeViewController
@@ -26,14 +26,25 @@ class SwipeViewController: UIViewController {
         kolodaView.backgroundColor = UIColor.TindestColor.lightGray
         kolodaView.dataSource = self
         kolodaView.delegate = self
-
-        // Do any additional setup after loading the view.
+        print("view did load")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func returnTapped(_ sender: Any) {
+        print("returnTapped")
     }
+    
+    @IBAction func nopeTapped(_ sender: Any) {
+        kolodaView?.swipe(SwipeResultDirection.left)
+    }
+    
+    @IBAction func likeTapped(_ sender: Any) {
+        kolodaView?.swipe(SwipeResultDirection.right)
+    }
+    
+    @IBAction func superLikeTapped(_ sender: Any) {
+        print("superLikeTapped")
+    }
+    
 }
 
 extension SwipeViewController: IndicatorInfoProvider {
@@ -59,4 +70,8 @@ extension SwipeViewController: KolodaViewDataSource, KolodaViewDelegate {
     func kolodaShouldMoveBackgroundCard(koloda: KolodaView) -> Bool {
         return false
     }
+    
+//    func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
+//        return Bundle.main.loadNibNamed("SwipeOverlayView", owner: self, options: nil)![0] as? OverlayView
+//    }
 }

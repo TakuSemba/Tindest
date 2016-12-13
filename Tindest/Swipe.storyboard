@@ -33,68 +33,109 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idi-sx-tQ0">
                                         <rect key="frame" x="0.0" y="24.5" width="94" height="128"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="return_button" translatesAutoresizingMaskIntoConstraints="NO" id="iWe-BR-1bp">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i03-Hn-yqX">
                                                 <rect key="frame" x="17" y="34" width="60" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="7Bm-b5-chd"/>
-                                                    <constraint firstAttribute="height" constant="60" id="Rjb-jy-f7c"/>
+                                                    <constraint firstAttribute="height" constant="60" id="AjM-gF-OU0"/>
+                                                    <constraint firstAttribute="width" constant="60" id="btx-nU-S2D"/>
                                                 </constraints>
-                                            </imageView>
+                                                <state key="normal" title="Button" image="return_button"/>
+                                                <connections>
+                                                    <action selector="returnTapped:" destination="aaP-bl-TfZ" eventType="touchUpInside" id="TR2-cl-WXA"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
-                                            <constraint firstItem="iWe-BR-1bp" firstAttribute="centerY" secondItem="idi-sx-tQ0" secondAttribute="centerY" id="4kB-4M-CCc"/>
-                                            <constraint firstItem="iWe-BR-1bp" firstAttribute="centerX" secondItem="idi-sx-tQ0" secondAttribute="centerX" id="o3v-pP-ghb"/>
+                                            <constraint firstItem="i03-Hn-yqX" firstAttribute="centerY" secondItem="idi-sx-tQ0" secondAttribute="centerY" id="ucT-fa-Gzq"/>
+                                            <constraint firstItem="i03-Hn-yqX" firstAttribute="centerX" secondItem="idi-sx-tQ0" secondAttribute="centerX" id="z3a-eH-vgT"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tsx-VO-92H">
                                         <rect key="frame" x="94" y="24.5" width="93.5" height="128"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nope_button" translatesAutoresizingMaskIntoConstraints="NO" id="63o-8A-B5b">
-                                                <rect key="frame" x="11.5" y="28.5" width="70.5" height="70"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJ7-T3-Led">
+                                                <rect key="frame" x="11.5" y="28.5" width="70" height="70"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="IkO-Ot-PVq"/>
-                                                    <constraint firstAttribute="width" constant="70" id="xBO-oi-Mjf"/>
+                                                    <constraint firstAttribute="width" constant="70" id="CDO-Wl-UpO"/>
+                                                    <constraint firstAttribute="height" constant="70" id="y1E-tM-C2t"/>
                                                 </constraints>
-                                            </imageView>
+                                                <state key="normal" title="Button" image="nope_button"/>
+                                                <connections>
+                                                    <action selector="nopeTapped:" destination="aaP-bl-TfZ" eventType="touchUpInside" id="K9U-Qw-yY1"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
-                                            <constraint firstItem="63o-8A-B5b" firstAttribute="centerY" secondItem="Tsx-VO-92H" secondAttribute="centerY" id="1bQ-Tm-GE7"/>
-                                            <constraint firstItem="63o-8A-B5b" firstAttribute="centerX" secondItem="Tsx-VO-92H" secondAttribute="centerX" id="5Vt-jG-shJ"/>
+                                            <constraint firstItem="GJ7-T3-Led" firstAttribute="centerY" secondItem="Tsx-VO-92H" secondAttribute="centerY" id="aqJ-Lj-RtM"/>
+                                            <constraint firstItem="GJ7-T3-Led" firstAttribute="centerX" secondItem="Tsx-VO-92H" secondAttribute="centerX" id="hx1-Je-7Bz"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diu-c2-6WS">
                                         <rect key="frame" x="187.5" y="24.5" width="94" height="128"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like_button" translatesAutoresizingMaskIntoConstraints="NO" id="b4Z-ew-ZDZ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJb-Lz-1He">
                                                 <rect key="frame" x="12" y="28.5" width="70" height="70"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="bX0-Be-hpP"/>
-                                                    <constraint firstAttribute="width" constant="70" id="hm1-8a-9z1"/>
+                                                    <constraint firstAttribute="height" constant="70" id="IKN-53-dZG"/>
+                                                    <constraint firstAttribute="width" constant="70" id="Oy0-lE-til"/>
                                                 </constraints>
-                                            </imageView>
+                                                <state key="normal" title="Button" image="like_button"/>
+                                                <connections>
+                                                    <action selector="likeTapped:" destination="aaP-bl-TfZ" eventType="touchUpInside" id="tix-GX-Iae"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="b4Z-ew-ZDZ" firstAttribute="centerX" secondItem="diu-c2-6WS" secondAttribute="centerX" id="KbR-Z1-2Bb"/>
-                                            <constraint firstItem="b4Z-ew-ZDZ" firstAttribute="centerY" secondItem="diu-c2-6WS" secondAttribute="centerY" id="YmN-6n-7qr"/>
+                                            <constraint firstItem="cJb-Lz-1He" firstAttribute="centerX" secondItem="diu-c2-6WS" secondAttribute="centerX" id="V5G-hf-bvK"/>
+                                            <constraint firstItem="cJb-Lz-1He" firstAttribute="centerY" secondItem="diu-c2-6WS" secondAttribute="centerY" id="mP0-OJ-BZA"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rs7-gX-n1S">
                                         <rect key="frame" x="281.5" y="58.5" width="93.5" height="60"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="super_like_button" translatesAutoresizingMaskIntoConstraints="NO" id="nzV-O1-P8U">
-                                                <rect key="frame" x="16.5" y="0.0" width="60.5" height="60"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r36-1k-SIE">
+                                                <rect key="frame" x="16.5" y="0.0" width="60" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="imx-1t-YsA"/>
-                                                    <constraint firstAttribute="height" constant="60" id="sDw-xV-Eo1"/>
+                                                    <constraint firstAttribute="height" constant="60" id="2hU-pB-V1B"/>
+                                                    <constraint firstAttribute="width" constant="60" id="Lm3-iv-Dco"/>
                                                 </constraints>
-                                            </imageView>
+                                                <state key="normal" title="Button" image="super_like_button"/>
+                                                <connections>
+                                                    <action selector="superLikeTapped:" destination="aaP-bl-TfZ" eventType="touchUpInside" id="mJi-ge-XrJ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="nzV-O1-P8U" firstAttribute="centerX" secondItem="rs7-gX-n1S" secondAttribute="centerX" id="U1S-M5-wax"/>
-                                            <constraint firstItem="nzV-O1-P8U" firstAttribute="centerY" secondItem="rs7-gX-n1S" secondAttribute="centerY" id="jj1-qb-KDq"/>
+                                            <constraint firstItem="r36-1k-SIE" firstAttribute="centerY" secondItem="rs7-gX-n1S" secondAttribute="centerY" id="bbH-UW-KuN"/>
+                                            <constraint firstItem="r36-1k-SIE" firstAttribute="centerX" secondItem="rs7-gX-n1S" secondAttribute="centerX" id="zSn-Sy-Vgb"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rs7-gX-n1S" secondAttribute="trailing" id="1WM-vc-8P1"/>
+                                    <constraint firstItem="rs7-gX-n1S" firstAttribute="top" secondItem="XKN-R9-K8Z" secondAttribute="top" constant="58.5" id="GjK-C6-OHi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tsx-VO-92H" secondAttribute="bottom" constant="24.5" id="JGQ-vK-7Er"/>
+                                    <constraint firstItem="Tsx-VO-92H" firstAttribute="top" secondItem="XKN-R9-K8Z" secondAttribute="top" constant="24.5" id="Jh7-5n-afw"/>
+                                    <constraint firstItem="idi-sx-tQ0" firstAttribute="leading" secondItem="XKN-R9-K8Z" secondAttribute="leading" id="MF8-TV-tes"/>
+                                    <constraint firstItem="rs7-gX-n1S" firstAttribute="leading" secondItem="diu-c2-6WS" secondAttribute="trailing" id="NgX-Ev-y87"/>
+                                    <constraint firstItem="rs7-gX-n1S" firstAttribute="leading" secondItem="diu-c2-6WS" secondAttribute="trailing" id="S8R-7l-vlI"/>
+                                    <constraint firstItem="diu-c2-6WS" firstAttribute="top" secondItem="XKN-R9-K8Z" secondAttribute="top" constant="24.5" id="SrE-HV-FPP"/>
+                                    <constraint firstAttribute="bottom" secondItem="idi-sx-tQ0" secondAttribute="bottom" constant="24.5" id="WzJ-mq-mFj"/>
+                                    <constraint firstItem="diu-c2-6WS" firstAttribute="leading" secondItem="Tsx-VO-92H" secondAttribute="trailing" id="Xhs-te-687"/>
+                                    <constraint firstItem="Tsx-VO-92H" firstAttribute="leading" secondItem="idi-sx-tQ0" secondAttribute="trailing" id="cJU-eb-C11"/>
+                                    <constraint firstAttribute="bottom" secondItem="diu-c2-6WS" secondAttribute="bottom" constant="24.5" id="fIb-Dc-1Fc"/>
+                                    <constraint firstItem="diu-c2-6WS" firstAttribute="leading" secondItem="Tsx-VO-92H" secondAttribute="trailing" id="gUz-Ut-XBs"/>
+                                    <constraint firstItem="idi-sx-tQ0" firstAttribute="top" secondItem="XKN-R9-K8Z" secondAttribute="top" constant="24.5" id="pk5-eG-yPL"/>
+                                    <constraint firstItem="Tsx-VO-92H" firstAttribute="leading" secondItem="idi-sx-tQ0" secondAttribute="trailing" id="rud-rx-7Cq"/>
+                                    <constraint firstAttribute="bottom" secondItem="rs7-gX-n1S" secondAttribute="bottom" constant="58.5" id="s12-Zc-Npg"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.93758095854922274" green="0.93758095854922274" blue="0.93758095854922274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -114,6 +155,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnO-bP-IwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="r8C-gJ-KOq"/>
             </objects>
             <point key="canvasLocation" x="-181.59999999999999" y="-154.27286356821591"/>
         </scene>
