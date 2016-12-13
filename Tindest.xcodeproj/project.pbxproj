@@ -19,8 +19,6 @@
 		1357FC8D1DFEB99100DAD45E /* MessageSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1357FC8C1DFEB99100DAD45E /* MessageSectionHeaderView.xib */; };
 		13A576921DFFFC7800A9515B /* SwipeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */; };
 		13A576941DFFFCFB00A9515B /* SwipeOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */; };
-		13A576971E003ADD00A9515B /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A576951E003ADD00A9515B /* OverlayView.xib */; };
-		13A576991E003AE700A9515B /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A576981E003AE700A9515B /* ExampleOverlayView.swift */; };
 		13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */; };
 		13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */; };
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
@@ -71,8 +69,6 @@
 		1357FC8C1DFEB99100DAD45E /* MessageSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageSectionHeaderView.xib; sourceTree = "<group>"; };
 		13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOverlayView.swift; sourceTree = "<group>"; };
 		13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeOverlayView.xib; sourceTree = "<group>"; };
-		13A576961E003ADD00A9515B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = ../../Koloda/Example/Koloda/Base.lproj/OverlayView.xib; sourceTree = "<group>"; };
-		13A576981E003AE700A9515B /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleOverlayView.swift; path = ../../Koloda/Example/Koloda/ExampleOverlayView.swift; sourceTree = "<group>"; };
 		13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCollectionView.swift; sourceTree = "<group>"; };
 		13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCollectionView.xib; sourceTree = "<group>"; };
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,13 +161,11 @@
 		1357FC871DFEB8DE00DAD45E /* Swipe */ = {
 			isa = PBXGroup;
 			children = (
-				13A576981E003AE700A9515B /* ExampleOverlayView.swift */,
 				13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */,
 				13558E231DFB182800E0CC6B /* CustomKolodaView.swift */,
 				13558E1F1DFAFF8300E0CC6B /* CardView.swift */,
 				13558E211DFAFF9100E0CC6B /* CardView.xib */,
 				13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */,
-				13A576951E003ADD00A9515B /* OverlayView.xib */,
 			);
 			name = Swipe;
 			sourceTree = "<group>";
@@ -413,7 +407,6 @@
 				13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */,
 				13A576941DFFFCFB00A9515B /* SwipeOverlayView.xib in Resources */,
 				13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */,
-				13A576971E003ADD00A9515B /* OverlayView.xib in Resources */,
 				13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */,
 				13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */,
 				132AF61B1DFDC465005B549E /* MessageTableViewCell.xib in Resources */,
@@ -503,7 +496,6 @@
 				1357FC8B1DFEB98400DAD45E /* MessageSectionHeaderView.swift in Sources */,
 				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,
 				13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */,
-				13A576991E003AE700A9515B /* ExampleOverlayView.swift in Sources */,
 				13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */,
 				13DE7D481DF7FFA0006C07C5 /* MessageViewController.swift in Sources */,
 				13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */,
@@ -542,14 +534,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		13A576951E003ADD00A9515B /* OverlayView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13A576961E003ADD00A9515B /* Base */,
-			);
-			name = OverlayView.xib;
-			sourceTree = "<group>";
-		};
 		13DE7D151DF7D91E006C07C5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

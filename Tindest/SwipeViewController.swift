@@ -63,10 +63,7 @@ extension SwipeViewController: KolodaViewDataSource {
         return UINib(nibName: "CardView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
     
-    func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
-        return Bundle.main.loadNibNamed("OverlayView",owner: self, options: nil)![0] as? OverlayView
-    }
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
-        return Bundle.main.loadNibNamed("OverlayView",owner: self, options: nil)![0] as? OverlayView
+        return Bundle.main.loadNibNamed("SwipeOverlayView",owner: self, options: nil)![0] as? SwipeOverlayView
     }
 }

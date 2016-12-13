@@ -9,8 +9,8 @@
 import UIKit
 import Koloda
 
-private let overlayRightImageName = "nope_overlay"
-private let overlayLeftImageName = "like_overlay"
+private let overlayRightImageName = "like_overlay"
+private let overlayLeftImageName = "nope_overlay"
 
 class SwipeOverlayView: OverlayView {
 
@@ -29,10 +29,8 @@ class SwipeOverlayView: OverlayView {
         didSet {
             switch overlayState {
             case .left? :
-                print("left")
                 overlayImageView.image = UIImage(named: overlayLeftImageName)
             case .right? :
-                print("right")
                 overlayImageView.image = UIImage(named: overlayRightImageName)
             default:
                 overlayImageView.image = nil
