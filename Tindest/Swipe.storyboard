@@ -21,10 +21,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-2q-MJ6" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="10" y="10" width="355" height="480"/>
+                                <rect key="frame" x="10" y="10" width="355" height="450"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="480" id="VOp-lv-bEX"/>
+                                    <constraint firstAttribute="height" constant="450" id="i7T-k8-IRE"/>
+                                    <constraint firstAttribute="width" constant="355" id="x8W-ug-ulF"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XKN-R9-K8Z">
@@ -127,9 +128,11 @@
                                     <constraint firstItem="rs7-gX-n1S" firstAttribute="leading" secondItem="diu-c2-6WS" secondAttribute="trailing" id="NgX-Ev-y87"/>
                                     <constraint firstItem="rs7-gX-n1S" firstAttribute="leading" secondItem="diu-c2-6WS" secondAttribute="trailing" id="S8R-7l-vlI"/>
                                     <constraint firstItem="diu-c2-6WS" firstAttribute="top" secondItem="XKN-R9-K8Z" secondAttribute="top" constant="24.5" id="SrE-HV-FPP"/>
+                                    <constraint firstAttribute="width" constant="375" id="Tyn-ym-gcp"/>
                                     <constraint firstAttribute="bottom" secondItem="idi-sx-tQ0" secondAttribute="bottom" constant="24.5" id="WzJ-mq-mFj"/>
                                     <constraint firstItem="diu-c2-6WS" firstAttribute="leading" secondItem="Tsx-VO-92H" secondAttribute="trailing" id="Xhs-te-687"/>
                                     <constraint firstItem="Tsx-VO-92H" firstAttribute="leading" secondItem="idi-sx-tQ0" secondAttribute="trailing" id="cJU-eb-C11"/>
+                                    <constraint firstAttribute="height" constant="177" id="eF6-JI-K7N"/>
                                     <constraint firstAttribute="bottom" secondItem="diu-c2-6WS" secondAttribute="bottom" constant="24.5" id="fIb-Dc-1Fc"/>
                                     <constraint firstItem="diu-c2-6WS" firstAttribute="leading" secondItem="Tsx-VO-92H" secondAttribute="trailing" id="gUz-Ut-XBs"/>
                                     <constraint firstItem="idi-sx-tQ0" firstAttribute="top" secondItem="XKN-R9-K8Z" secondAttribute="top" constant="24.5" id="pk5-eG-yPL"/>
@@ -140,13 +143,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93758095854922274" green="0.93758095854922274" blue="0.93758095854922274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0Oa-2q-MJ6" firstAttribute="top" secondItem="xPI-iE-IoM" secondAttribute="bottom" constant="10" id="All-Mw-Whf"/>
-                            <constraint firstItem="0Oa-2q-MJ6" firstAttribute="leading" secondItem="ZaC-rt-BCy" secondAttribute="leading" constant="10" id="GPZ-rO-r2Q"/>
-                            <constraint firstItem="XKN-R9-K8Z" firstAttribute="top" secondItem="0Oa-2q-MJ6" secondAttribute="bottom" id="JZo-bZ-DTs"/>
-                            <constraint firstAttribute="trailing" secondItem="0Oa-2q-MJ6" secondAttribute="trailing" constant="10" id="MIp-K3-GM5"/>
-                            <constraint firstItem="Jpp-fB-BF9" firstAttribute="top" secondItem="XKN-R9-K8Z" secondAttribute="bottom" id="asy-Z4-6WS"/>
-                            <constraint firstAttribute="trailing" secondItem="XKN-R9-K8Z" secondAttribute="trailing" id="ucJ-ck-yiW"/>
-                            <constraint firstItem="XKN-R9-K8Z" firstAttribute="leading" secondItem="ZaC-rt-BCy" secondAttribute="leading" id="wBp-gB-A8e"/>
+                            <constraint firstAttribute="trailing" secondItem="XKN-R9-K8Z" secondAttribute="trailing" id="7Yc-Yo-ari"/>
+                            <constraint firstItem="0Oa-2q-MJ6" firstAttribute="centerX" secondItem="ZaC-rt-BCy" secondAttribute="centerX" id="Rjb-B3-0Ss"/>
+                            <constraint firstItem="Jpp-fB-BF9" firstAttribute="top" secondItem="XKN-R9-K8Z" secondAttribute="bottom" id="SVF-TL-K5v"/>
+                            <constraint firstItem="XKN-R9-K8Z" firstAttribute="leading" secondItem="ZaC-rt-BCy" secondAttribute="leading" id="xH8-KK-1tX"/>
+                            <constraint firstItem="0Oa-2q-MJ6" firstAttribute="top" secondItem="xPI-iE-IoM" secondAttribute="bottom" constant="10" id="xif-8m-8YI"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -155,7 +156,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnO-bP-IwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="r8C-gJ-KOq"/>
             </objects>
             <point key="canvasLocation" x="-181.59999999999999" y="-154.27286356821591"/>
         </scene>
