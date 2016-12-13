@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.    
-        let _ = MainViewController(nibName: nil, bundle: nil)
+        let _ = MainViewController()
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = sb.instantiateViewController(withIdentifier: "Main")
+        let mainViewController = sb.instantiateViewController(withIdentifier: "MainViewController")
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()

@@ -11,7 +11,7 @@
         <!--Main View Controller-->
         <scene sceneID="Vq6-Vf-1iV">
             <objects>
-                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xyb-mb-YKf" customClass="MainViewController" customModule="Tindest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xyb-mb-YKf" customClass="MainViewController" customModule="Tindest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zJR-oX-gfb"/>
                         <viewControllerLayoutGuide type="bottom" id="2GF-8s-kZO"/>

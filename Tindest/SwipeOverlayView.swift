@@ -9,19 +9,21 @@
 import UIKit
 import Koloda
 
-private let overlayRightImageName = "overlay_like"
-private let overlayLeftImageName = "overlay_skip"
+private let overlayRightImageName = "nope_overlay"
+private let overlayLeftImageName = "like_overlay"
 
 class SwipeOverlayView: OverlayView {
 
+
     @IBOutlet lazy var overlayImageView: UIImageView! = {
-            [unowned self] in
-            
-            var imageView = UIImageView(frame: self.bounds)
-            self.addSubview(imageView)
-            
-            return imageView
-    }()
+        [unowned self] in
+        
+        var imageView = UIImageView(frame: self.bounds)
+        self.addSubview(imageView)
+        
+        return imageView
+        }()
+    
     
     override var overlayState: SwipeResultDirection? {
         didSet {

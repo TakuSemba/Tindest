@@ -12,8 +12,9 @@ import Koloda
 
 class SwipeViewController: UIViewController{
     
-    @IBOutlet var kolodaView: KolodaView!
-
+    
+    @IBOutlet weak var kolodaView: CustomKolodaView!
+    
     class func instantiateFromStoryboard() -> SwipeViewController {
         let storyboard = UIStoryboard(name: "Swipe", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! SwipeViewController
@@ -25,8 +26,6 @@ class SwipeViewController: UIViewController{
         view.backgroundColor = UIColor.TindestColor.lightGray
         kolodaView.backgroundColor = UIColor.TindestColor.lightGray
         kolodaView.dataSource = self
-        kolodaView.delegate = self
-        print("view did load")
     }
     
     @IBAction func returnTapped(_ sender: Any) {
@@ -54,24 +53,20 @@ extension SwipeViewController: IndicatorInfoProvider {
     }
 }
 
-extension SwipeViewController: KolodaViewDataSource, KolodaViewDelegate {
+extension SwipeViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         return 10
     }
+    
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         return UINib(nibName: "CardView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
     
-    func kolodaShouldTransparentizeNextCard(koloda: KolodaView) -> Bool {
-        return false
+    func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
+        return Bundle.main.loadNibNamed("OverlayView",owner: self, options: nil)![0] as? OverlayView
     }
-    
-    func kolodaShouldMoveBackgroundCard(koloda: KolodaView) -> Bool {
-        return false
+    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
+        return Bundle.main.loadNibNamed("OverlayView",owner: self, options: nil)![0] as? OverlayView
     }
-    
-//    func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
-//        return Bundle.main.loadNibNamed("SwipeOverlayView", owner: self, options: nil)![0] as? OverlayView
-//    }
 }
