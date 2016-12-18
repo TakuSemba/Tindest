@@ -23,9 +23,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-2q-MJ6" customClass="CustomKolodaView" customModule="Tindest" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="355" height="537"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="355" id="x8W-ug-ulF"/>
-                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XKN-R9-K8Z">
                                 <rect key="frame" x="0.0" y="547" width="375" height="120"/>
