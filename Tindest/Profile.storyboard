@@ -105,7 +105,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="100"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_friend" translatesAutoresizingMaskIntoConstraints="NO" id="OU5-bv-IYu">
-                                                                        <rect key="frame" x="11" y="0.0" width="90" height="90"/>
+                                                                        <rect key="frame" x="16" y="5" width="80" height="80"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="OU5-bv-IYu" secondAttribute="height" multiplier="1:1" id="T6D-I2-lKp"/>
                                                                         </constraints>
@@ -113,23 +113,23 @@
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstItem="OU5-bv-IYu" firstAttribute="centerX" secondItem="Fyi-dr-4ID" secondAttribute="centerX" id="cNu-m3-C2o"/>
-                                                                    <constraint firstItem="OU5-bv-IYu" firstAttribute="top" secondItem="Fyi-dr-4ID" secondAttribute="top" id="i4l-VT-zir"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="OU5-bv-IYu" secondAttribute="bottom" constant="10" id="u8F-ge-34z"/>
+                                                                    <constraint firstItem="OU5-bv-IYu" firstAttribute="top" secondItem="Fyi-dr-4ID" secondAttribute="top" constant="5" id="i4l-VT-zir"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="OU5-bv-IYu" secondAttribute="bottom" constant="15" id="u8F-ge-34z"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LJ-yA-rVO">
                                                                 <rect key="frame" x="112.5" y="0.0" width="112.5" height="100"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_friend" translatesAutoresizingMaskIntoConstraints="NO" id="hqE-lE-aRs">
-                                                                        <rect key="frame" x="11" y="10" width="90" height="90"/>
+                                                                        <rect key="frame" x="16" y="15" width="80" height="80"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="hqE-lE-aRs" secondAttribute="height" multiplier="1:1" id="Ewq-dd-Fmd"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="hqE-lE-aRs" firstAttribute="top" secondItem="4LJ-yA-rVO" secondAttribute="top" constant="10" id="AnS-St-Yz5"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="hqE-lE-aRs" secondAttribute="bottom" id="Wym-bP-UAD"/>
+                                                                    <constraint firstItem="hqE-lE-aRs" firstAttribute="top" secondItem="4LJ-yA-rVO" secondAttribute="top" constant="15" id="AnS-St-Yz5"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="hqE-lE-aRs" secondAttribute="bottom" constant="5" id="Wym-bP-UAD"/>
                                                                     <constraint firstItem="hqE-lE-aRs" firstAttribute="centerX" secondItem="4LJ-yA-rVO" secondAttribute="centerX" id="ywY-S5-SpZ"/>
                                                                 </constraints>
                                                             </view>
@@ -137,16 +137,16 @@
                                                                 <rect key="frame" x="225" y="0.0" width="112.5" height="100"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_friend" translatesAutoresizingMaskIntoConstraints="NO" id="Suu-cf-DBR">
-                                                                        <rect key="frame" x="11.5" y="0.0" width="90" height="90"/>
+                                                                        <rect key="frame" x="16.5" y="5" width="80" height="80"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="Suu-cf-DBR" secondAttribute="height" id="ucH-Yr-I17"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="Suu-cf-DBR" firstAttribute="top" secondItem="isz-gY-9pz" secondAttribute="top" id="Env-Q1-13A"/>
+                                                                    <constraint firstItem="Suu-cf-DBR" firstAttribute="top" secondItem="isz-gY-9pz" secondAttribute="top" constant="5" id="Env-Q1-13A"/>
                                                                     <constraint firstItem="Suu-cf-DBR" firstAttribute="centerX" secondItem="isz-gY-9pz" secondAttribute="centerX" id="OQh-ap-c03"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="Suu-cf-DBR" secondAttribute="bottom" constant="10" id="j9a-BE-1wt"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Suu-cf-DBR" secondAttribute="bottom" constant="15" id="j9a-BE-1wt"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>

@@ -30,7 +30,7 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabItemCell> 
         settings.style.selectedBarBackgroundColor = .clear
         settings.style.buttonBarItemTitleColor = .black
         settings.style.buttonBarItemsShouldFillAvailiableWidth = false
-        settings.style.buttonBarMinimumLineSpacing = 100
+        settings.style.buttonBarMinimumLineSpacing = view.frame.width/4
         settings.style.buttonBarLeftContentInset = 200
         settings.style.buttonBarRightContentInset = 200
         settings.style.buttonBarItemLeftRightMargin = 0
