@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,13 +16,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="RZG-O6-vgw">
-                    <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
+                    <rect key="frame" x="0.0" y="0.0" width="335" height="400"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOL-ga-lh8">
-                    <rect key="frame" x="0.0" y="420" width="335" height="80"/>
+                    <rect key="frame" x="0.0" y="400" width="335" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catharine, 25" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bru-MF-9BC">
-                            <rect key="frame" x="30" y="28" width="121.5" height="24"/>
+                            <rect key="frame" x="30" y="28" width="121.5" height="44"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -32,7 +33,6 @@
                         <constraint firstAttribute="bottom" secondItem="Bru-MF-9BC" secondAttribute="bottom" constant="28" id="0SJ-6I-vhY"/>
                         <constraint firstItem="Bru-MF-9BC" firstAttribute="leading" secondItem="DOL-ga-lh8" secondAttribute="leading" constant="30" id="lsf-Hl-zVe"/>
                         <constraint firstItem="Bru-MF-9BC" firstAttribute="top" secondItem="DOL-ga-lh8" secondAttribute="top" constant="28" id="pqD-jp-7vl"/>
-                        <constraint firstAttribute="height" constant="80" id="r8O-bf-vHz"/>
                     </constraints>
                 </view>
             </subviews>
@@ -40,11 +40,12 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="DOL-ga-lh8" secondAttribute="bottom" id="3qQ-7I-wuJ"/>
                 <constraint firstItem="RZG-O6-vgw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BfP-xH-HOJ"/>
+                <constraint firstItem="DOL-ga-lh8" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1/5" id="Dyr-QX-6mQ"/>
                 <constraint firstItem="RZG-O6-vgw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="P2t-Vb-Hel"/>
                 <constraint firstItem="DOL-ga-lh8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="V9H-aU-oSs"/>
+                <constraint firstItem="RZG-O6-vgw" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="4/5" id="beR-4A-s3A"/>
                 <constraint firstAttribute="trailing" secondItem="RZG-O6-vgw" secondAttribute="trailing" id="qjH-em-kEr"/>
                 <constraint firstAttribute="trailing" secondItem="DOL-ga-lh8" secondAttribute="trailing" id="sJ0-1w-wce"/>
-                <constraint firstItem="DOL-ga-lh8" firstAttribute="top" secondItem="RZG-O6-vgw" secondAttribute="bottom" id="zha-Fn-5EY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
