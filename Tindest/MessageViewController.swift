@@ -16,6 +16,8 @@ class MessageViewController: UIViewController {
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! MessageViewController
     }
     
+    var items = ["Ellen", "Bob", "Chierly", "Emily", "Jang", "Nick"]
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -62,7 +64,7 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
             sectionNum = 1
         } else if section == 1{
-            sectionNum = 10
+            sectionNum = items.count
         }
         
         return sectionNum
@@ -79,6 +81,7 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
             
         } else{
             let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
+            cell.name.text = items[indexPath.item]
             return cell
         }
     }

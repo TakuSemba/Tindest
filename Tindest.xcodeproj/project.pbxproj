@@ -131,36 +131,11 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		1357FC841DFEB89100DAD45E /* Swipe */ = {
+		1357FC871DFEB8DE00DAD45E /* Swipe */ = {
 			isa = PBXGroup;
 			children = (
 				13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */,
 				13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */,
-			);
-			name = Swipe;
-			sourceTree = "<group>";
-		};
-		1357FC851DFEB8AA00DAD45E /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				13DE7D451DF7FF97006C07C5 /* ProfileViewController.swift */,
-				13DE7D4C1DF8008A006C07C5 /* Profile.storyboard */,
-			);
-			name = Profile;
-			sourceTree = "<group>";
-		};
-		1357FC861DFEB8C900DAD45E /* Message */ = {
-			isa = PBXGroup;
-			children = (
-				13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */,
-				13DE7D4E1DF80091006C07C5 /* Message.storyboard */,
-			);
-			name = Message;
-			sourceTree = "<group>";
-		};
-		1357FC871DFEB8DE00DAD45E /* Swipe */ = {
-			isa = PBXGroup;
-			children = (
 				13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */,
 				13558E231DFB182800E0CC6B /* CustomKolodaView.swift */,
 				13558E1F1DFAFF8300E0CC6B /* CardView.swift */,
@@ -173,6 +148,8 @@
 		1357FC881DFEB8EB00DAD45E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				13DE7D451DF7FF97006C07C5 /* ProfileViewController.swift */,
+				13DE7D4C1DF8008A006C07C5 /* Profile.storyboard */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -180,6 +157,8 @@
 		1357FC891DFEB8F600DAD45E /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */,
+				13DE7D4E1DF80091006C07C5 /* Message.storyboard */,
 				132AF6141DFDA250005B549E /* MatchCollectionViewCell.xib */,
 				132AF6161DFDAA25005B549E /* MatchCollectionViewCell.swift */,
 				132AF6181DFDC465005B549E /* MessageTableViewCell.swift */,
@@ -190,6 +169,13 @@
 				13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */,
 			);
 			name = Message;
+			sourceTree = "<group>";
+		};
+		13D06BA41E09821B003CDCBB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		13DE7D051DF7D91E006C07C5 = {
@@ -217,9 +203,9 @@
 		13DE7D101DF7D91E006C07C5 /* Tindest */ = {
 			isa = PBXGroup;
 			children = (
+				13D06BA41E09821B003CDCBB /* ViewModel */,
 				13558E191DFAE05500E0CC6B /* Extensions */,
 				13DE7D401DF7FEBC006C07C5 /* View */,
-				13DE7D3F1DF7FEAE006C07C5 /* Controller */,
 				13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */,
 				13DE7D181DF7D91E006C07C5 /* Assets.xcassets */,
 				13DE7D1A1DF7D91E006C07C5 /* LaunchScreen.storyboard */,
@@ -246,21 +232,11 @@
 			path = TindestUITests;
 			sourceTree = "<group>";
 		};
-		13DE7D3F1DF7FEAE006C07C5 /* Controller */ = {
+		13DE7D401DF7FEBC006C07C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				13DE7D151DF7D91E006C07C5 /* Main.storyboard */,
 				13DE7D411DF7FF2C006C07C5 /* MainViewController.swift */,
-				1357FC861DFEB8C900DAD45E /* Message */,
-				1357FC851DFEB8AA00DAD45E /* Profile */,
-				1357FC841DFEB89100DAD45E /* Swipe */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		13DE7D401DF7FEBC006C07C5 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				13DE7D521DF8388F006C07C5 /* TabItemCell.xib */,
 				13DE7D541DF8391D006C07C5 /* TabItemCell.swift */,
 				1357FC891DFEB8F600DAD45E /* Message */,
