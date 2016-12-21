@@ -21,6 +21,8 @@
 		13A576941DFFFCFB00A9515B /* SwipeOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */; };
 		13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */; };
 		13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */; };
+		13D06BA71E09867F003CDCBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D06BA61E09867F003CDCBB /* User.swift */; };
+		13D06BA91E0987B2003CDCBB /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D06BA81E0987B2003CDCBB /* MessageViewModel.swift */; };
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
 		13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D151DF7D91E006C07C5 /* Main.storyboard */; };
 		13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D181DF7D91E006C07C5 /* Assets.xcassets */; };
@@ -71,6 +73,8 @@
 		13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeOverlayView.xib; sourceTree = "<group>"; };
 		13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCollectionView.swift; sourceTree = "<group>"; };
 		13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCollectionView.xib; sourceTree = "<group>"; };
+		13D06BA61E09867F003CDCBB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		13D06BA81E0987B2003CDCBB /* MessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13DE7D161DF7D91E006C07C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -171,11 +175,44 @@
 			name = Message;
 			sourceTree = "<group>";
 		};
-		13D06BA41E09821B003CDCBB /* ViewModel */ = {
+		13A433A71E0AAAB9002079F5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				13D06BA61E09867F003CDCBB /* User.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		13A433A81E0AAAC7002079F5 /* Api */ = {
 			isa = PBXGroup;
 			children = (
 			);
+			name = Api;
+			sourceTree = "<group>";
+		};
+		13A433A91E0AAAD1002079F5 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Storage;
+			sourceTree = "<group>";
+		};
+		13D06BA41E09821B003CDCBB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				13D06BA81E0987B2003CDCBB /* MessageViewModel.swift */,
+			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		13D06BA51E098672003CDCBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13A433A91E0AAAD1002079F5 /* Storage */,
+				13A433A81E0AAAC7002079F5 /* Api */,
+				13A433A71E0AAAB9002079F5 /* Entity */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		13DE7D051DF7D91E006C07C5 = {
@@ -203,8 +240,9 @@
 		13DE7D101DF7D91E006C07C5 /* Tindest */ = {
 			isa = PBXGroup;
 			children = (
-				13D06BA41E09821B003CDCBB /* ViewModel */,
 				13558E191DFAE05500E0CC6B /* Extensions */,
+				13D06BA51E098672003CDCBB /* Model */,
+				13D06BA41E09821B003CDCBB /* ViewModel */,
 				13DE7D401DF7FEBC006C07C5 /* View */,
 				13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */,
 				13DE7D181DF7D91E006C07C5 /* Assets.xcassets */,
@@ -463,12 +501,14 @@
 			files = (
 				132AF6171DFDAA25005B549E /* MatchCollectionViewCell.swift in Sources */,
 				13DE7D421DF7FF2C006C07C5 /* MainViewController.swift in Sources */,
+				13D06BA91E0987B2003CDCBB /* MessageViewModel.swift in Sources */,
 				13558E201DFAFF8300E0CC6B /* CardView.swift in Sources */,
 				13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */,
 				132AF61A1DFDC465005B549E /* MessageTableViewCell.swift in Sources */,
 				13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */,
 				13A576921DFFFC7800A9515B /* SwipeOverlayView.swift in Sources */,
 				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
+				13D06BA71E09867F003CDCBB /* User.swift in Sources */,
 				1357FC8B1DFEB98400DAD45E /* MessageSectionHeaderView.swift in Sources */,
 				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,
 				13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */,

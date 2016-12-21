@@ -2,8 +2,9 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'Tindest' do
-pod 'Alamofire', '~> 4.0'
-pod 'RxSwift',    '~> 3.0.0-beta.1'
+pod 'Alamofire'
+pod 'RxSwift'
+pod 'RxCocoa'
 pod 'ObjectMapper'
 pod 'SDWebImage'
 pod 'XLPagerTabStrip'

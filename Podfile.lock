@@ -4,6 +4,8 @@ PODS:
     - pop (~> 1.0)
   - ObjectMapper (2.2.2)
   - pop (1.0.9)
+  - RxCocoa (3.0.1):
+    - RxSwift (~> 3.0)
   - RxSwift (3.0.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -11,10 +13,11 @@ PODS:
   - XLPagerTabStrip (6.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - Alamofire
   - Koloda (from `https://github.com/Yalantis/Koloda.git`, branch `swift-3`)
   - ObjectMapper
-  - RxSwift (~> 3.0.0-beta.1)
+  - RxCocoa
+  - RxSwift
   - SDWebImage
   - XLPagerTabStrip
 
@@ -33,10 +36,11 @@ SPEC CHECKSUMS:
   Koloda: 5aee353329cd1605540f1215a4c1975481dc7a37
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   XLPagerTabStrip: c46e802a8dcac29edbcea573de8fe920e052455b
 
-PODFILE CHECKSUM: a3c19bb9e99075ef34ab1bb1abb899c23cbcbf57
+PODFILE CHECKSUM: 7d90ac01a505561dd44a19424fb5331545f639a2
 
 COCOAPODS: 1.1.1

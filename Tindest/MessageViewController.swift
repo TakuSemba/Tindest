@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import XLPagerTabStrip
 
 class MessageViewController: UIViewController {
@@ -16,7 +18,11 @@ class MessageViewController: UIViewController {
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! MessageViewController
     }
     
-    var items = ["Ellen", "Bob", "Chierly", "Emily", "Jang", "Nick"]
+    internal let disposeBag = DisposeBag()
+    
+    internal let viewModel = MessageViewModel()
+    
+    internal var users: [User] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,6 +37,22 @@ class MessageViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.contentInset = UIEdgeInsetsMake(0, 0, -20, 0);
+        
+        viewModel.user.subscribe(onNext: { (user) in
+                print(user)
+                self.users.append(user)
+            }).addDisposableTo(disposeBag)
+        
+        viewModel.state.asObservable().subscribe(onNext: { (viewState) in
+            switch viewState {
+                case .complete :
+                    self.tableView.reloadData()
+                    break
+                default: break
+            }
+        }).addDisposableTo(disposeBag)
+        
+        viewModel.getUsers()
     }
 
 }
@@ -64,7 +86,7 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
             sectionNum = 1
         } else if section == 1{
-            sectionNum = items.count
+            sectionNum = self.users.count
         }
         
         return sectionNum
@@ -81,9 +103,14 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
             
         } else{
             let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
-            cell.name.text = items[indexPath.item]
+            cell.name.text = self.users[indexPath.item].name
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.item)
+        self.viewModel.addUser()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
