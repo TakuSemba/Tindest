@@ -26,6 +26,12 @@
                                     <constraint firstAttribute="width" constant="80" id="7Oa-rO-9yA"/>
                                     <constraint firstAttribute="height" constant="80" id="ap0-a9-OxE"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi, how are u" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9M-qz-a8b">
                                 <rect key="frame" x="112" y="55" width="192" height="25"/>
@@ -72,6 +78,7 @@
             <connections>
                 <outlet property="message" destination="m9M-qz-a8b" id="515-mF-UE7"/>
                 <outlet property="name" destination="BgY-c7-dw3" id="j0n-z5-xK5"/>
+                <outlet property="thumbnail" destination="yOo-li-HFH" id="ENc-J7-BnV"/>
             </connections>
         </tableViewCell>
     </objects>

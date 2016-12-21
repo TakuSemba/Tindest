@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import XLPagerTabStrip
+import SDWebImage
 
 class MessageViewController: UIViewController {
     
@@ -22,9 +23,13 @@ class MessageViewController: UIViewController {
     
     internal let viewModel = MessageViewModel()
     
-    internal var users: [User] = []
+    internal var messageUsers: [User] = []
+    
+    internal var newMatchedUsers: [User] = []
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +43,15 @@ class MessageViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.contentInset = UIEdgeInsetsMake(0, 0, -20, 0);
         
-        viewModel.user.subscribe(onNext: { (user) in
-                print(user)
-                self.users.append(user)
+        viewModel.messageUsers.subscribe(onNext: { (user) in
+                self.messageUsers.append(user)
             }).addDisposableTo(disposeBag)
         
-        viewModel.state.asObservable().subscribe(onNext: { (viewState) in
+        viewModel.newMatchedUsers.subscribe(onNext: { (user) in
+            self.newMatchedUsers.append(user)
+        }).addDisposableTo(disposeBag)
+        
+        viewModel.messageUsersState.asObservable().subscribe(onNext: { (viewState) in
             switch viewState {
                 case .complete :
                     self.tableView.reloadData()
@@ -52,7 +60,17 @@ class MessageViewController: UIViewController {
             }
         }).addDisposableTo(disposeBag)
         
-        viewModel.getUsers()
+        viewModel.newMatchedUsersState.asObservable().subscribe(onNext: { (viewState) in
+            switch viewState {
+            case .complete :
+                self.collectionView.reloadData()
+                break
+            default: break
+            }
+        }).addDisposableTo(disposeBag)
+        
+        viewModel.getMessageUsers()
+        viewModel.getNewMatchedusers()
     }
 
 }
@@ -67,13 +85,17 @@ extension MessageViewController: IndicatorInfoProvider{
 extension MessageViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        print (newMatchedUsers.count)
+        return newMatchedUsers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MatchCollectionViewCell", for: indexPath as IndexPath) as! MatchCollectionViewCell
-        
+            cell.name.text = newMatchedUsers[indexPath.item].name
+            if let thumbnail = self.messageUsers[indexPath.item].avatarUrl {
+                cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+            }
         return cell
     }
 }
@@ -86,7 +108,7 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
             sectionNum = 1
         } else if section == 1{
-            sectionNum = self.users.count
+            sectionNum = self.messageUsers.count
         }
         
         return sectionNum
@@ -96,6 +118,7 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
         if indexPath.section == 0 {
             let cell: MessageCollectionView = Bundle.main.loadNibNamed("MessageCollectionView", owner: self, options: nil)?.first as! MessageCollectionView
             cell.collectionView.dataSource = self
+            collectionView = cell.collectionView
             
             let nib = UINib(nibName: "MatchCollectionViewCell", bundle: nil)
             cell.collectionView.register(nib, forCellWithReuseIdentifier: "MatchCollectionViewCell")
@@ -103,13 +126,16 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
             
         } else{
             let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
-            cell.name.text = self.users[indexPath.item].name
+            cell.name.text = self.messageUsers[indexPath.item].name
+            cell.message.text = self.messageUsers[indexPath.item].location
+            if let thumbnail = self.messageUsers[indexPath.item].avatarUrl {
+                cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+            }
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.item)
         self.viewModel.addUser()
     }
     

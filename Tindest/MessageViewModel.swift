@@ -28,8 +28,10 @@ class MessageViewModel {
     
     private let disposeBag = DisposeBag()
     
-    internal let user = BehaviorSubject<User>(value: User(id: 1, name: "hogehoge"))
-    internal let state = Variable<ViewState>(.loading)
+    internal let messageUsers = BehaviorSubject<User>(value: User(id: 1, name: "hogehoge"))
+    internal let newMatchedUsers = BehaviorSubject<User>(value: User(id: 1, name: "hugahuga"))
+    internal let messageUsersState = Variable<ViewState>(.none)
+    internal let newMatchedUsersState = Variable<ViewState>(.none)
     
     internal let events: Variable<[User]> = Variable([])
     internal let requestState = Variable(RequestState.Stopped)
@@ -39,28 +41,48 @@ class MessageViewModel {
         
     }
     
-    func getUsers() {
-        self.state.value = .loading
+    func getMessageUsers() {
+        self.messageUsersState.value = .loading
         
-        let mockUsers = [
-            User(id: 1, name: "Lilly"),
-            User(id: 2, name: "Brick"),
-            User(id: 3, name: "Tom"),
-            User(id: 4, name: "Chris")
-        ]
-        
-        Observable.from(mockUsers)
+        Api.ShotRequest.getShots(10)
+            .flatMap({ shots -> Observable<Shot> in
+                return Observable.from(shots)
+            })
+            .map({ shot in
+                return shot.user
+            })
             .subscribe(
                 onNext: {[weak self] user in
-                    self?.user.onNext(user)
-                    self?.state.value = .complete
+                    self?.messageUsers.onNext(user!)
+                    self?.messageUsersState.value = .complete
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func getNewMatchedusers(){
+        self.newMatchedUsersState.value = .loading
+        
+        Api.ShotRequest.getShots(100)
+            .flatMap({ shots -> Observable<Shot> in
+                return Observable.from(shots)
+            })
+            .map({ shot in
+                return shot.user
+            })
+            .filter({ (user) -> Bool in
+                return (user!.name?.characters.count)! < 6
+            })
+            .subscribe(
+                onNext: {[weak self] user in
+                    self?.newMatchedUsers.onNext(user!)
+                    self?.newMatchedUsersState.value = .complete
             })
             .addDisposableTo(disposeBag)
     }
     
     func addUser() {
-        user.onNext(User(id: 13, name: "takutkuatkau"))
-        self.state.value = .complete
+        messageUsers.onNext(User(id: 13, name: "takutkuatkau"))
+        self.messageUsersState.value = .complete
     }
     
 }

@@ -10,8 +10,9 @@ import UIKit
 
 class MatchCollectionViewCell: UICollectionViewCell {
     
-        
     @IBOutlet weak var name: UILabel!
+    
+    @IBOutlet weak var thumbnail: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

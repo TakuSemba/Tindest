@@ -13,7 +13,7 @@ struct User: Mappable{
     
     var id: Int?
     var name: String?
-    var avatorUrl: String?
+    var avatarUrl: String?
     var location: String?
     
     init?(map: Map) {
@@ -28,7 +28,7 @@ struct User: Mappable{
     mutating func mapping(map: Map) {
         self.id <- map["id"]
         self.name <- map["name"]
-        self.avatorUrl <- map["avator_url"]
+        self.avatarUrl <- map["avatar_url"]
         self.location <- map["location"]
     }
 }
