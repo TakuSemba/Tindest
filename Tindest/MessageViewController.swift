@@ -60,7 +60,13 @@ class MessageViewController: UIViewController {
         
         
         let _ = viewModel.observableNewMatchedUsers.observeNext { [weak self] e in
-            self?.collectionView.reloadData()
+            print(e.change)
+            switch e.change {
+                case .endBatchEditing:
+                    self?.collectionView.reloadData()
+                default:
+                    break
+            }
         }
         
         viewModel.getMessageUsers()
@@ -79,7 +85,7 @@ extension MessageViewController: IndicatorInfoProvider{
 extension MessageViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.newMatchedUsers.count
+        return viewModel.observableNewMatchedUsers.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -90,9 +96,9 @@ extension MessageViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MatchCollectionViewCell", for: indexPath as IndexPath) as! MatchCollectionViewCell
 //            cell.name.text = viewModel.observableNewMatchedUsers[indexPath.item].name
-//            if let thumbnail = viewModel.observableNewMatchedUsers[indexPath.item].avatarUrl {
-//                cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
-//            }
+            if let thumbnail = viewModel.observableNewMatchedUsers[indexPath.item].avatarUrl {
+                cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+            }
         return cell
     }
 }

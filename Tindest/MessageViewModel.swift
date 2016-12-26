@@ -30,9 +30,7 @@ class MessageViewModel {
     private let disposeBag = DisposeBag()
     
     internal let messageUsers = BehaviorSubject<User>(value: User(id: 1, name: "hogehoge"))
-    internal let newMatchedUsers = PublishSubject<User>()
     internal let messageUsersState = Variable<ViewState>(.none)
-    internal let newMatchedUsersState = Variable<ViewState>(.none)
     
     internal let events: Variable<[User]> = Variable([])
     internal let requestState = Variable(RequestState.Stopped)
@@ -58,7 +56,6 @@ class MessageViewModel {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] user in
-                    self?.observableNewMatchedUsers.append(user!)
                     self?.messageUsers.onNext(user!)
                 },
                 onCompleted: { [weak self] () in
@@ -69,8 +66,6 @@ class MessageViewModel {
     }
     
     func getNewMatchedusers(){
-        self.newMatchedUsersState.value = .loading
-        
         Api.ShotRequest.getShots(100)
             .flatMap({ shots -> RxSwift.Observable<Shot> in
                 return RxSwift.Observable<Shot>.from(shots)
@@ -81,13 +76,15 @@ class MessageViewModel {
             .filter({ (user) -> Bool in
                 return (user!.name?.characters.count)! < 6
             })
+            .toArray()
             .observeOn(MainScheduler.instance)
             .subscribe(
-                onNext: {[weak self] user in
-                    self?.observableMessageUsers.append(user!)
-                },
-                onCompleted: { [weak self] () in
-                    self?.newMatchedUsersState.value = .complete
+                onNext: {[weak self] users in
+                    self?.observableNewMatchedUsers.batchUpdate({ (data) in
+                        for user in users {
+                            data.append(user!)
+                        }
+                    })
                 }
             )
             .addDisposableTo(disposeBag)
