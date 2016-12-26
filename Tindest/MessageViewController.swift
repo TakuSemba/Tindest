@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import XLPagerTabStrip
 import SDWebImage
+import Bond
 
 class MessageViewController: UIViewController {
     
@@ -47,9 +48,6 @@ class MessageViewController: UIViewController {
                 self.messageUsers.append(user)
             }).addDisposableTo(disposeBag)
         
-        viewModel.newMatchedUsers.subscribe(onNext: { (user) in
-            self.newMatchedUsers.append(user)
-        }).addDisposableTo(disposeBag)
         
         viewModel.messageUsersState.asObservable().subscribe(onNext: { (viewState) in
             switch viewState {
@@ -60,14 +58,10 @@ class MessageViewController: UIViewController {
             }
         }).addDisposableTo(disposeBag)
         
-        viewModel.newMatchedUsersState.asObservable().subscribe(onNext: { (viewState) in
-            switch viewState {
-            case .complete :
-                self.collectionView.reloadData()
-                break
-            default: break
-            }
-        }).addDisposableTo(disposeBag)
+        
+        let _ = viewModel.observableNewMatchedUsers.observeNext { [weak self] e in
+            self?.collectionView.reloadData()
+        }
         
         viewModel.getMessageUsers()
         viewModel.getNewMatchedusers()
@@ -95,11 +89,10 @@ extension MessageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MatchCollectionViewCell", for: indexPath as IndexPath) as! MatchCollectionViewCell
-            cell.thumbnail.image = nil;
-            cell.name.text = newMatchedUsers[indexPath.item].name
-            if let thumbnail = self.newMatchedUsers[indexPath.item].avatarUrl {
-                cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
-            }
+//            cell.name.text = viewModel.observableNewMatchedUsers[indexPath.item].name
+//            if let thumbnail = viewModel.observableNewMatchedUsers[indexPath.item].avatarUrl {
+//                cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+//            }
         return cell
     }
 }

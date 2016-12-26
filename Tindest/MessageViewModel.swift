@@ -37,8 +37,9 @@ class MessageViewModel {
     internal let events: Variable<[User]> = Variable([])
     internal let requestState = Variable(RequestState.Stopped)
     
-    internal var observableNewMatchedUsers = MutableObservableArray<User>()
-    
+    internal let observableNewMatchedUsers = MutableObservableArray<User>([])
+    internal let observableMessageUsers = MutableObservableArray<User>([])
+        
     init() {
         
         
@@ -57,7 +58,7 @@ class MessageViewModel {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] user in
-//                    self?.observableNewMatchedUsers.append(user!)
+                    self?.observableNewMatchedUsers.append(user!)
                     self?.messageUsers.onNext(user!)
                 },
                 onCompleted: { [weak self] () in
@@ -83,7 +84,7 @@ class MessageViewModel {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] user in
-                    self?.newMatchedUsers.onNext(user!)
+                    self?.observableMessageUsers.append(user!)
                 },
                 onCompleted: { [weak self] () in
                     self?.newMatchedUsersState.value = .complete

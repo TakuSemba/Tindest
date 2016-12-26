@@ -17,7 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Bond
+  - Bond (~> 5.3)
   - Koloda (from `https://github.com/Yalantis/Koloda.git`, branch `swift-3`)
   - ObjectMapper
   - RxCocoa
@@ -47,6 +47,6 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   XLPagerTabStrip: c46e802a8dcac29edbcea573de8fe920e052455b
 
-PODFILE CHECKSUM: 0878cc21db50b46e215a45bc90a3987c9f6f9316
+PODFILE CHECKSUM: 3013b4b0d81f68d311099106f275a6e9b8aae0c9
 
 COCOAPODS: 1.1.1
