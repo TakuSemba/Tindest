@@ -85,15 +85,19 @@ extension MessageViewController: IndicatorInfoProvider{
 extension MessageViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print (newMatchedUsers.count)
-        return newMatchedUsers.count
+        return self.newMatchedUsers.count
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MatchCollectionViewCell", for: indexPath as IndexPath) as! MatchCollectionViewCell
+            cell.thumbnail.image = nil;
             cell.name.text = newMatchedUsers[indexPath.item].name
-            if let thumbnail = self.messageUsers[indexPath.item].avatarUrl {
+            if let thumbnail = self.newMatchedUsers[indexPath.item].avatarUrl {
                 cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
             }
         return cell

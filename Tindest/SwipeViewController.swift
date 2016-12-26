@@ -26,6 +26,8 @@ class SwipeViewController: UIViewController{
         view.backgroundColor = UIColor.TindestColor.lightGray
         kolodaView.backgroundColor = UIColor.TindestColor.lightGray
         kolodaView.dataSource = self
+        kolodaView.delegate = self
+
     }
     
     @IBAction func returnTapped(_ sender: Any) {
@@ -65,5 +67,13 @@ extension SwipeViewController: KolodaViewDataSource {
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
         return Bundle.main.loadNibNamed("SwipeOverlayView",owner: self, options: nil)![0] as? SwipeOverlayView
+    }
+}
+
+extension SwipeViewController: KolodaViewDelegate {
+    
+    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+        let detail = DetailViewController.instantiateFromStoryboard()
+        self.present(detail, animated: true, completion: nil)
     }
 }

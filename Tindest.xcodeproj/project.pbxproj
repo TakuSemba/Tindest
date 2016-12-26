@@ -22,6 +22,8 @@
 		13A433AF1E0AAD43002079F5 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A433AE1E0AAD43002079F5 /* UserRequest.swift */; };
 		13A433B11E0AB340002079F5 /* Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A433B01E0AB340002079F5 /* Shot.swift */; };
 		13A433B31E0ABA0C002079F5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A433B21E0ABA0C002079F5 /* Image.swift */; };
+		13A433B61E0BE92D002079F5 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A433B51E0BE92D002079F5 /* Detail.storyboard */; };
+		13A433B81E0BE950002079F5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A433B71E0BE950002079F5 /* DetailViewController.swift */; };
 		13A576921DFFFC7800A9515B /* SwipeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */; };
 		13A576941DFFFCFB00A9515B /* SwipeOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */; };
 		13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */; };
@@ -79,6 +81,8 @@
 		13A433AE1E0AAD43002079F5 /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		13A433B01E0AB340002079F5 /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
 		13A433B21E0ABA0C002079F5 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		13A433B51E0BE92D002079F5 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		13A433B71E0BE950002079F5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOverlayView.swift; sourceTree = "<group>"; };
 		13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeOverlayView.xib; sourceTree = "<group>"; };
 		13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCollectionView.swift; sourceTree = "<group>"; };
@@ -150,11 +154,11 @@
 			children = (
 				13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */,
 				13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */,
-				13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */,
 				13558E231DFB182800E0CC6B /* CustomKolodaView.swift */,
+				13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */,
+				13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */,
 				13558E1F1DFAFF8300E0CC6B /* CardView.swift */,
 				13558E211DFAFF9100E0CC6B /* CardView.xib */,
-				13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */,
 			);
 			name = Swipe;
 			sourceTree = "<group>";
@@ -210,6 +214,15 @@
 			children = (
 			);
 			name = Storage;
+			sourceTree = "<group>";
+		};
+		13A433B41E0BE90C002079F5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				13A433B51E0BE92D002079F5 /* Detail.storyboard */,
+				13A433B71E0BE950002079F5 /* DetailViewController.swift */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		13D06BA41E09821B003CDCBB /* ViewModel */ = {
@@ -295,6 +308,7 @@
 				1357FC891DFEB8F600DAD45E /* Message */,
 				1357FC881DFEB8EB00DAD45E /* Profile */,
 				1357FC871DFEB8DE00DAD45E /* Swipe */,
+				13A433B41E0BE90C002079F5 /* Detail */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -440,6 +454,7 @@
 				13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */,
 				132AF61B1DFDC465005B549E /* MessageTableViewCell.xib in Resources */,
 				13DE7D531DF8388F006C07C5 /* TabItemCell.xib in Resources */,
+				13A433B61E0BE92D002079F5 /* Detail.storyboard in Resources */,
 				13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */,
 				13DE7D4B1DF80082006C07C5 /* Swipe.storyboard in Resources */,
 			);
@@ -525,6 +540,7 @@
 				13A433AB1E0AACDE002079F5 /* Api.swift in Sources */,
 				132AF61A1DFDC465005B549E /* MessageTableViewCell.swift in Sources */,
 				13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */,
+				13A433B81E0BE950002079F5 /* DetailViewController.swift in Sources */,
 				13A576921DFFFC7800A9515B /* SwipeOverlayView.swift in Sources */,
 				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
 				13D06BA71E09867F003CDCBB /* User.swift in Sources */,

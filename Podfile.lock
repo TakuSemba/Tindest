@@ -1,9 +1,12 @@
 PODS:
   - Alamofire (4.2.0)
-  - Koloda (3.1.2):
+  - Bond (5.3.1):
+    - ReactiveKit (~> 3.1)
+  - Koloda (4.0):
     - pop (~> 1.0)
   - ObjectMapper (2.2.2)
   - pop (1.0.9)
+  - ReactiveKit (3.1.1)
   - RxCocoa (3.0.1):
     - RxSwift (~> 3.0)
   - RxSwift (3.0.1)
@@ -14,6 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Bond
   - Koloda (from `https://github.com/Yalantis/Koloda.git`, branch `swift-3`)
   - ObjectMapper
   - RxCocoa
@@ -28,19 +32,21 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Koloda:
-    :commit: 2aea10e0ae955814e38fc815ff38c0b20fb126ea
+    :commit: 00fc63910eeb9208cef9bf5b72c7243a59511414
     :git: https://github.com/Yalantis/Koloda.git
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
-  Koloda: 5aee353329cd1605540f1215a4c1975481dc7a37
+  Bond: 4e67616dedd6515adbe25ad360848e73f3a142a1
+  Koloda: b133e13cee0444c545e788d87950131bfac47389
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  ReactiveKit: e830df3deeb6cdf2acd18cee5cf07cb25488ae4e
   RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   XLPagerTabStrip: c46e802a8dcac29edbcea573de8fe920e052455b
 
-PODFILE CHECKSUM: 7d90ac01a505561dd44a19424fb5331545f639a2
+PODFILE CHECKSUM: 0878cc21db50b46e215a45bc90a3987c9f6f9316
 
 COCOAPODS: 1.1.1

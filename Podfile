@@ -5,6 +5,7 @@ target 'Tindest' do
 pod 'Alamofire'
 pod 'RxSwift'
 pod 'RxCocoa'
+pod 'Bond'
 pod 'ObjectMapper'
 pod 'SDWebImage'
 pod 'XLPagerTabStrip'

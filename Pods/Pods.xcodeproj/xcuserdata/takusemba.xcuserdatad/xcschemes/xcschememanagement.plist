@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Bond.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Koloda.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,6 +25,11 @@
 			<false/>
 		</dict>
 		<key>Pods-Tindest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactiveKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,7 +67,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D277C7AE3E2057B70726100069481B1</key>
+		<key>146E26B4B2ED8EFDE18B5C7FB043A728</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,7 +77,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>28A4A91F6C557CB15A8DD11F7CB98A6F</key>
+		<key>611F40EB6C97D9EBC2D94EC35526166B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +87,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>91B973C62DFC410693E750D2ABC01BF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9BDD0E42347ED8EDEA19928B85B79254</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D29BF1A8D7708E9FD872F5F49E3C63B</key>
+		<key>9FFE8AD5978C89F6B9791DED6C122892</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A26D7E98A15EC16E160A6FD3C4DDFB18</key>
+		<key>AD60870F5762594C27011BBAA5559985</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B06B9B3B984D95BBC92DA2D5368FDED2</key>
+		<key>B10012277176DCEDBDB02DDFB6E852C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CEA36531AF6D831DDAF2EB024F16AE85</key>
+		<key>DB93025778FCC619221B9D9F130359B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E50C2C393BCD9765D71D1F49D86A1533</key>
 		<dict>
 			<key>primary</key>
 			<true/>

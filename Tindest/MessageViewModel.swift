@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Bond
 
 enum RequestState {
     case Stopped
@@ -29,12 +30,14 @@ class MessageViewModel {
     private let disposeBag = DisposeBag()
     
     internal let messageUsers = BehaviorSubject<User>(value: User(id: 1, name: "hogehoge"))
-    internal let newMatchedUsers = BehaviorSubject<User>(value: User(id: 1, name: "hugahuga"))
+    internal let newMatchedUsers = PublishSubject<User>()
     internal let messageUsersState = Variable<ViewState>(.none)
     internal let newMatchedUsersState = Variable<ViewState>(.none)
     
     internal let events: Variable<[User]> = Variable([])
     internal let requestState = Variable(RequestState.Stopped)
+    
+    internal var observableNewMatchedUsers = MutableObservableArray<User>()
     
     init() {
         
@@ -45,17 +48,22 @@ class MessageViewModel {
         self.messageUsersState.value = .loading
         
         Api.ShotRequest.getShots(10)
-            .flatMap({ shots -> Observable<Shot> in
-                return Observable.from(shots)
+            .flatMap({ shots -> RxSwift.Observable<Shot> in
+                return RxSwift.Observable.from(shots)
             })
             .map({ shot in
                 return shot.user
             })
+            .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] user in
+//                    self?.observableNewMatchedUsers.append(user!)
                     self?.messageUsers.onNext(user!)
+                },
+                onCompleted: { [weak self] () in
                     self?.messageUsersState.value = .complete
-            })
+                }
+            )
             .addDisposableTo(disposeBag)
     }
     
@@ -63,8 +71,8 @@ class MessageViewModel {
         self.newMatchedUsersState.value = .loading
         
         Api.ShotRequest.getShots(100)
-            .flatMap({ shots -> Observable<Shot> in
-                return Observable.from(shots)
+            .flatMap({ shots -> RxSwift.Observable<Shot> in
+                return RxSwift.Observable<Shot>.from(shots)
             })
             .map({ shot in
                 return shot.user
@@ -72,11 +80,15 @@ class MessageViewModel {
             .filter({ (user) -> Bool in
                 return (user!.name?.characters.count)! < 6
             })
+            .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] user in
                     self?.newMatchedUsers.onNext(user!)
+                },
+                onCompleted: { [weak self] () in
                     self?.newMatchedUsersState.value = .complete
-            })
+                }
+            )
             .addDisposableTo(disposeBag)
     }
     
