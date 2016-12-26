@@ -44,23 +44,16 @@ class MessageViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.contentInset = UIEdgeInsetsMake(0, 0, -20, 0);
         
-        viewModel.messageUsers.subscribe(onNext: { (user) in
-                self.messageUsers.append(user)
-            }).addDisposableTo(disposeBag)
-        
-        
-        viewModel.messageUsersState.asObservable().subscribe(onNext: { (viewState) in
-            switch viewState {
-                case .complete :
-                    self.tableView.reloadData()
-                    break
-                default: break
+        let _ = viewModel.observableMessageUsers.observeNext { [weak self] e in
+            switch e.change {
+            case .endBatchEditing:
+                self?.tableView.reloadData()
+            default:
+                break
             }
-        }).addDisposableTo(disposeBag)
-        
+        }
         
         let _ = viewModel.observableNewMatchedUsers.observeNext { [weak self] e in
-            print(e.change)
             switch e.change {
                 case .endBatchEditing:
                     self?.collectionView.reloadData()
@@ -95,7 +88,7 @@ extension MessageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MatchCollectionViewCell", for: indexPath as IndexPath) as! MatchCollectionViewCell
-//            cell.name.text = viewModel.observableNewMatchedUsers[indexPath.item].name
+            cell.name.text = viewModel.observableNewMatchedUsers[indexPath.item].name
             if let thumbnail = viewModel.observableNewMatchedUsers[indexPath.item].avatarUrl {
                 cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
             }
@@ -111,7 +104,7 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
             sectionNum = 1
         } else if section == 1{
-            sectionNum = self.messageUsers.count
+            sectionNum = self.viewModel.observableMessageUsers.count
         }
         
         return sectionNum
@@ -129,9 +122,9 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
             
         } else{
             let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
-            cell.name.text = self.messageUsers[indexPath.item].name
-            cell.message.text = self.messageUsers[indexPath.item].location
-            if let thumbnail = self.messageUsers[indexPath.item].avatarUrl {
+            cell.name.text = self.viewModel.observableMessageUsers[indexPath.item].name
+            cell.message.text = self.viewModel.observableMessageUsers[indexPath.item].location
+            if let thumbnail = self.viewModel.observableMessageUsers[indexPath.item].avatarUrl {
                 cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
             }
             return cell
