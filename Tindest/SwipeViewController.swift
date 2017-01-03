@@ -90,4 +90,8 @@ extension SwipeViewController: KolodaViewDelegate {
         detail.user = viewModel.swipableUsers[index]
         self.present(detail, animated: true, completion: nil)
     }
+    
+    func kolodaShouldTransparentizeNextCard(_ koloda: KolodaView) -> Bool {
+        return false
+    }
 }

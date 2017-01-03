@@ -12,10 +12,6 @@ class DetailViewController: UIViewController {
     
     var user: User?
     
-    @IBOutlet weak var image: UIImageView!
-    
-    @IBOutlet weak var name: UILabel!
-    
     class func instantiateFromStoryboard() -> DetailViewController {
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! DetailViewController
@@ -23,11 +19,12 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let imageUrl = user?.avatarUrl {
-            image.sd_setImage(with: URL(string: imageUrl)!)
-        }
-        name.text = user?.name
+
+//        if let imageUrl = user?.avatarUrl {
+//            image.sd_setImage(with: URL(string: imageUrl)!)
+//        }
+//        name.text = user?.name
+//        introduction.text = user?.bio
     }
     
     @IBAction func backToSwipe(_ sender: Any) {
