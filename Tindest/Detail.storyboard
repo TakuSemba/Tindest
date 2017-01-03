@@ -33,12 +33,53 @@
                                                     <constraint firstAttribute="width" secondItem="Ktx-h8-x12" secondAttribute="height" id="m4x-e9-8yr"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnd-py-FnT">
+                                                <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="ZeG-9n-etx"/>
+                                                    <constraint firstAttribute="width" constant="40" id="ooO-Qp-qeD"/>
+                                                </constraints>
+                                                <state key="normal" image="back_detail"/>
+                                                <connections>
+                                                    <action selector="backToSwipe:" destination="wEl-Ip-nnj" eventType="touchUpInside" id="5m6-6g-Skg"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZO-JP-t53">
+                                                <rect key="frame" x="20" y="385" width="335" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXe-Id-vLT">
+                                                        <rect key="frame" x="0.0" y="8" width="335" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 killometers away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeM-PV-73x">
+                                                        <rect key="frame" x="0.0" y="40.5" width="335" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.61169630289077759" green="0.61180418729782104" blue="0.61168956756591797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="HeM-PV-73x" secondAttribute="trailing" id="5DT-v1-jpw"/>
+                                                    <constraint firstAttribute="height" constant="60" id="KG0-X8-ouF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="HeM-PV-73x" secondAttribute="bottom" id="L6A-bn-pDQ"/>
+                                                    <constraint firstItem="HeM-PV-73x" firstAttribute="leading" secondItem="RZO-JP-t53" secondAttribute="leading" id="dO7-xy-pfj"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Ktx-h8-x12" firstAttribute="top" secondItem="ld7-mV-hrb" secondAttribute="top" id="Cso-rt-mRV"/>
-                                            <constraint firstItem="Ktx-h8-x12" firstAttribute="leading" secondItem="ld7-mV-hrb" secondAttribute="leading" id="oyg-1T-ATk"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ktx-h8-x12" secondAttribute="trailing" id="yB6-eb-xfy"/>
+                                            <constraint firstItem="RZO-JP-t53" firstAttribute="leading" secondItem="ld7-mV-hrb" secondAttribute="leading" constant="20" id="H8u-AH-54Y"/>
+                                            <constraint firstItem="nnd-py-FnT" firstAttribute="top" secondItem="ld7-mV-hrb" secondAttribute="top" constant="15" id="KOn-4k-wc8"/>
+                                            <constraint firstItem="RZO-JP-t53" firstAttribute="top" secondItem="Ktx-h8-x12" secondAttribute="bottom" constant="10" id="Udf-Cb-OAZ"/>
+                                            <constraint firstItem="Ktx-h8-x12" firstAttribute="top" secondItem="ld7-mV-hrb" secondAttribute="top" id="WKw-ip-Jf1"/>
+                                            <constraint firstItem="nnd-py-FnT" firstAttribute="leading" secondItem="ld7-mV-hrb" secondAttribute="leading" constant="15" id="Xgv-TK-6ut"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ktx-h8-x12" secondAttribute="trailing" id="ciR-HN-Lcf"/>
+                                            <constraint firstAttribute="trailing" secondItem="RZO-JP-t53" secondAttribute="trailing" constant="20" id="tPH-Ak-2B4"/>
+                                            <constraint firstItem="Ktx-h8-x12" firstAttribute="leading" secondItem="ld7-mV-hrb" secondAttribute="leading" id="xut-ab-fg5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -62,6 +103,7 @@
                     </view>
                     <connections>
                         <outlet property="image" destination="Ktx-h8-x12" id="eRU-XD-Evt"/>
+                        <outlet property="name" destination="sXe-Id-vLT" id="NXm-0S-p8b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZv-at-2Y6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,4 +111,7 @@
             <point key="canvasLocation" x="-26.399999999999999" y="-79.610194902548727"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back_detail" width="80" height="80"/>
+    </resources>
 </document>
