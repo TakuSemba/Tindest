@@ -54,6 +54,10 @@
                     <integer key="value" value="10"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="image" destination="RZG-O6-vgw" id="8R7-s2-xud"/>
+                <outlet property="name" destination="Bru-MF-9BC" id="Xev-ec-f98"/>
+            </connections>
             <point key="canvasLocation" x="277.5" y="-29"/>
         </view>
     </objects>

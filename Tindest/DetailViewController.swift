@@ -10,6 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var user: User?
+    
+    @IBOutlet weak var image: UIImageView!
+    
     class func instantiateFromStoryboard() -> DetailViewController {
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! DetailViewController
@@ -18,5 +22,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(user)
+        if let imageUrl = user?.avatarUrl {
+            image.sd_setImage(with: URL(string: imageUrl)!)
+        }
     }
 }

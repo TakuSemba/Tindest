@@ -1,0 +1,6 @@
+framework module SegueContext {
+  umbrella header "SegueContext-umbrella.h"
+
+  export *
+  module * { export * }
+}

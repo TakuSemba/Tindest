@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,20 +21,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail View Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T2-pL-cHV">
-                                <rect key="frame" x="0.0" y="318" width="375" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMp-8A-mtg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ld7-mV-hrb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ktx-h8-x12">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Ktx-h8-x12" secondAttribute="height" id="m4x-e9-8yr"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Ktx-h8-x12" firstAttribute="top" secondItem="ld7-mV-hrb" secondAttribute="top" id="Cso-rt-mRV"/>
+                                            <constraint firstItem="Ktx-h8-x12" firstAttribute="leading" secondItem="ld7-mV-hrb" secondAttribute="leading" id="oyg-1T-ATk"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ktx-h8-x12" secondAttribute="trailing" id="yB6-eb-xfy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ld7-mV-hrb" firstAttribute="leading" secondItem="JMp-8A-mtg" secondAttribute="leading" id="23y-bu-F2c"/>
+                                    <constraint firstItem="ld7-mV-hrb" firstAttribute="top" secondItem="JMp-8A-mtg" secondAttribute="top" id="9wu-14-KKb"/>
+                                    <constraint firstAttribute="bottom" secondItem="ld7-mV-hrb" secondAttribute="bottom" id="QIe-kh-0yv"/>
+                                    <constraint firstItem="ld7-mV-hrb" firstAttribute="centerY" secondItem="JMp-8A-mtg" secondAttribute="centerY" id="bRy-cl-wB9"/>
+                                    <constraint firstAttribute="trailing" secondItem="ld7-mV-hrb" secondAttribute="trailing" id="jqW-xK-ZBn"/>
+                                    <constraint firstItem="ld7-mV-hrb" firstAttribute="centerX" secondItem="JMp-8A-mtg" secondAttribute="centerX" id="oP1-io-m3e"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2T2-pL-cHV" firstAttribute="centerY" secondItem="LJ3-hW-gUR" secondAttribute="centerY" id="8rK-tx-QLj"/>
-                            <constraint firstItem="2T2-pL-cHV" firstAttribute="leading" secondItem="LJ3-hW-gUR" secondAttribute="leading" id="biv-wb-VcF"/>
-                            <constraint firstAttribute="trailing" secondItem="2T2-pL-cHV" secondAttribute="trailing" id="ekb-Pd-EB3"/>
+                            <constraint firstItem="JMp-8A-mtg" firstAttribute="leading" secondItem="LJ3-hW-gUR" secondAttribute="leading" id="Gpi-cb-yvC"/>
+                            <constraint firstItem="JMp-8A-mtg" firstAttribute="top" secondItem="mL3-Cj-Vuq" secondAttribute="bottom" id="fzo-ye-LX0"/>
+                            <constraint firstAttribute="trailing" secondItem="JMp-8A-mtg" secondAttribute="trailing" id="k7E-fI-DAK"/>
+                            <constraint firstItem="0Pj-pU-9Ls" firstAttribute="top" secondItem="JMp-8A-mtg" secondAttribute="bottom" id="yCP-LC-HxZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="Ktx-h8-x12" id="eRU-XD-Evt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZv-at-2Y6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

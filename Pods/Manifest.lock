@@ -13,6 +13,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SegueContext (1.1.0)
   - XLPagerTabStrip (6.0.0)
 
 DEPENDENCIES:
@@ -23,17 +24,24 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SDWebImage
+  - SegueContext (from `https://github.com/tokorom/SegueContext.git`, branch `swift-3.0`)
   - XLPagerTabStrip
 
 EXTERNAL SOURCES:
   Koloda:
     :branch: swift-3
     :git: https://github.com/Yalantis/Koloda.git
+  SegueContext:
+    :branch: swift-3.0
+    :git: https://github.com/tokorom/SegueContext.git
 
 CHECKOUT OPTIONS:
   Koloda:
     :commit: 00fc63910eeb9208cef9bf5b72c7243a59511414
     :git: https://github.com/Yalantis/Koloda.git
+  SegueContext:
+    :commit: f1bef3d96da940675f6406d932b697020913241d
+    :git: https://github.com/tokorom/SegueContext.git
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
@@ -45,8 +53,9 @@ SPEC CHECKSUMS:
   RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SegueContext: c6b84daa86673085b1276f5228dddaaaca100722
   XLPagerTabStrip: c46e802a8dcac29edbcea573de8fe920e052455b
 
-PODFILE CHECKSUM: 3013b4b0d81f68d311099106f275a6e9b8aae0c9
+PODFILE CHECKSUM: fef0ee227fabc2c1114b280f6bad895e87539381
 
 COCOAPODS: 1.1.1

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D73CB45C3846F43F6A69DF11E61985DD'
-               BlueprintName = 'XLPagerTabStrip-XLPagerTabStrip'
+               BlueprintIdentifier = '597856A70B1B0DC4F853913883DE2A2D'
+               BlueprintName = 'SegueContext'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'XLPagerTabStrip.bundle'>
+               BuildableName = 'SegueContext.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

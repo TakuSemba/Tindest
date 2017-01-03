@@ -15,12 +15,12 @@ class MessageViewModel {
     
     private let disposeBag = DisposeBag()
     
-    internal let observableNewMatchedUsers = MutableObservableArray<User>([])
-    internal let observableMessageUsers = MutableObservableArray<User>([])
+    internal var newMatchedUsers = MutableObservableArray<User>([])
+    internal var messageUsers = MutableObservableArray<User>([])
         
     init() {
-        
-        
+        getMessageUsers()
+        getNewMatchedusers()
     }
     
     func getMessageUsers() {        
@@ -35,9 +35,9 @@ class MessageViewModel {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] users in
-                    self?.observableMessageUsers.batchUpdate({ (data) in
+                    self?.messageUsers.batchUpdate({ (data) in
                         for user in users {
-                            self?.observableMessageUsers.append(user!)
+                            data.append(user!)
                         }
                     })
                 }
@@ -60,7 +60,7 @@ class MessageViewModel {
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] users in
-                    self?.observableNewMatchedUsers.batchUpdate({ (data) in
+                    self?.newMatchedUsers.batchUpdate({ (data) in
                         for user in users {
                             data.append(user!)
                         }
@@ -71,7 +71,7 @@ class MessageViewModel {
     }
     
     func addUser() {
-        self.observableMessageUsers.batchUpdate({ (data) in
+        self.messageUsers.batchUpdate({ (data) in
             data.append(User(id: 13, name: "takutkuatkau"))
         })
     }

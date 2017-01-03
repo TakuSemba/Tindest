@@ -12,6 +12,7 @@ import Koloda
 
 class SwipeViewController: UIViewController{
     
+    internal let viewModel = SwipeViewModel()
     
     @IBOutlet weak var kolodaView: CustomKolodaView!
     
@@ -27,6 +28,16 @@ class SwipeViewController: UIViewController{
         kolodaView.backgroundColor = UIColor.TindestColor.lightGray
         kolodaView.dataSource = self
         kolodaView.delegate = self
+        
+        let _ = viewModel.swipableUsers.observeNext { [weak self] e in
+            switch e.change {
+            case .endBatchEditing:
+                self?.kolodaView.reloadData()
+                break
+            default:
+                break
+            }
+        }
 
     }
     
@@ -58,11 +69,13 @@ extension SwipeViewController: IndicatorInfoProvider {
 extension SwipeViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return 10
+        return viewModel.swipableUsers.count
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return UINib(nibName: "CardView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
+        let cardView: CardView = UINib(nibName: "CardView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! CardView
+        cardView.user = viewModel.swipableUsers[index]
+        return cardView
     }
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
@@ -74,6 +87,7 @@ extension SwipeViewController: KolodaViewDelegate {
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         let detail = DetailViewController.instantiateFromStoryboard()
+        detail.user = viewModel.swipableUsers[index]
         self.present(detail, animated: true, completion: nil)
     }
 }

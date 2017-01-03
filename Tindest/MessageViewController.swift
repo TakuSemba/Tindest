@@ -24,10 +24,6 @@ class MessageViewController: UIViewController {
     
     internal let viewModel = MessageViewModel()
     
-    internal var messageUsers: [User] = []
-    
-    internal var newMatchedUsers: [User] = []
-    
     @IBOutlet weak var tableView: UITableView!
     
     var collectionView: UICollectionView!
@@ -44,26 +40,26 @@ class MessageViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.contentInset = UIEdgeInsetsMake(0, 0, -20, 0);
         
-        let _ = viewModel.observableMessageUsers.observeNext { [weak self] e in
+        let _ = viewModel.messageUsers.observeNext { [weak self] e in
             switch e.change {
             case .endBatchEditing:
                 self?.tableView.reloadData()
+                break
             default:
                 break
             }
         }
         
-        let _ = viewModel.observableNewMatchedUsers.observeNext { [weak self] e in
+        let _ = viewModel.newMatchedUsers.observeNext { [weak self] e in
             switch e.change {
                 case .endBatchEditing:
                     self?.collectionView.reloadData()
+                    break
                 default:
                     break
             }
         }
-        
-        viewModel.getMessageUsers()
-        viewModel.getNewMatchedusers()
+    
     }
 
 }
@@ -78,7 +74,7 @@ extension MessageViewController: IndicatorInfoProvider{
 extension MessageViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.observableNewMatchedUsers.count
+        return viewModel.newMatchedUsers.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -88,8 +84,8 @@ extension MessageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MatchCollectionViewCell", for: indexPath as IndexPath) as! MatchCollectionViewCell
-            cell.name.text = viewModel.observableNewMatchedUsers[indexPath.item].name
-            if let thumbnail = viewModel.observableNewMatchedUsers[indexPath.item].avatarUrl {
+            cell.name.text = viewModel.newMatchedUsers[indexPath.item].name
+            if let thumbnail = viewModel.newMatchedUsers[indexPath.item].avatarUrl {
                 cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
             }
         return cell
@@ -104,7 +100,7 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
             sectionNum = 1
         } else if section == 1{
-            sectionNum = self.viewModel.observableMessageUsers.count
+            sectionNum = self.viewModel.messageUsers.count
         }
         
         return sectionNum
@@ -122,9 +118,9 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
             
         } else{
             let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
-            cell.name.text = self.viewModel.observableMessageUsers[indexPath.item].name
-            cell.message.text = self.viewModel.observableMessageUsers[indexPath.item].location
-            if let thumbnail = self.viewModel.observableMessageUsers[indexPath.item].avatarUrl {
+            cell.name.text = self.viewModel.messageUsers[indexPath.item].name
+            cell.message.text = self.viewModel.messageUsers[indexPath.item].location
+            if let thumbnail = self.viewModel.messageUsers[indexPath.item].avatarUrl {
                 cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
             }
             return cell
