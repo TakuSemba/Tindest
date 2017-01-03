@@ -26,7 +26,7 @@ class CardView: UIView {
     }
     
     private func update(){
-        name.text = "\(user?.name), \(Int(arc4random_uniform(20)) + 20)"
+        name.text = "\((user?.name)!), \(Int(arc4random_uniform(20)) + 20)"
         if let imageUrl = user?.avatarUrl {
             image.sd_setImage(with: URL(string: imageUrl)!)
         }

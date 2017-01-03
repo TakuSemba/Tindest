@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
         if let imageUrl = user?.avatarUrl {
             image.sd_setImage(with: URL(string: imageUrl)!)
         }
-        name.text = "\(user?.name), \(Int(arc4random_uniform(20)) + 20)"
+        name.text = "\((user?.name)!), \(Int(arc4random_uniform(20)) + 20)"
         introduction.text = user?.bio
     }
     @IBAction func backToSwipe(_ sender: Any) {
