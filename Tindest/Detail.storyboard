@@ -149,7 +149,7 @@
                                                     <constraint firstAttribute="width" constant="70" id="8zv-FM-uOY"/>
                                                     <constraint firstAttribute="height" constant="70" id="B7z-0T-jYh"/>
                                                 </constraints>
-                                                <state key="normal" image="nope_button"/>
+                                                <state key="normal" image="nope_button_fill"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -166,7 +166,7 @@
                                                     <constraint firstAttribute="height" constant="70" id="3XX-qg-RTx"/>
                                                     <constraint firstAttribute="width" constant="70" id="Gdo-Vt-BLR"/>
                                                 </constraints>
-                                                <state key="normal" image="super_like_button"/>
+                                                <state key="normal" image="super_like_button_fill"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -183,7 +183,7 @@
                                                     <constraint firstAttribute="height" constant="70" id="NVg-Au-Bhk"/>
                                                     <constraint firstAttribute="width" constant="70" id="Pib-ah-FwB"/>
                                                 </constraints>
-                                                <state key="normal" image="like_button"/>
+                                                <state key="normal" image="like_button_fill"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -250,9 +250,9 @@
     </scenes>
     <resources>
         <image name="back_detail" width="80" height="80"/>
-        <image name="like_button" width="126" height="126"/>
-        <image name="nope_button" width="126" height="126"/>
-        <image name="super_like_button" width="101" height="101"/>
+        <image name="like_button_fill" width="119" height="119"/>
+        <image name="nope_button_fill" width="118" height="118"/>
+        <image name="super_like_button_fill" width="119" height="119"/>
         <image name="white_gradation" width="720" height="151"/>
     </resources>
 </document>
