@@ -68,6 +68,7 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="QpX-78-TkI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ebg-Bs-LeZ"/>
                     <constraint firstAttribute="bottom" secondItem="QpX-78-TkI" secondAttribute="bottom" id="EgM-kJ-mm1"/>
                     <constraint firstItem="QpX-78-TkI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ddG-8t-LRV"/>
                     <constraint firstAttribute="trailing" secondItem="QpX-78-TkI" secondAttribute="trailing" id="mPl-od-1d3"/>

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Diff.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Koloda.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,6 +30,11 @@
 			<false/>
 		</dict>
 		<key>Pods-Tindest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PulsingHalo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -49,11 +59,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SegueContext.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>XLPagerTabStrip-XLPagerTabStrip.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,7 +77,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>14FBE4D9AC7E97DE14D8D308CD6E41AE</key>
+		<key>0A05FB752ADF334DF2C1693D562F2B33</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,22 +87,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47322C20F703F421D1AD17F15DC78B8E</key>
+		<key>3740B2760B70652CCFD7F98BC7F980CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>597856A70B1B0DC4F853913883DE2A2D</key>
+		<key>3FB8E884C92249552B11CB40F89E6CC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C55A64A47B833D4F1A05FA448323F94</key>
+		<key>43ACFBD63E11953A15A0929723B56B45</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7BAFF4A6453F843594CBCC7C9959DF31</key>
+		<key>693A48807DD62DB0869C3AE32C9D8AC3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78CD6A96889497DC2BCF06D948BCF248</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BDD0E42347ED8EDEA19928B85B79254</key>
+		<key>8C6C7D458C57E60CFD321F9EF035A4FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD60870F5762594C27011BBAA5559985</key>
+		<key>9BDD0E42347ED8EDEA19928B85B79254</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,17 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D73CB45C3846F43F6A69DF11E61985DD</key>
+		<key>D20EFAA95A4764617A5115C641333618</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DB93025778FCC619221B9D9F130359B1</key>
+		<key>E0D4D0FD906DB55B4E1CA552C9AC4F4B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7AECB3DB867092BA2751C25503C6859</key>
+		<key>FC50508E255C81C593C91954BBFCFB91</key>
 		<dict>
 			<key>primary</key>
 			<true/>

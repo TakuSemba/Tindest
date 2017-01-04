@@ -9,12 +9,16 @@
 import UIKit
 import XLPagerTabStrip
 import Koloda
+import PulsingHalo
 
 class SwipeViewController: UIViewController{
     
     internal let viewModel = SwipeViewModel()
     
     @IBOutlet weak var kolodaView: CustomKolodaView!
+    @IBOutlet weak var sourceView: UIImageView!
+    
+    let pulsator = PulsingHaloLayer()
     
     class func instantiateFromStoryboard() -> SwipeViewController {
         let storyboard = UIStoryboard(name: "Swipe", bundle: nil)
@@ -25,9 +29,12 @@ class SwipeViewController: UIViewController{
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.TindestColor.lightGray
-        kolodaView.backgroundColor = UIColor.TindestColor.lightGray
         kolodaView.dataSource = self
         kolodaView.delegate = self
+        
+        sourceView.layer.insertSublayer(pulsator, below: sourceView.layer)
+        setupInitialPulsator()
+        pulsator.start()
         
         let _ = viewModel.swipableUsers.observeNext { [weak self] e in
             switch e.change {
@@ -38,7 +45,6 @@ class SwipeViewController: UIViewController{
                 break
             }
         }
-
     }
     
     @IBAction func returnTapped(_ sender: Any) {
@@ -57,6 +63,10 @@ class SwipeViewController: UIViewController{
         print("superLikeTapped")
     }
     
+    private func setupInitialPulsator() {
+        pulsator.backgroundColor = UIColor.TindestColor.mainRed.cgColor
+        pulsator.radius = 240.0
+    }
 }
 
 extension SwipeViewController: IndicatorInfoProvider {

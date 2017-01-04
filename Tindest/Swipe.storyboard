@@ -125,12 +125,33 @@
                                     <constraint firstAttribute="bottom" secondItem="9RT-Ay-jQE" secondAttribute="bottom" id="zLb-6z-dMg"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lf4-Ej-o0j">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_picture" translatesAutoresizingMaskIntoConstraints="NO" id="omp-Ym-Ccd">
+                                        <rect key="frame" x="140.5" y="220.5" width="93.5" height="93.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="omp-Ym-Ccd" secondAttribute="height" id="dN0-TY-rNp"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="omp-Ym-Ccd" firstAttribute="width" secondItem="lf4-Ej-o0j" secondAttribute="width" multiplier="0.25" id="9TZ-Oc-H8a"/>
+                                    <constraint firstItem="omp-Ym-Ccd" firstAttribute="centerY" secondItem="lf4-Ej-o0j" secondAttribute="centerY" id="CUn-8a-1yB"/>
+                                    <constraint firstItem="omp-Ym-Ccd" firstAttribute="centerX" secondItem="lf4-Ej-o0j" secondAttribute="centerX" id="Qa6-Gi-fT2"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqq-kQ-Jtx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="533.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-2q-MJ6" customClass="CustomKolodaView" customModule="Tindest" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="355" height="523.5"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -144,10 +165,14 @@
                         <color key="backgroundColor" red="0.93758095854922274" green="0.93758095854922274" blue="0.93758095854922274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XKN-R9-K8Z" firstAttribute="height" secondItem="ZaC-rt-BCy" secondAttribute="height" multiplier="1/5" id="4TO-Gh-JY2"/>
+                            <constraint firstItem="lf4-Ej-o0j" firstAttribute="top" secondItem="xPI-iE-IoM" secondAttribute="bottom" id="5xc-sU-0u7"/>
                             <constraint firstItem="XKN-R9-K8Z" firstAttribute="width" secondItem="ZaC-rt-BCy" secondAttribute="width" multiplier="0.9" id="9iO-vd-JyD"/>
+                            <constraint firstItem="lf4-Ej-o0j" firstAttribute="height" secondItem="ZaC-rt-BCy" secondAttribute="height" multiplier="0.8" id="L1K-q0-z5j"/>
                             <constraint firstItem="Kqq-kQ-Jtx" firstAttribute="leading" secondItem="ZaC-rt-BCy" secondAttribute="leading" id="OAz-J1-b1l"/>
+                            <constraint firstItem="lf4-Ej-o0j" firstAttribute="leading" secondItem="ZaC-rt-BCy" secondAttribute="leading" id="QcM-aU-X5N"/>
                             <constraint firstItem="Jpp-fB-BF9" firstAttribute="top" secondItem="XKN-R9-K8Z" secondAttribute="bottom" id="Z59-H5-HfL"/>
                             <constraint firstAttribute="trailing" secondItem="Kqq-kQ-Jtx" secondAttribute="trailing" id="eH4-kw-4ZR"/>
+                            <constraint firstAttribute="trailing" secondItem="lf4-Ej-o0j" secondAttribute="trailing" id="gbk-59-Swz"/>
                             <constraint firstItem="Kqq-kQ-Jtx" firstAttribute="top" secondItem="xPI-iE-IoM" secondAttribute="bottom" id="pky-WY-Zj6"/>
                             <constraint firstItem="Kqq-kQ-Jtx" firstAttribute="height" secondItem="ZaC-rt-BCy" secondAttribute="height" multiplier="4/5" id="qhJ-Nk-sPo"/>
                             <constraint firstItem="XKN-R9-K8Z" firstAttribute="centerX" secondItem="ZaC-rt-BCy" secondAttribute="centerX" id="xPa-1R-gBd"/>
@@ -156,6 +181,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="kolodaView" destination="0Oa-2q-MJ6" id="VQo-Kx-WQg"/>
+                        <outlet property="sourceView" destination="omp-Ym-Ccd" id="FxV-ZM-wEU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnO-bP-IwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,6 +192,7 @@
     <resources>
         <image name="like_button" width="126" height="126"/>
         <image name="nope_button" width="126" height="126"/>
+        <image name="profile_picture" width="202" height="202"/>
         <image name="return_button" width="101" height="101"/>
         <image name="super_like_button" width="101" height="101"/>
     </resources>

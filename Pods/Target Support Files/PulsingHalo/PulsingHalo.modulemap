@@ -1,0 +1,6 @@
+framework module PulsingHalo {
+  umbrella header "PulsingHalo-umbrella.h"
+
+  export *
+  module * { export * }
+}
