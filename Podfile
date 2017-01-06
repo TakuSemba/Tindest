@@ -9,7 +9,7 @@ pod 'Bond', '~> 5.3'
 pod 'ObjectMapper'
 pod 'SDWebImage'
 pod 'XLPagerTabStrip'
-pod 'PulsingHalo'
+pod 'Pulsator'
 pod 'Koloda', :git => 'https://github.com/Yalantis/Koloda.git', :branch => 'swift-3'
 end
 

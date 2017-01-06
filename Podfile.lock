@@ -8,7 +8,7 @@ PODS:
     - pop (~> 1.0)
   - ObjectMapper (2.2.2)
   - pop (1.0.9)
-  - PulsingHalo (0.2.3)
+  - Pulsator (0.2.0)
   - ReactiveKit (3.1.2)
   - RxCocoa (3.1.0):
     - RxSwift (~> 3.1)
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - Bond (~> 5.3)
   - Koloda (from `https://github.com/Yalantis/Koloda.git`, branch `swift-3`)
   - ObjectMapper
-  - PulsingHalo
+  - Pulsator
   - RxCocoa
   - RxSwift
   - SDWebImage
@@ -46,13 +46,13 @@ SPEC CHECKSUMS:
   Koloda: b133e13cee0444c545e788d87950131bfac47389
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
-  PulsingHalo: f0fe19699182eb959e4bc333838a2609ef7f7d48
+  Pulsator: 0df1d24c09354555be8f4c386ba7c4df297690eb
   ReactiveKit: fcd80a87ac9548f11dc33ace1042022c9eb7d01c
   RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   XLPagerTabStrip: c46e802a8dcac29edbcea573de8fe920e052455b
 
-PODFILE CHECKSUM: 9ed7b35dd949f3466f6d78fc093eff1b296b00ff
+PODFILE CHECKSUM: bbe88584bda08215aafd93c40865b10eeddad7a1
 
 COCOAPODS: 1.1.1

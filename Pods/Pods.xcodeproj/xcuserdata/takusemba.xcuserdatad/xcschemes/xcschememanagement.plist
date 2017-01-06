@@ -34,7 +34,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PulsingHalo.xcscheme</key>
+		<key>Pulsator.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -92,22 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FB8E884C92249552B11CB40F89E6CC3</key>
+		<key>510E0495680E4DE867DBC8D87A76EC1B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>43ACFBD63E11953A15A0929723B56B45</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>693A48807DD62DB0869C3AE32C9D8AC3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>78CD6A96889497DC2BCF06D948BCF248</key>
+		<key>6CF6E08289A8B52B7E7E88C8D57F7C18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +112,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>94EB15A5B1E077A9BA35BE6A32357FAF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9AE70D8FF174849A02A9C8E8AF6DB493</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9BDD0E42347ED8EDEA19928B85B79254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3DE4C122F1BCED5D961527941D2D627</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,17 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D20EFAA95A4764617A5115C641333618</key>
+		<key>C87E47D7C57A7742B61F303ADEDA040E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0D4D0FD906DB55B4E1CA552C9AC4F4B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC50508E255C81C593C91954BBFCFB91</key>
+		<key>E7AEB66AF44D407C0239C008AD381AD3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

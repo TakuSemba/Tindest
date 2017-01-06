@@ -41,8 +41,8 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabItemCell> 
                 newCell?.imageView.tintColor = UIColor.TindestColor.mainRed
     
         }
-        
         moveToViewController(at: 1, animated: false)
+    
         super.viewDidLoad()
     }
     
@@ -52,9 +52,16 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<TabItemCell> 
         return [ProfileViewController.instantiateFromStoryboard(), SwipeViewController.instantiateFromStoryboard(), MessageViewController.instantiateFromStoryboard()]
     }
     
-    
     override func configure(cell: TabItemCell, for indicatorInfo: IndicatorInfo) {
         cell.imageView.image = indicatorInfo.image?.withRenderingMode(.alwaysTemplate)
+    }
+    
+    override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
+        super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
+        if (toIndex == 1 && progressPercentage == 1) {
+            let child = viewControllers[toIndex] as! SwipeViewController
+            child.startPulse()
+        }
     }
 }
 

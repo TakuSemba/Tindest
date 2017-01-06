@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 import Koloda
-import PulsingHalo
+import Pulsator
 
 class SwipeViewController: UIViewController{
     
@@ -20,7 +20,7 @@ class SwipeViewController: UIViewController{
     @IBOutlet weak var image: UIImageView!
 
     
-    let pulsator = PulsingHaloLayer()
+    let pulsator = Pulsator()
     
     class func instantiateFromStoryboard() -> SwipeViewController {
         let storyboard = UIStoryboard(name: "Swipe", bundle: nil)
@@ -37,8 +37,8 @@ class SwipeViewController: UIViewController{
         image.layer.superlayer?.insertSublayer(pulsator, below: image.layer)
         pulsator.backgroundColor = UIColor.TindestColor.mainRed.cgColor
         pulsator.radius = 180.0
-        pulsator.haloLayerNumber = 3
-        pulsator.start()
+        pulsator.numPulse = 3
+        startPulse()
         
         let _ = viewModel.swipableUsers.observeNext { [weak self] e in
             switch e.change {
@@ -48,6 +48,12 @@ class SwipeViewController: UIViewController{
             default:
                 break
             }
+        }
+    }
+    
+    internal func startPulse(){
+        if(!pulsator.isPulsating){
+            pulsator.start()
         }
     }
     
@@ -109,5 +115,9 @@ extension SwipeViewController: KolodaViewDelegate {
     
     func kolodaShouldTransparentizeNextCard(_ koloda: KolodaView) -> Bool {
         return false
+    }
+    
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        viewModel.getSwipableUsers()
     }
 }
