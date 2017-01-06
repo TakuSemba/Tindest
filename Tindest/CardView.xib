@@ -47,6 +47,7 @@
                 <constraint firstAttribute="trailing" secondItem="RZG-O6-vgw" secondAttribute="trailing" id="qjH-em-kEr"/>
                 <constraint firstAttribute="trailing" secondItem="DOL-ga-lh8" secondAttribute="trailing" id="sJ0-1w-wce"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>

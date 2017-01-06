@@ -16,7 +16,9 @@ class SwipeViewController: UIViewController{
     internal let viewModel = SwipeViewModel()
     
     @IBOutlet weak var kolodaView: CustomKolodaView!
-    @IBOutlet weak var sourceView: UIImageView!
+    @IBOutlet weak var sourceView: UIView!
+    @IBOutlet weak var image: UIImageView!
+
     
     let pulsator = PulsingHaloLayer()
     
@@ -32,8 +34,10 @@ class SwipeViewController: UIViewController{
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
-        sourceView.layer.insertSublayer(pulsator, below: sourceView.layer)
-        setupInitialPulsator()
+        image.layer.superlayer?.insertSublayer(pulsator, below: image.layer)
+        pulsator.backgroundColor = UIColor.TindestColor.mainRed.cgColor
+        pulsator.radius = 180.0
+        pulsator.haloLayerNumber = 3
         pulsator.start()
         
         let _ = viewModel.swipableUsers.observeNext { [weak self] e in
@@ -45,6 +49,13 @@ class SwipeViewController: UIViewController{
                 break
             }
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        image.layer.layoutIfNeeded()
+        pulsator.position = image.layer.position
     }
     
     @IBAction func returnTapped(_ sender: Any) {
@@ -61,11 +72,6 @@ class SwipeViewController: UIViewController{
     
     @IBAction func superLikeTapped(_ sender: Any) {
         print("superLikeTapped")
-    }
-    
-    private func setupInitialPulsator() {
-        pulsator.backgroundColor = UIColor.TindestColor.mainRed.cgColor
-        pulsator.radius = 240.0
     }
 }
 
