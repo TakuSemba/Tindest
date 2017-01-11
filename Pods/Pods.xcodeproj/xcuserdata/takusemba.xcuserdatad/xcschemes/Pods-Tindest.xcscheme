@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C87E47D7C57A7742B61F303ADEDA040E"
+               BlueprintIdentifier = "E080C55D9C4FC91BCCFABDB5FD86D411"
                BuildableName = "Pods_Tindest.framework"
                BlueprintName = "Pods-Tindest"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C87E47D7C57A7742B61F303ADEDA040E"
+            BlueprintIdentifier = "E080C55D9C4FC91BCCFABDB5FD86D411"
             BuildableName = "Pods_Tindest.framework"
             BlueprintName = "Pods-Tindest"
             ReferencedContainer = "container:Pods.xcodeproj">

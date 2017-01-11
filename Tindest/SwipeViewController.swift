@@ -10,6 +10,7 @@ import UIKit
 import XLPagerTabStrip
 import Koloda
 import Pulsator
+import ImageOpenTransition
 
 class SwipeViewController: UIViewController{
     
@@ -19,6 +20,7 @@ class SwipeViewController: UIViewController{
     @IBOutlet weak var sourceView: UIView!
     @IBOutlet weak var image: UIImageView!
 
+    var selectedImage: UIImageView!
     
     let pulsator = Pulsator()
     
@@ -108,8 +110,10 @@ extension SwipeViewController: KolodaViewDataSource {
 extension SwipeViewController: KolodaViewDelegate {
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+        
         let detail = DetailViewController.instantiateFromStoryboard()
         detail.user = viewModel.swipableUsers[index]
+        selectedImage = (koloda.viewForCard(at: index) as! CardView).image
         self.present(detail, animated: true, completion: nil)
     }
     
@@ -121,3 +125,14 @@ extension SwipeViewController: KolodaViewDelegate {
         viewModel.getSwipableUsers()
     }
 }
+
+extension SwipeViewController {
+    
+    func copyImageView() -> UIImageView {
+        let image = UIImageView(image: self.selectedImage.image)
+        image.frame = self.selectedImage.convert(self.selectedImage.bounds, to: self.parent?.view)
+        image.contentMode = self.selectedImage.contentMode
+        return image
+    }
+}
+

@@ -46,6 +46,8 @@
 		13DE7D4F1DF80091006C07C5 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D4E1DF80091006C07C5 /* Message.storyboard */; };
 		13DE7D531DF8388F006C07C5 /* TabItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DE7D521DF8388F006C07C5 /* TabItemCell.xib */; };
 		13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D541DF8391D006C07C5 /* TabItemCell.swift */; };
+		13E38F621E260E4D00FE790F /* SwipeToDetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E38F611E260E4D00FE790F /* SwipeToDetailTransition.swift */; };
+		13E38F641E2633DE00FE790F /* MovableUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E38F631E2633DE00FE790F /* MovableUIButton.swift */; };
 		49FFA0CE1CA71531EB1E8106 /* Pods_Tindest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,8 @@
 		13DE7D4E1DF80091006C07C5 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		13DE7D521DF8388F006C07C5 /* TabItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabItemCell.xib; sourceTree = "<group>"; };
 		13DE7D541DF8391D006C07C5 /* TabItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemCell.swift; sourceTree = "<group>"; };
+		13E38F611E260E4D00FE790F /* SwipeToDetailTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeToDetailTransition.swift; sourceTree = "<group>"; };
+		13E38F631E2633DE00FE790F /* MovableUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovableUIButton.swift; sourceTree = "<group>"; };
 		AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE0E4EB18B390D8F8A50AC7 /* Pods-Tindest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.release.xcconfig"; sourceTree = "<group>"; };
 		F45F37F78CF7F5F37003FA2B /* Pods-Tindest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 		13DE7D101DF7D91E006C07C5 /* Tindest */ = {
 			isa = PBXGroup;
 			children = (
+				13E38F601E260E0D00FE790F /* Animation */,
 				13558E191DFAE05500E0CC6B /* Extensions */,
 				13D06BA51E098672003CDCBB /* Model */,
 				13D06BA41E09821B003CDCBB /* ViewModel */,
@@ -330,6 +335,15 @@
 				13A433B41E0BE90C002079F5 /* Detail */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		13E38F601E260E0D00FE790F /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				13E38F611E260E4D00FE790F /* SwipeToDetailTransition.swift */,
+				13E38F631E2633DE00FE790F /* MovableUIButton.swift */,
+			);
+			name = Animation;
 			sourceTree = "<group>";
 		};
 		36F75EFFA009CD0AA85DBD55 /* Pods */ = {
@@ -420,7 +434,7 @@
 				TargetAttributes = {
 					13DE7D0D1DF7D91E006C07C5 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 85HF529P6T;
+						DevelopmentTeam = K582T3S2GH;
 						ProvisioningStyle = Automatic;
 					};
 					13DE7D211DF7D91E006C07C5 = {
@@ -557,6 +571,7 @@
 				13A433AF1E0AAD43002079F5 /* UserRequest.swift in Sources */,
 				13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */,
 				13A433B31E0ABA0C002079F5 /* Image.swift in Sources */,
+				13E38F641E2633DE00FE790F /* MovableUIButton.swift in Sources */,
 				13A433AB1E0AACDE002079F5 /* Api.swift in Sources */,
 				132AF61A1DFDC465005B549E /* MessageTableViewCell.swift in Sources */,
 				13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */,
@@ -565,6 +580,7 @@
 				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
 				13D06BA71E09867F003CDCBB /* User.swift in Sources */,
 				1357FC8B1DFEB98400DAD45E /* MessageSectionHeaderView.swift in Sources */,
+				13E38F621E260E4D00FE790F /* SwipeToDetailTransition.swift in Sources */,
 				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,
 				13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */,
 				13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */,
@@ -727,7 +743,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 85HF529P6T;
+				DEVELOPMENT_TEAM = K582T3S2GH;
 				INFOPLIST_FILE = Tindest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -744,7 +760,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 85HF529P6T;
+				DEVELOPMENT_TEAM = K582T3S2GH;
 				INFOPLIST_FILE = Tindest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

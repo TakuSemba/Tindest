@@ -143,7 +143,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8C7-qW-5Ge">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="134"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6W-1J-NsB">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6W-1J-NsB" customClass="MovableUIButton" customModule="Tindest" customModuleProvider="target">
                                                 <rect key="frame" x="27" y="32" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="8zv-FM-uOY"/>
@@ -160,13 +160,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikQ-2J-aNU">
                                         <rect key="frame" x="125" y="0.0" width="125" height="134"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRg-6k-3XG">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRg-6k-3XG" customClass="MovableUIButton" customModule="Tindest" customModuleProvider="target">
                                                 <rect key="frame" x="27.5" y="32.5" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="3XX-qg-RTx"/>
                                                     <constraint firstAttribute="width" constant="70" id="Gdo-Vt-BLR"/>
                                                 </constraints>
                                                 <state key="normal" image="super_like_button_fill"/>
+                                                <connections>
+                                                    <action selector="superlikeTapped:" destination="wEl-Ip-nnj" eventType="touchUpInside" id="Na3-4f-cQz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -177,7 +180,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJg-L7-apK">
                                         <rect key="frame" x="250" y="0.0" width="125" height="134"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW5-s0-lcN">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW5-s0-lcN" customClass="MovableUIButton" customModule="Tindest" customModuleProvider="target">
                                                 <rect key="frame" x="27" y="32" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="NVg-Au-Bhk"/>
@@ -211,7 +214,7 @@
                                     <constraint firstAttribute="bottom" secondItem="ikQ-2J-aNU" secondAttribute="bottom" id="tTv-2Y-fka"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8j-hR-Pg5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8j-hR-Pg5" customClass="MovableUIButton" customModule="Tindest" customModuleProvider="target">
                                 <rect key="frame" x="21" y="30" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pY5-zS-Y7C"/>
@@ -240,7 +243,10 @@
                     <connections>
                         <outlet property="image" destination="Lhx-LA-KfN" id="PNy-EH-Ieh"/>
                         <outlet property="introduction" destination="Lb6-Rb-U2X" id="flb-eN-Ebp"/>
+                        <outlet property="likeButton" destination="ZW5-s0-lcN" id="58K-eF-vog"/>
                         <outlet property="name" destination="WPB-VT-10v" id="Vxh-K5-kTG"/>
+                        <outlet property="nopeButton" destination="M6W-1J-NsB" id="fFt-sW-K1N"/>
+                        <outlet property="superlikeButton" destination="pRg-6k-3XG" id="2td-eP-4yU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZv-at-2Y6" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6AE198E1D7631E223CB72BC7D6D4F82E'
-               BlueprintName = 'XLPagerTabStrip'
+               BlueprintIdentifier = '04FC980097F875086A18D696CD1A98BB'
+               BlueprintName = 'ImageOpenTransition'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'XLPagerTabStrip.framework'>
+               BuildableName = 'ImageOpenTransition.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
