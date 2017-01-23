@@ -8,7 +8,6 @@
 
 import Alamofire
 import RxSwift
-import Alamofire
 import ObjectMapper
 
 extension Api {

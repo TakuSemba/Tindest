@@ -10,7 +10,6 @@ import UIKit
 import XLPagerTabStrip
 import Koloda
 import Pulsator
-import ImageOpenTransition
 
 class SwipeViewController: UIViewController{
     
@@ -135,4 +134,3 @@ extension SwipeViewController {
         return image
     }
 }
-

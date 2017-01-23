@@ -12,6 +12,7 @@ import RxCocoa
 import XLPagerTabStrip
 import SDWebImage
 import Bond
+import RxDataSources
 
 class MessageViewController: UIViewController {
     
@@ -30,25 +31,21 @@ class MessageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
         
-        tableView.backgroundColor = UIColor.white
-        tableView.dataSource = self
-        tableView.delegate = self
+        let sections: [MultipleSectionModel] = [
+            .newMatchRowSection(title: "Section 1",
+                                    items: [.newMatchRowItem()]),
+            .messageUsersSection(title: "Section 2",
+                               items: [.messageUsersItem(user: User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"))])
+        ]
         
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, -20, 0);
+        let dataSource = RxTableViewSectionedReloadDataSource<MultipleSectionModel>()
+        skinTableViewDataSource(dataSource)
+        self.tableView.delegate = self
         
-        let _ = viewModel.messageUsers.observeNext { [weak self] e in
-            switch e.change {
-            case .endBatchEditing:
-                self?.tableView.reloadData()
-                break
-            default:
-                break
-            }
-        }
+        Observable.just(sections)
+            .bindTo(tableView.rx.items(dataSource: dataSource))
+            .addDisposableTo(disposeBag)
         
         let _ = viewModel.newMatchedUsers.observeNext { [weak self] e in
             switch e.change {
@@ -60,6 +57,29 @@ class MessageViewController: UIViewController {
             }
         }
     
+    }
+    
+    func skinTableViewDataSource(_ dataSource: RxTableViewSectionedReloadDataSource<MultipleSectionModel>) {
+        dataSource.configureCell = { (dataSource, table, indexPath, _) in
+            switch dataSource[indexPath] {
+            case .newMatchRowItem:
+                let cell: MessageCollectionView = Bundle.main.loadNibNamed("MessageCollectionView", owner: self, options: nil)?.first as! MessageCollectionView
+                cell.collectionView.dataSource = self
+                self.collectionView = cell.collectionView
+                
+                let nib = UINib(nibName: "MatchCollectionViewCell", bundle: nil)
+                cell.collectionView.register(nib, forCellWithReuseIdentifier: "MatchCollectionViewCell")
+                return cell
+            case let .messageUsersItem(user):
+                let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
+                cell.name.text = user.name
+                cell.message.text = user.location
+                if let thumbnail = user.avatarUrl {
+                    cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+                }
+                return cell
+            }
+        }
     }
 
 }
@@ -92,48 +112,7 @@ extension MessageViewController: UICollectionViewDataSource {
     }
 }
 
-extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int{
-        var sectionNum: Int = 0
-        
-        if section == 0 {
-            sectionNum = 1
-        } else if section == 1{
-            sectionNum = self.viewModel.messageUsers.count
-        }
-        
-        return sectionNum
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        if indexPath.section == 0 {
-            let cell: MessageCollectionView = Bundle.main.loadNibNamed("MessageCollectionView", owner: self, options: nil)?.first as! MessageCollectionView
-            cell.collectionView.dataSource = self
-            collectionView = cell.collectionView
-            
-            let nib = UINib(nibName: "MatchCollectionViewCell", bundle: nil)
-            cell.collectionView.register(nib, forCellWithReuseIdentifier: "MatchCollectionViewCell")
-            return cell
-            
-        } else{
-            let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
-            cell.name.text = self.viewModel.messageUsers[indexPath.item].name
-            cell.message.text = self.viewModel.messageUsers[indexPath.item].location
-            if let thumbnail = self.viewModel.messageUsers[indexPath.item].avatarUrl {
-                cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
-            }
-            return cell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel.addUser()
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
+extension MessageViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = Bundle.main.loadNibNamed("MessageSectionHeaderView", owner: self, options: nil)?.first as! MessageSectionHeaderView
@@ -152,3 +131,37 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+enum MultipleSectionModel {
+    case newMatchRowSection(title: String, items: [SectionItem])
+    case messageUsersSection(title: String, items: [SectionItem])
+}
+
+enum SectionItem {
+    case newMatchRowItem()
+    case messageUsersItem(user: User)
+}
+
+extension MultipleSectionModel: SectionModelType {
+    
+    var items: [SectionItem] {
+        switch  self {
+        case .newMatchRowSection(title: _, items: let items):
+            return items.map {$0}
+        case .messageUsersSection(title: _, items: let items):
+            return items.map {$0}
+        }
+    }
+    
+    init(original: MultipleSectionModel, items: [SectionItem]) {
+        switch original {
+        case let .newMatchRowSection(title: title, items: _):
+            self = .newMatchRowSection(title: title, items: items)
+        case let .messageUsersSection(title, _):
+            self = .messageUsersSection(title: title, items: items)
+        }
+    }
+}
+
+
+

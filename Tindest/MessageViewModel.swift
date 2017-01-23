@@ -69,11 +69,4 @@ class MessageViewModel {
             )
             .addDisposableTo(disposeBag)
     }
-    
-    func addUser() {
-        self.messageUsers.batchUpdate({ (data) in
-            data.append(User(id: 13, name: "takutkuatkau"))
-        })
-    }
-    
 }

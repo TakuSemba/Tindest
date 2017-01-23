@@ -21,9 +21,10 @@ struct User: Mappable{
         
     }
 
-    init(id: Int, name: String) {
-        self.id = id
+    init(name: String, location: String, avatarUrl: String) {
         self.name = name
+        self.location = location
+        self.avatarUrl = avatarUrl
     }
     
     mutating func mapping(map: Map) {

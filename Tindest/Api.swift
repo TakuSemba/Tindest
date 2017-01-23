@@ -15,7 +15,7 @@ final class Api {
         let httpProtocol = "https"
         
         // The domain of common endpoint
-        let domainName = "api.dribbble.com/v1"
+        let domainName = "private-c2341-cubtest.apiary-mock.com/api"
         
         return httpProtocol + "://" + domainName + "/"
         

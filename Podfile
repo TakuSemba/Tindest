@@ -11,6 +11,7 @@ pod 'SDWebImage'
 pod 'XLPagerTabStrip'
 pod 'Pulsator'
 pod 'Koloda', :git => 'https://github.com/Yalantis/Koloda.git', :branch => 'swift-3'
+pod 'RxDataSources', '~> 1.0'
 end
 
 post_install do |installer|

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,10 +32,10 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="6Nz-iN-ybS" firstAttribute="leading" secondItem="adT-qz-7Bg" secondAttribute="leading" id="7bG-Tt-s6j"/>
-                    <constraint firstAttribute="bottom" secondItem="6Nz-iN-ybS" secondAttribute="bottom" id="EAP-ni-QdA"/>
-                    <constraint firstAttribute="trailing" secondItem="6Nz-iN-ybS" secondAttribute="trailing" id="Tel-e1-IzZ"/>
-                    <constraint firstItem="6Nz-iN-ybS" firstAttribute="top" secondItem="adT-qz-7Bg" secondAttribute="top" id="UJq-Un-NrQ"/>
+                    <constraint firstItem="6Nz-iN-ybS" firstAttribute="leading" secondItem="adT-qz-7Bg" secondAttribute="leading" id="8sN-x1-cAG"/>
+                    <constraint firstAttribute="bottom" secondItem="6Nz-iN-ybS" secondAttribute="bottom" id="KEv-Hu-79x"/>
+                    <constraint firstItem="6Nz-iN-ybS" firstAttribute="top" secondItem="adT-qz-7Bg" secondAttribute="top" id="fmc-Kt-p96"/>
+                    <constraint firstAttribute="trailing" secondItem="6Nz-iN-ybS" secondAttribute="trailing" id="uTF-Xd-4Kw"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '04FC980097F875086A18D696CD1A98BB'
-               BlueprintName = 'ImageOpenTransition'
+               BlueprintIdentifier = '81D90FC67EE15B0213131BB451C3848E'
+               BlueprintName = 'RxDataSources'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'ImageOpenTransition.framework'>
+               BuildableName = 'RxDataSources.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ImageOpenTransition.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Koloda.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -50,6 +45,11 @@
 			<false/>
 		</dict>
 		<key>RxCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxDataSources.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -82,12 +82,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04FC980097F875086A18D696CD1A98BB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>069440F537F4544C67BD98FF15E7A89D</key>
+		<key>09AE8A96E33E787FC0E8E67D16BD3404</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,22 +97,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>36245267F2A38B92E870773B7F6151E1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3740B2760B70652CCFD7F98BC7F980CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6AE198E1D7631E223CB72BC7D6D4F82E</key>
+		<key>392D0991A87AB9A95C72DFAF3EFB61FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7CDB31345D87E145254BFFC0322ECABC</key>
+		<key>4E10F87DF21D31EE7DCA0F86FDBE0EE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52A77A6F8218D4BADFF218A919A12AFA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5C650C46D970F0EDBB99EE86F7CAE1B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5CFC46A90D0A7921C17F2A9F386BA482</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>81D90FC67EE15B0213131BB451C3848E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,17 +152,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E080C55D9C4FC91BCCFABDB5FD86D411</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FDBFB804503342FEEF3E159FECE6AF36</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FECFFE634905BDC73F3BC0240462B4D4</key>
+		<key>C82864889092DC97216C13DC3A6E8E62</key>
 		<dict>
 			<key>primary</key>
 			<true/>
