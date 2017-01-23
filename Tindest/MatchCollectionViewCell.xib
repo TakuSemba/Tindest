@@ -11,10 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MatchCollectionViewCell" reuseIdentifier="MatchCollectionViewCell" id="vrX-Fs-yfo" customClass="MatchCollectionViewCell" customModule="Tindest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="match_cell" translatesAutoresizingMaskIntoConstraints="NO" id="ZOO-Rx-Lsw">
