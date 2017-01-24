@@ -21,7 +21,9 @@ class MessageViewModel {
         .messageUsersSection(items: [.messageUsersItem(user: User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"))])
     ]
     
-    let newMatchedUsers = Observable.just([User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")])
+    let newMatchedUsers: ObservableArray<[User]>
+    
+//    let newMatchedUsers = Observable.just([User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")])
     
     init() {
         getMessageUsers()
