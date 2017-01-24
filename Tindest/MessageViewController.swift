@@ -32,6 +32,12 @@ class MessageViewController: UIViewController {
         self.tableView.register(UINib(nibName: "MessageCollectionView", bundle: nil), forCellReuseIdentifier: "MessageCollectionView")
         self.tableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
         
+        self.viewModel.messageUsers.asObservable()
+            .bindTo(self.tableView.rx.items) { (tableView, row, element) in
+                
+            }
+            .addDisposableTo(self.disposeBag)
+        
         let dataSource = RxTableViewSectionedReloadDataSource<MultipleSectionModel>()
         
         dataSource.configureCell = { (dataSource, table, indexPath, _) in

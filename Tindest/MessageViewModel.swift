@@ -20,6 +20,8 @@ class MessageViewModel {
     
     let newMatchedUsers = Variable<[User]>([])
     
+    let messageUsers = Variable<[User]>([])
+    
     let sections: [MultipleSectionModel] = [
         .newMatchRowSection(items: [.newMatchRowItem()]),
         .messageUsersSection(items: [.messageUsersItem(user: User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"))])
@@ -39,6 +41,8 @@ class MessageViewModel {
 
         
         newMatchedUsers.value.append(user)
+        
+        messageUsers.value =  users
         
         itemDidSelect.subscribe(
             onNext: {[weak self] indexPath in
