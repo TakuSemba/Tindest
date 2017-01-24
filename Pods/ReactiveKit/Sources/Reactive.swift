@@ -22,23 +22,37 @@
 //  THE SOFTWARE.
 //
 
-/// A signal represents a sequence of elements.
-public struct Signal<Element, Error: Swift.Error>: SignalProtocol {
+/// A proxy protocol for reactive extensions.
+///
+/// To provide reactive extensions on type X, do
+///
+/// extension ReactiveExtensions where Base == X {
+///   var y: Signal<Int, NoError> { ... }
+/// }
+///
+/// where X conforms to ReactiveExtensionsProvider.
+public protocol ReactiveExtensions {
+  associatedtype Base
+  var base: Base { get }
+}
 
-  public typealias Producer = (AtomicObserver<Element, Error>) -> Disposable
+public struct Reactive<Base>: ReactiveExtensions {
+  public let base: Base
 
-  private let producer: Producer
+  public init(_ base: Base) {
+    self.base = base
+  }
+}
 
-  /// Create new signal given a producer closure.
-  public init(producer: @escaping Producer) {
-    self.producer = producer
+public protocol ReactiveExtensionsProvider: class {}
+
+public extension ReactiveExtensionsProvider {
+
+  public var reactive: Reactive<Self> {
+    return Reactive(self)
   }
 
-  /// Register the observer that will receive events from the signal.
-  public func observe(with observer: @escaping Observer<Element, Error>) -> Disposable {
-    let serialDisposable = SerialDisposable(otherDisposable: nil)
-    let observer = AtomicObserver(disposable: serialDisposable, observer: observer)
-    serialDisposable.otherDisposable = producer(observer)
-    return serialDisposable
+  public static var reactive: Reactive<Self>.Type {
+    return Reactive<Self>.self
   }
 }

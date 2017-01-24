@@ -30,6 +30,9 @@ class MessageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "MessageCollectionView", bundle: nil), forCellReuseIdentifier: "MessageCollectionView")
+        tableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
+        
         view.backgroundColor = UIColor.white
         
         tableView.backgroundColor = UIColor.white
@@ -108,7 +111,8 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         if indexPath.section == 0 {
-            let cell: MessageCollectionView = Bundle.main.loadNibNamed("MessageCollectionView", owner: self, options: nil)?.first as! MessageCollectionView
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageCollectionView", for: indexPath) as! MessageCollectionView
+
             cell.collectionView.dataSource = self
             collectionView = cell.collectionView
             
@@ -117,7 +121,7 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
             return cell
             
         } else{
-            let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell", for: indexPath) as! MessageTableViewCell
             cell.name.text = self.viewModel.messageUsers[indexPath.item].name
             cell.message.text = self.viewModel.messageUsers[indexPath.item].location
             if let thumbnail = self.viewModel.messageUsers[indexPath.item].avatarUrl {

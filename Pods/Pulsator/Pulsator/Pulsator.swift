@@ -106,6 +106,10 @@ open class Pulsator: CAReplicatorLayer, CAAnimationDelegate {
         return keys.count > 0
     }
     
+    /// private properties for resuming
+    fileprivate weak var prevSuperlayer: CALayer?
+    fileprivate var prevLayerIndex: Int?
+    
     // MARK: - Initializer
 
     override public init() {
@@ -119,9 +123,14 @@ open class Pulsator: CAReplicatorLayer, CAAnimationDelegate {
             red: 0, green: 0.455, blue: 0.756, alpha: 0.45).cgColor
         
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(recreate),
-                                                         name: NSNotification.Name.UIApplicationDidBecomeActive,
-                                                         object: nil)
+                                               selector: #selector(save),
+                                               name: NSNotification.Name.UIApplicationDidEnterBackground,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(resume),
+                                               name: NSNotification.Name.UIApplicationWillEnterForeground,
+                                               object: nil)
     }
     
     override public init(layer: Any) {
@@ -180,14 +189,33 @@ open class Pulsator: CAReplicatorLayer, CAAnimationDelegate {
         instanceDelay = (animationDuration + pulseInterval) / Double(numPulse)
     }
     
-    // MARK: - Internal Methods
-    
-    internal func recreate() {
+    fileprivate func recreate() {
         guard animationGroup != nil else { return }        // Not need to be recreated.
         stop()
         let when = DispatchTime.now() + Double(Int64(0.2 * double_t(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: when) { () -> Void in
             self.start()
+        }
+    }
+    
+    // MARK: - Internal Methods
+    
+    internal func save() {
+        prevSuperlayer = superlayer
+        prevLayerIndex = prevSuperlayer?.sublayers?.index(where: {$0 === self})
+    }
+
+    internal func resume() {
+        if let prevSuperlayer = prevSuperlayer, let prevLayerIndex = prevLayerIndex {
+            prevSuperlayer.insertSublayer(self, at: UInt32(prevLayerIndex))
+        }
+        if pulse.superlayer == nil {
+            addSublayer(pulse)
+        }
+        let isAnimating = pulse.animation(forKey: kPulsatorAnimationKey) != nil
+        // if the animationGroup is not nil, it means the animation was not stopped
+        if let animationGroup = animationGroup, !isAnimating {
+            pulse.add(animationGroup, forKey: kPulsatorAnimationKey)
         }
     }
     

@@ -25,6 +25,9 @@
 import Foundation
 
 /// Represents a type that receives events.
+public typealias Observer<Element, Error: Swift.Error> = (Event<Element, Error>) -> Void
+
+/// Represents a type that receives events.
 public protocol ObserverProtocol {
 
   /// Type of elements being received.
@@ -38,13 +41,13 @@ public protocol ObserverProtocol {
 }
 
 /// Represents a type that receives events. Observer is just a convenience
-/// wrapper around a closure that accepts an event.
-public struct Observer<Element, Error: Swift.Error>: ObserverProtocol {
+/// wrapper around a closure observer `Observer<Element, Error>`.
+public struct AnyObserver<Element, Error: Swift.Error>: ObserverProtocol {
 
-  private let observer: (Event<Element, Error>) -> Void
+  private let observer: Observer<Element, Error>
 
-  /// Creates an observer that wraps given closure.
-  public init(observer: @escaping (Event<Element, Error>) -> Void) {
+  /// Creates an observer that wraps a closure observer.
+  public init(observer: @escaping Observer<Element, Error>) {
     self.observer = observer
   }
 
@@ -57,13 +60,13 @@ public struct Observer<Element, Error: Swift.Error>: ObserverProtocol {
 /// Observer that ensures events are sent atomically.
 public class AtomicObserver<Element, Error: Swift.Error>: ObserverProtocol {
 
-  private let observer: (Event<Element, Error>) -> Void
+  private let observer: Observer<Element, Error>
   private let disposable: Disposable
   private let lock = NSRecursiveLock(name: "com.reactivekit.signal.atomicobserver")
   private var terminated = false
 
   /// Creates an observer that wraps given closure.
-  public init(disposable: Disposable, observer: @escaping (Event<Element, Error>) -> Void) {
+  public init(disposable: Disposable, observer: @escaping Observer<Element, Error>) {
     self.disposable = disposable
     self.observer = observer
   }
@@ -105,5 +108,10 @@ public extension ObserverProtocol {
   public func completed(with element: Element) {
     next(element)
     completed()
+  }
+
+  /// Converts the receiver to the Observer closure.
+  public func toObserver() -> Observer<Element, Error> {
+    return on
   }
 }

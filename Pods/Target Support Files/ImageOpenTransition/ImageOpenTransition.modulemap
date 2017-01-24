@@ -1,6 +1,0 @@
-framework module ImageOpenTransition {
-  umbrella header "ImageOpenTransition-umbrella.h"
-
-  export *
-  module * { export * }
-}

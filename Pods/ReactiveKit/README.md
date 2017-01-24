@@ -1,18 +1,13 @@
 ![](Assets/logo.png)
 
-[![Platform](https://img.shields.io/cocoapods/p/ReactiveKit.svg?style=flat)](http://cocoadocs.org/docsets/ReactiveKit/3.0.0/)
+[![Platform](https://img.shields.io/cocoapods/p/ReactiveKit.svg?style=flat)](http://cocoadocs.org/docsets/ReactiveKit/)
 [![Build Status](https://travis-ci.org/ReactiveKit/ReactiveKit.svg?branch=master)](https://travis-ci.org/ReactiveKit/ReactiveKit)
 [![Join Us on Gitter](https://img.shields.io/badge/GITTER-join%20chat-blue.svg)](https://gitter.im/ReactiveKit/General)
 [![Twitter](https://img.shields.io/badge/twitter-@srdanrasic-red.svg?style=flat)](https://twitter.com/srdanrasic)
 
 __ReactiveKit__ is a Swift framework for reactive and functional reactive programming.
 
-The framework is best used in a combination with the following extensions:
-
-* [Bond](https://github.com/ReactiveKit/Bond) - UIKit and AppKit bindings, reactive delegates, data sources.
-* [ReactiveAlamofire](https://github.com/ReactiveKit/ReactiveAlamofire) - Reactive extensions for Alamofire framework.
-
-**Note: This README describes ReactiveKit v3. For changes check out the [migration section](#migration)!**
+The framework is best used in a combination with [Bond](https://github.com/ReactiveKit/Bond) that provides UIKit and AppKit bindings, reactive delegates and data sources.
 
 ## Reactive Programming
 
@@ -62,15 +57,15 @@ let counter = Signal<Int, NoError> { observer in
 
 > Producer closure expects you to return a disposable. More about disposables can be found [here](#cancellation).
 
-Notice how we defined signal as `Signal<Int, NoError>`. First generic argument specifies that the signal  emits elements of type `Int`. Second one specifies the error type that the signal can error-out with. `NoError` is a type without a constructor so it cannot be initialized. It is used to create signals that cannot error-out, so called _non-failable signals_. This is so common type so ReactiveKit provides a typealias `Signal1` defined as 
+Notice how we defined signal as `Signal<Int, NoError>`. First generic argument specifies that the signal  emits elements of type `Int`. Second one specifies the error type that the signal can error-out with. `NoError` is a type without a constructor so it cannot be initialized. It is used to create signals that cannot error-out, so called _non-failable signals_. This is so common type so ReactiveKit provides a typealias `SafeSignal` defined as 
 
 ```swift
-public typealias Signal1<Element> = Signal<Element, NoError>
+public typealias SafeSignal<Element> = Signal<Element, NoError>
 ```
 
-That means that instead of `Signal<Int, NoError>` you can write just `Signal1<Int>`. 
+That means that instead of `Signal<Int, NoError>` you can write just `SafeSignal<Int>`. 
 
-> The type name `Signal1` might not be the happiest name, but we expect Swift 4 to introduce default generic arguments so we will be able to use just `Signal<Int>`.
+> The type name `SafeSignal` might not be the happiest name, but we expect Swift 4 to introduce default generic arguments so we will be able to use just `Signal<Int>`.
 
 When the producer fails to produce the element, you can signal an error. For example, mapping network request could looks like this:
 
@@ -101,16 +96,14 @@ The example also shows to use a disposable. When the signal is disposed, the `Bl
 These were examples of how to manually create signals. There are few operators in the framework that you can use to create convenient signals. For example, when you need to convert a sequence to a signal, you will use following constructor:
 
 ```swift
-let counter = Signal1.sequence([1, 2, 3])
+let counter = SafeSignal.sequence([1, 2, 3])
 ```
 
 To create a signal that produces an integer every second, do
 
 ```swift
-let counter = Signal1<Int>.interval(1, queue: DispatchQueue.main)
+let counter = SafeSignal<Int>.interval(1)
 ```
-
-> Note that this constructor requires a dispatch queue on which the events will be produced.
 
 For more constructors, refer to the code reference.
 
@@ -171,7 +164,7 @@ or to convert each element to another signal that just triples that element and 
 
 ```swift
 let tripled = counter.flatMapConcat { number in
-  return Signal1.sequence(Array(count: 3, repeatedValue: number))
+  return SafeSignal.sequence(Array(count: 3, repeatedValue: number))
 }
 ``` 
 
@@ -203,7 +196,7 @@ Most powerful way is to `flatMapError` into another signal:
 
 ```swift
 let image = fetchImage(url: ...).flatMapError { error in
-  return Signal<UIImage> ...
+  return SafeSignal<UIImage> ...
 }
 ```
 
@@ -249,12 +242,12 @@ class X {
     ...
     aSignal.observeNext { _ in
       ...
-    }.disposeIn(disposeBag)
+    }.dispose(in: disposeBag)
   }
 }
 ```
 
-> If you are using Bond framework and your class is a subclass or a descendent of NSObject, Bond provides the bag as an extension property `bnd_bag` that you can use out of the box.
+> If you are using Bond framework and your class is a subclass or a descendent of NSObject, Bond provides the bag as an extension property `reactive.bag` that you can use out of the box.
 
 Another way to ensure signal disposition is by using bindings instead of observations where possible. They handle everything automatically so you don't have to manually dispose signals. 
 
@@ -338,20 +331,20 @@ When you want to receive events on a specific dispatch queue, just use `context`
 ### CocoaPods
 
 ```
-pod 'ReactiveKit', '~> 3.1'
-pod 'Bond', '~> 5.0'
+pod 'ReactiveKit', '~> 3.2'
+pod 'Bond', '~> 6.0'
 ```
 
 ### Carthage
 
 ```
-github "ReactiveKit/ReactiveKit" ~> 3.1
-github "ReactiveKit/Bond" ~> 5.0
+github "ReactiveKit/ReactiveKit" ~> 3.2
+github "ReactiveKit/Bond" ~> 6.0
 ```
 
 ## <a name="migration"></a>Migration
 
-### Migration from v2.x to v3.0
+### Migration from v2.x to v3.x
 
 There are some big changes in v3. Major one is that ReactiveKit is joining forces with Bond to make great family of frameworks for functional reactive programming. Some things have been moved out of ReactiveKit to Bond in order to make ReactiveKit simpler and focused on FRP, while Bond has been reimplemented on top of ReactiveKit in order to provide great extensions like bindings, reactive delegates or observable collections.
 
@@ -364,16 +357,16 @@ What that means for you? Well, nothing has changed conceptually so your migratio
 * Operator `toSignal(justLogError:)` has been renamed to `suppressError(logging:)`
 * Operators like `takeLast`, `skipLast`, `feedNextInto`, `bindTo` have been renamed to `take(last:)`, `skip(last:)`, `feedNext(into:)`, `bind(to:)` etc.
 * Each of the operators `combineLatest`, `zip`, `merge` and `amb` now has overloads for 6 arguments.
-* `PushStream` and `PushOperation` have been replaced by `PublishSubject1` and `PublishSubject`.
+* `PushStream` and `PushOperation` have been replaced by `SafePublishSubject` and `PublishSubject`.
 * `Queue` has been removed. Use `DispatchQueue`.
 * `CollectionProperty` has been moved to Bond framework and implemented as three types: `ObservableArray`, `ObservableDictionary` and `ObservableSet`.
-* `ProtocolProxy` and other Foundation extensions have been moved to Bond framework. Prefix of extensions has been changed to `bnd`. For example `rBag` is renamed to `bnd_bag`.
+* `ProtocolProxy` and other Foundation extensions have been moved to Bond framework. Prefix of extensions has been changed to `reactive`. For example `rBag` is renamed to `reactive.bag`.
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2015-2016 Srdan Rasic (@srdanrasic)
+Copyright (c) 2015-2017 Srdan Rasic (@srdanrasic)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FECFFE634905BDC73F3BC0240462B4D4'
+               BlueprintIdentifier = '9AE70D8FF174849A02A9C8E8AF6DB493'
                BlueprintName = 'Pulsator'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pulsator.framework'>
