@@ -31,35 +31,53 @@ class MessageViewController: UIViewController {
         
         self.tableView.register(UINib(nibName: "MessageCollectionView", bundle: nil), forCellReuseIdentifier: "MessageCollectionView")
         self.tableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
-        self.tableView.register(UINib(nibName: "MessageSectionHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "MessageSectionHeaderView")
         
         let dataSource = RxTableViewSectionedReloadDataSource<MultipleSectionModel>()
-        skinTableViewDataSource(dataSource)
         
-        self.tableView.rx.setDelegate(self)
-            .addDisposableTo(disposeBag)
-        
-        Observable.just(viewModel.sections)
-            .bindTo(tableView.rx.items(dataSource: dataSource))
-            .addDisposableTo(disposeBag)
-
-    
-    }
-    
-    func skinTableViewDataSource(_ dataSource: RxTableViewSectionedReloadDataSource<MultipleSectionModel>) {
         dataSource.configureCell = { (dataSource, table, indexPath, _) in
             switch dataSource[indexPath] {
             case .newMatchRowItem:
                 self.tableView.rowHeight =  120
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageCollectionView", for: indexPath) as! MessageCollectionView
                 cell.collectionView.register(UINib(nibName: "MatchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MatchCollectionViewCell")
-
-                    Observable.just([User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")])
-                        .bindTo(cell.collectionView.rx.items(cellIdentifier: "MatchCollectionViewCell")) { index, user, cell in
-                    (cell as! MatchCollectionViewCell).name.text = user.name
-                    if let thumbnail = user.avatarUrl {
-                        (cell as! MatchCollectionViewCell).thumbnail.sd_setImage(with: URL(string: thumbnail)!)
-                    }}
+                
+//                Observable.of(self.viewModel.itemDidSelect)
+//                    .merge()
+//                    .scan(initialState) { (state: NewMatchedUserState, indexPath: IndexPath) -> NewMatchedUserState in
+//                        return state.add()
+//                    }
+//                    .startWith(initialState)
+//                    .map {
+//                        $0.newMatchedUsers
+//                    }
+//                    .shareReplay(1)
+//                    .bindTo(cell.collectionView.rx.items(cellIdentifier: "MatchCollectionViewCell", cellType: MatchCollectionViewCell.self)) { index, user, cell in
+//                        cell.name.text = user.name
+//                        if let thumbnail = user.avatarUrl {
+//                            cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+//                        }
+//                    }
+//                    .addDisposableTo(self.disposeBag)
+                
+//                    Observable.just(initialState)
+//                        .map {
+//                            $0.newMatchedUsers
+//                        }
+//                        .bindTo(cell.collectionView.rx.items(cellIdentifier: "MatchCollectionViewCell", cellType: MatchCollectionViewCell.self)) { index, user, cell in
+//                            cell.name.text = user.name
+//                            if let thumbnail = user.avatarUrl {
+//                                cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+//                            }
+//                        }
+//                    .addDisposableTo(self.disposeBag)
+                
+                self.viewModel.newMatchedUsers.asObservable()
+                    .bindTo(cell.collectionView.rx.items(cellIdentifier: "MatchCollectionViewCell", cellType: MatchCollectionViewCell.self)) { index, user, cell in
+                        cell.name.text = user.name
+                        if let thumbnail = user.avatarUrl {
+                            cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+                        }
+                    }
                     .addDisposableTo(self.disposeBag)
                 
                 return cell
@@ -74,6 +92,19 @@ class MessageViewController: UIViewController {
                 return cell
             }
         }
+        
+        self.tableView.rx.setDelegate(self)
+            .addDisposableTo(disposeBag)
+        
+        Observable.just(viewModel.sections)
+            .bindTo(tableView.rx.items(dataSource: dataSource))
+            .addDisposableTo(disposeBag)
+        
+        tableView.rx.itemSelected
+            .bindTo(viewModel.itemDidSelect)
+            .addDisposableTo(self.disposeBag)
+
+    
     }
 
 }

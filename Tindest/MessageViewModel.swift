@@ -16,21 +16,41 @@ class MessageViewModel {
     
     private let disposeBag = DisposeBag()
     
+    var itemDidSelect = PublishSubject<IndexPath>()
+    
+    let newMatchedUsers = Variable<[User]>([])
+    
     let sections: [MultipleSectionModel] = [
         .newMatchRowSection(items: [.newMatchRowItem()]),
         .messageUsersSection(items: [.messageUsersItem(user: User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"))])
     ]
-    
-    let newMatchedUsers: ObservableArray<[User]>
-    
-//    let newMatchedUsers = Observable.just([User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")])
-    
+
     init() {
-        getMessageUsers()
-        getNewMatchedusers()
+//        getMessageUsers()
+//        getNewMatchedusers()
+        
+        
+        let users = [
+            User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"),
+            User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")
+        ]
+        
+        let user = User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")
+
+        
+        newMatchedUsers.value.append(user)
+        
+        itemDidSelect.subscribe(
+            onNext: {[weak self] indexPath in
+                print("item selected")
+                self?.newMatchedUsers.value.append(user)
+                
+            }
+        ).addDisposableTo(disposeBag)
+        
     }
     
-    func getMessageUsers() {        
+    func getMessageUsers() {
 //        Api.ShotRequest.getShots(10)
 //            .flatMap({ shots -> RxSwift.Observable<Shot> in
 //                return RxSwift.Observable.from(shots)
@@ -75,10 +95,6 @@ class MessageViewModel {
 //                }
 //            )
 //            .addDisposableTo(disposeBag)
-    }
-    
-    func addUser(){
-        
     }
     
 }
