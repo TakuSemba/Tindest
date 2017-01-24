@@ -29,18 +29,18 @@ class MessageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UINib(nibName: "MessageCollectionView", bundle: nil), forCellReuseIdentifier: "MessageCollectionView")
-        self.tableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
+        self.tableView.register(UINib(nibName: "NewMatchView", bundle: nil), forCellReuseIdentifier: "NewMatchView")
+        self.tableView.register(UINib(nibName: "MessageView", bundle: nil), forCellReuseIdentifier: "MessageView")
         
         let dataSource = RxTableViewSectionedReloadDataSource<MultipleSectionModel>()
 
         dataSource.configureCell = { (dataSource, table, indexPath, _) in
             switch dataSource[indexPath] {
-            case .newMatchRowItem:
+            case .newMatch:
                 self.tableView.rowHeight =  120
-                let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageCollectionView", for: indexPath) as! MessageCollectionView
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "NewMatchView", for: indexPath) as! NewMatchView
                 cell.collectionView.register(UINib(nibName: "MatchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MatchCollectionViewCell")
-            
+                
                 self.viewModel.newMatchedUsers.asObservable()
                     .bindTo(cell.collectionView.rx.items(cellIdentifier: "MatchCollectionViewCell", cellType: MatchCollectionViewCell.self)) { index, user, cell in
                         cell.name.text = user.name
@@ -49,22 +49,30 @@ class MessageViewController: UIViewController {
                         }
                     }
                     .addDisposableTo(self.disposeBag)
-                
+        
                 return cell
-            case let .messageUsersItem(user):
-                self.tableView.rowHeight =  100
-                let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell", for: indexPath) as! MessageTableViewCell
-                cell.name.text = user.name
-                cell.message.text = user.location
-                if let thumbnail = user.avatarUrl {
-                    cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
-                }
+            case .message:
+//                self.tableView.rowHeight =  CGFloat(self.viewModel.messageUsers.value.count * 100)
+                self.tableView.rowHeight =  1000
+                
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageView", for: indexPath) as! MessageView
+                cell.collectionView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellWithReuseIdentifier: "MessageTableViewCell")
+                
+                self.viewModel.newMatchedUsers.asObservable()
+                    .bindTo(cell.collectionView.rx.items(cellIdentifier: "MessageTableViewCell", cellType: MessageTableViewCell.self)) { index, user, cell in
+                        cell.name.text = user.name
+                        if let thumbnail = user.avatarUrl {
+                            cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+                        }
+                    }
+                    .addDisposableTo(self.disposeBag)
+                
                 return cell
             }
         }
         
-        self.tableView.rx.setDelegate(self)
-            .addDisposableTo(disposeBag)
+//        self.tableView.rx.setDelegate(self)
+//            .addDisposableTo(disposeBag)
         
         self.tableView.rx.itemSelected
             .bindTo(self.viewModel.itemDidSelect)

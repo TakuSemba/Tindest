@@ -28,22 +28,35 @@ class MessageViewModel {
 //        getMessageUsers()
 //        getNewMatchedusers()
         
-        
-        let users = [
-            User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"),
-            User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")
-        ]
-        
         let user = User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")
 
         
         newMatchedUsers.value.append(user)
+        newMatchedUsers.value.append(user)
+        newMatchedUsers.value.append(user)
+        newMatchedUsers.value.append(user)
+        newMatchedUsers.value.append(user)
+        newMatchedUsers.value.append(user)
+        newMatchedUsers.value.append(user)
+        newMatchedUsers.value.append(user)
+        newMatchedUsers.value.append(user)
         
-        messageUsers.value =  users
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
+        messageUsers.value.append(user)
         
         sections.value = [
-            .newMatchRowSection(title: "Section 1", items: [.newMatchRowItem()]),
-            .messageUsersSection(title: "Section 2", items: [.messageUsersItem(user: User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"))])
+            .newMatchSection(title: "Section 1", items: [.newMatch]),
+            .messageSection(title: "Section 2", items: [.message])
         ]
 
         self.itemDidSelect.subscribe(
@@ -106,41 +119,41 @@ class MessageViewModel {
 }
 
 enum MultipleSectionModel {
-    case newMatchRowSection(title: String, items: [SectionItem])
-    case messageUsersSection(title: String, items: [SectionItem])
+    case newMatchSection(title: String, items: [SectionItem])
+    case messageSection(title: String, items: [SectionItem])
 }
 
 enum SectionItem {
-    case newMatchRowItem()
-    case messageUsersItem(user: User)
+    case newMatch
+    case message
 }
 
 extension MultipleSectionModel: SectionModelType {
     
     var title: String {
         switch self {
-        case .newMatchRowSection(title: let title, items: _):
+        case .newMatchSection(title: let title, items: _):
             return title
-        case .messageUsersSection(title: let title, items: _):
+        case .messageSection(title: let title, items: _):
             return title
         }
     }
     
     var items: [SectionItem] {
         switch  self {
-        case .newMatchRowSection(title: _, items: let items):
+        case .newMatchSection(title: _, items: let items):
             return items.map {$0}
-        case .messageUsersSection(title: _, items: let items):
+        case .messageSection(title: _, items: let items):
             return items.map {$0}
         }
     }
     
     init(original: MultipleSectionModel, items: [SectionItem]) {
         switch original {
-        case let .newMatchRowSection(title: title, items: _):
-            self = .newMatchRowSection(title: title, items: items)
-        case let .messageUsersSection(title, _):
-            self = .messageUsersSection(title: title, items: items)
+        case let .newMatchSection(title: title, items: _):
+            self = .newMatchSection(title: title, items: items)
+        case let .messageSection(title, _):
+            self = .messageSection(title: title, items: items)
         }
     }
 }

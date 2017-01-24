@@ -1,5 +1,5 @@
 //
-//  MessageTableViewCell.swift
+//  MessageCollectionView.swift
 //  Tindest
 //
 //  Created by TakuSemba on 2016/12/12.
@@ -8,11 +8,9 @@
 
 import UIKit
 
-class MessageTableViewCell: UICollectionViewCell {
+class NewMatchView: UITableViewCell {
     
-    @IBOutlet weak var thumbnail: UIImageView!
-    @IBOutlet weak var message: UILabel!
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

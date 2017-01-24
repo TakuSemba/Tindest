@@ -27,8 +27,8 @@
 		13A433B81E0BE950002079F5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A433B71E0BE950002079F5 /* DetailViewController.swift */; };
 		13A576921DFFFC7800A9515B /* SwipeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */; };
 		13A576941DFFFCFB00A9515B /* SwipeOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */; };
-		13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */; };
-		13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */; };
+		13AC0C161DFEC11200EFE2BA /* NewMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC0C151DFEC11200EFE2BA /* NewMatchView.swift */; };
+		13AC0C181DFEC11C00EFE2BA /* NewMatchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC0C171DFEC11C00EFE2BA /* NewMatchView.xib */; };
 		13D06BA71E09867F003CDCBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D06BA61E09867F003CDCBB /* User.swift */; };
 		13D06BA91E0987B2003CDCBB /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D06BA81E0987B2003CDCBB /* MessageViewModel.swift */; };
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
@@ -48,6 +48,8 @@
 		13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D541DF8391D006C07C5 /* TabItemCell.swift */; };
 		13E38F621E260E4D00FE790F /* SwipeToDetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E38F611E260E4D00FE790F /* SwipeToDetailTransition.swift */; };
 		13E38F641E2633DE00FE790F /* MovableUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E38F631E2633DE00FE790F /* MovableUIButton.swift */; };
+		13E683F51E3778B1009340FA /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13E683F41E3778B1009340FA /* MessageView.xib */; };
+		13E683F81E3778CC009340FA /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E683F71E3778CC009340FA /* MessageView.swift */; };
 		49FFA0CE1CA71531EB1E8106 /* Pods_Tindest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,8 +91,8 @@
 		13A433B71E0BE950002079F5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOverlayView.swift; sourceTree = "<group>"; };
 		13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeOverlayView.xib; sourceTree = "<group>"; };
-		13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCollectionView.swift; sourceTree = "<group>"; };
-		13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCollectionView.xib; sourceTree = "<group>"; };
+		13AC0C151DFEC11200EFE2BA /* NewMatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchView.swift; sourceTree = "<group>"; };
+		13AC0C171DFEC11C00EFE2BA /* NewMatchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewMatchView.xib; sourceTree = "<group>"; };
 		13D06BA61E09867F003CDCBB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		13D06BA81E0987B2003CDCBB /* MessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,8 @@
 		13DE7D541DF8391D006C07C5 /* TabItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemCell.swift; sourceTree = "<group>"; };
 		13E38F611E260E4D00FE790F /* SwipeToDetailTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeToDetailTransition.swift; sourceTree = "<group>"; };
 		13E38F631E2633DE00FE790F /* MovableUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovableUIButton.swift; sourceTree = "<group>"; };
+		13E683F41E3778B1009340FA /* MessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
+		13E683F71E3778CC009340FA /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE0E4EB18B390D8F8A50AC7 /* Pods-Tindest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.release.xcconfig"; sourceTree = "<group>"; };
 		F45F37F78CF7F5F37003FA2B /* Pods-Tindest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,8 +193,10 @@
 				132AF6191DFDC465005B549E /* MessageTableViewCell.xib */,
 				1357FC8A1DFEB98400DAD45E /* MessageSectionHeaderView.swift */,
 				1357FC8C1DFEB99100DAD45E /* MessageSectionHeaderView.xib */,
-				13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */,
-				13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */,
+				13AC0C151DFEC11200EFE2BA /* NewMatchView.swift */,
+				13AC0C171DFEC11C00EFE2BA /* NewMatchView.xib */,
+				13E683F71E3778CC009340FA /* MessageView.swift */,
+				13E683F41E3778B1009340FA /* MessageView.xib */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -488,7 +494,8 @@
 				132AF61B1DFDC465005B549E /* MessageTableViewCell.xib in Resources */,
 				13DE7D531DF8388F006C07C5 /* TabItemCell.xib in Resources */,
 				13A433B61E0BE92D002079F5 /* Detail.storyboard in Resources */,
-				13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */,
+				13E683F51E3778B1009340FA /* MessageView.xib in Resources */,
+				13AC0C181DFEC11C00EFE2BA /* NewMatchView.xib in Resources */,
 				13DE7D4B1DF80082006C07C5 /* Swipe.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,13 +587,14 @@
 				13DE7D441DF7FF8C006C07C5 /* SwipeViewController.swift in Sources */,
 				13D06BA71E09867F003CDCBB /* User.swift in Sources */,
 				1357FC8B1DFEB98400DAD45E /* MessageSectionHeaderView.swift in Sources */,
+				13E683F81E3778CC009340FA /* MessageView.swift in Sources */,
 				13E38F621E260E4D00FE790F /* SwipeToDetailTransition.swift in Sources */,
 				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,
 				13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */,
 				13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */,
 				13A433AD1E0AAD38002079F5 /* ShotRequest.swift in Sources */,
 				13DE7D481DF7FFA0006C07C5 /* MessageViewController.swift in Sources */,
-				13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */,
+				13AC0C161DFEC11200EFE2BA /* NewMatchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

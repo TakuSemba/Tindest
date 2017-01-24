@@ -1,14 +1,14 @@
 //
-//  MessageCollectionView.swift
+//  MessageView.swift
 //  Tindest
 //
-//  Created by TakuSemba on 2016/12/12.
-//  Copyright © 2016年 TakuSemba. All rights reserved.
+//  Created by TakuSemba on 2017/01/24.
+//  Copyright © 2017年 TakuSemba. All rights reserved.
 //
 
 import UIKit
 
-class MessageCollectionView: UITableViewCell {
+class MessageView: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
