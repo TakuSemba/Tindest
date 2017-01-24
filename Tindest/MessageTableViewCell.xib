@@ -67,10 +67,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="QpX-78-TkI" secondAttribute="bottom" id="0Hk-EI-80i"/>
-                    <constraint firstItem="QpX-78-TkI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aVv-YV-1Fl"/>
-                    <constraint firstItem="QpX-78-TkI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fhX-ME-79g"/>
+                    <constraint firstItem="QpX-78-TkI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bAP-nh-ige"/>
+                    <constraint firstAttribute="trailing" secondItem="QpX-78-TkI" secondAttribute="trailing" id="fP5-8K-fdF"/>
                     <constraint firstAttribute="trailing" secondItem="QpX-78-TkI" secondAttribute="trailing" id="foo-ST-oWN"/>
+                    <constraint firstAttribute="bottom" secondItem="QpX-78-TkI" secondAttribute="bottom" id="rfB-Vm-O8H"/>
                 </constraints>
                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             </tableViewCellContentView>

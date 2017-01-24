@@ -29,6 +29,10 @@ class MessageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.register(UINib(nibName: "MessageCollectionView", bundle: nil), forCellReuseIdentifier: "MessageCollectionView")
+        self.tableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
+        self.tableView.register(UINib(nibName: "MessageSectionHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "MessageSectionHeaderView")
+        
         let dataSource = RxTableViewSectionedReloadDataSource<MultipleSectionModel>()
         skinTableViewDataSource(dataSource)
         
@@ -46,23 +50,22 @@ class MessageViewController: UIViewController {
         dataSource.configureCell = { (dataSource, table, indexPath, _) in
             switch dataSource[indexPath] {
             case .newMatchRowItem:
-                let cell: MessageCollectionView = Bundle.main.loadNibNamed("MessageCollectionView", owner: self, options: nil)?.first as! MessageCollectionView
-                let nib = UINib(nibName: "MatchCollectionViewCell", bundle: nil)
-                cell.collectionView.register(nib, forCellWithReuseIdentifier: "MatchCollectionViewCell")
-                
-                Observable.just([User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")])
-                    .bindTo(cell.collectionView.rx.items(cellIdentifier: "MatchCollectionViewCell")) { index, user, newMatchedUsercell in
-                    (newMatchedUsercell as! MatchCollectionViewCell).name.text = user.name
+                self.tableView.rowHeight =  120
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageCollectionView", for: indexPath) as! MessageCollectionView
+                cell.collectionView.register(UINib(nibName: "MatchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MatchCollectionViewCell")
+
+                    Observable.just([User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")])
+                        .bindTo(cell.collectionView.rx.items(cellIdentifier: "MatchCollectionViewCell")) { index, user, cell in
+                    (cell as! MatchCollectionViewCell).name.text = user.name
                     if let thumbnail = user.avatarUrl {
-                        (newMatchedUsercell as! MatchCollectionViewCell).thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+                        (cell as! MatchCollectionViewCell).thumbnail.sd_setImage(with: URL(string: thumbnail)!)
                     }}
                     .addDisposableTo(self.disposeBag)
                 
-                print(cell.frame.height)
-                print(cell.collectionView.frame.height)
                 return cell
             case let .messageUsersItem(user):
-                let cell = Bundle.main.loadNibNamed("MessageTableViewCell", owner: self, options: nil)?.first as! MessageTableViewCell
+                self.tableView.rowHeight =  100
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell", for: indexPath) as! MessageTableViewCell
                 cell.name.text = user.name
                 cell.message.text = user.location
                 if let thumbnail = user.avatarUrl {
@@ -90,7 +93,7 @@ extension MessageViewController : UITableViewDelegate {
         if section == 0 {
             view.title.text = "New Matches"
         } else if section == 1 {
-         view.title.text = "Messages"
+            view.title.text = "Messages"
         }
         
         return view

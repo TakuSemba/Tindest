@@ -17,10 +17,8 @@ class MessageViewModel {
     private let disposeBag = DisposeBag()
     
     let sections: [MultipleSectionModel] = [
-        .newMatchRowSection(title: "Section 1",
-                            items: [.newMatchRowItem()]),
-        .messageUsersSection(title: "Section 2",
-                             items: [.messageUsersItem(user: User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"))])
+        .newMatchRowSection(items: [.newMatchRowItem()]),
+        .messageUsersSection(items: [.messageUsersItem(user: User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"))])
     ]
     
     let newMatchedUsers = Observable.just([User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg")])
@@ -84,8 +82,8 @@ class MessageViewModel {
 }
 
 enum MultipleSectionModel {
-    case newMatchRowSection(title: String, items: [SectionItem])
-    case messageUsersSection(title: String, items: [SectionItem])
+    case newMatchRowSection(items: [SectionItem])
+    case messageUsersSection(items: [SectionItem])
 }
 
 enum SectionItem {
@@ -97,19 +95,19 @@ extension MultipleSectionModel: SectionModelType {
     
     var items: [SectionItem] {
         switch  self {
-        case .newMatchRowSection(title: _, items: let items):
+        case .newMatchRowSection(items: let items):
             return items.map {$0}
-        case .messageUsersSection(title: _, items: let items):
+        case .messageUsersSection(items: let items):
             return items.map {$0}
         }
     }
     
     init(original: MultipleSectionModel, items: [SectionItem]) {
         switch original {
-        case let .newMatchRowSection(title: title, items: _):
-            self = .newMatchRowSection(title: title, items: items)
-        case let .messageUsersSection(title, _):
-            self = .messageUsersSection(title: title, items: items)
+        case .newMatchRowSection(items: _):
+            self = .newMatchRowSection(items: items)
+        case .messageUsersSection(items: _):
+            self = .messageUsersSection(items: items)
         }
     }
 }
