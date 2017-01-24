@@ -32,51 +32,15 @@ class MessageViewController: UIViewController {
         self.tableView.register(UINib(nibName: "MessageCollectionView", bundle: nil), forCellReuseIdentifier: "MessageCollectionView")
         self.tableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
         
-        self.viewModel.messageUsers.asObservable()
-            .bindTo(self.tableView.rx.items) { (tableView, row, element) in
-                
-            }
-            .addDisposableTo(self.disposeBag)
-        
         let dataSource = RxTableViewSectionedReloadDataSource<MultipleSectionModel>()
-        
+
         dataSource.configureCell = { (dataSource, table, indexPath, _) in
             switch dataSource[indexPath] {
             case .newMatchRowItem:
                 self.tableView.rowHeight =  120
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageCollectionView", for: indexPath) as! MessageCollectionView
                 cell.collectionView.register(UINib(nibName: "MatchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MatchCollectionViewCell")
-                
-//                Observable.of(self.viewModel.itemDidSelect)
-//                    .merge()
-//                    .scan(initialState) { (state: NewMatchedUserState, indexPath: IndexPath) -> NewMatchedUserState in
-//                        return state.add()
-//                    }
-//                    .startWith(initialState)
-//                    .map {
-//                        $0.newMatchedUsers
-//                    }
-//                    .shareReplay(1)
-//                    .bindTo(cell.collectionView.rx.items(cellIdentifier: "MatchCollectionViewCell", cellType: MatchCollectionViewCell.self)) { index, user, cell in
-//                        cell.name.text = user.name
-//                        if let thumbnail = user.avatarUrl {
-//                            cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
-//                        }
-//                    }
-//                    .addDisposableTo(self.disposeBag)
-                
-//                    Observable.just(initialState)
-//                        .map {
-//                            $0.newMatchedUsers
-//                        }
-//                        .bindTo(cell.collectionView.rx.items(cellIdentifier: "MatchCollectionViewCell", cellType: MatchCollectionViewCell.self)) { index, user, cell in
-//                            cell.name.text = user.name
-//                            if let thumbnail = user.avatarUrl {
-//                                cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
-//                            }
-//                        }
-//                    .addDisposableTo(self.disposeBag)
-                
+            
                 self.viewModel.newMatchedUsers.asObservable()
                     .bindTo(cell.collectionView.rx.items(cellIdentifier: "MatchCollectionViewCell", cellType: MatchCollectionViewCell.self)) { index, user, cell in
                         cell.name.text = user.name
@@ -102,15 +66,13 @@ class MessageViewController: UIViewController {
         self.tableView.rx.setDelegate(self)
             .addDisposableTo(disposeBag)
         
-        Observable.just(viewModel.sections)
-            .bindTo(tableView.rx.items(dataSource: dataSource))
-            .addDisposableTo(disposeBag)
-        
-        tableView.rx.itemSelected
-            .bindTo(viewModel.itemDidSelect)
+        self.tableView.rx.itemSelected
+            .bindTo(self.viewModel.itemDidSelect)
             .addDisposableTo(self.disposeBag)
-
-    
+        
+        self.viewModel.sections.asObservable()
+            .bindTo(self.tableView.rx.items(dataSource: dataSource))
+            .addDisposableTo(disposeBag)
     }
 
 }
@@ -126,13 +88,7 @@ extension MessageViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = Bundle.main.loadNibNamed("MessageSectionHeaderView", owner: self, options: nil)?.first as! MessageSectionHeaderView
-        
-        if section == 0 {
-            view.title.text = "New Matches"
-        } else if section == 1 {
-            view.title.text = "Messages"
-        }
-        
+        view.title.text = self.viewModel.sections.value[section].title
         return view
     }
     

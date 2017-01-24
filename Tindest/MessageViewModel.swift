@@ -22,10 +22,7 @@ class MessageViewModel {
     
     let messageUsers = Variable<[User]>([])
     
-    let sections: [MultipleSectionModel] = [
-        .newMatchRowSection(items: [.newMatchRowItem()]),
-        .messageUsersSection(items: [.messageUsersItem(user: User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"))])
-    ]
+    let sections = Variable<[MultipleSectionModel]>([])
 
     init() {
 //        getMessageUsers()
@@ -44,7 +41,16 @@ class MessageViewModel {
         
         messageUsers.value =  users
         
-        itemDidSelect.subscribe(
+        sections.value = [
+            .newMatchRowSection(title: "Section 1", items: [.newMatchRowItem()]),
+            .messageUsersSection(title: "Section 2", items: [.messageUsersItem(user: User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"))])
+        ]
+        
+        self.messageUsers.asObservable()
+            .bindTo(sections.value[1] = )
+            .addD
+                
+        self.itemDidSelect.subscribe(
             onNext: {[weak self] indexPath in
                 print("item selected")
                 self?.newMatchedUsers.value.append(user)
@@ -104,8 +110,8 @@ class MessageViewModel {
 }
 
 enum MultipleSectionModel {
-    case newMatchRowSection(items: [SectionItem])
-    case messageUsersSection(items: [SectionItem])
+    case newMatchRowSection(title: String, items: [SectionItem])
+    case messageUsersSection(title: String, items: [SectionItem])
 }
 
 enum SectionItem {
@@ -115,21 +121,30 @@ enum SectionItem {
 
 extension MultipleSectionModel: SectionModelType {
     
+    var title: String {
+        switch self {
+        case .newMatchRowSection(title: let title, items: _):
+            return title
+        case .messageUsersSection(title: let title, items: _):
+            return title
+        }
+    }
+    
     var items: [SectionItem] {
         switch  self {
-        case .newMatchRowSection(items: let items):
+        case .newMatchRowSection(title: _, items: let items):
             return items.map {$0}
-        case .messageUsersSection(items: let items):
+        case .messageUsersSection(title: _, items: let items):
             return items.map {$0}
         }
     }
     
     init(original: MultipleSectionModel, items: [SectionItem]) {
         switch original {
-        case .newMatchRowSection(items: _):
-            self = .newMatchRowSection(items: items)
-        case .messageUsersSection(items: _):
-            self = .messageUsersSection(items: items)
+        case let .newMatchRowSection(title: title, items: _):
+            self = .newMatchRowSection(title: title, items: items)
+        case let .messageUsersSection(title, _):
+            self = .messageUsersSection(title: title, items: items)
         }
     }
 }
