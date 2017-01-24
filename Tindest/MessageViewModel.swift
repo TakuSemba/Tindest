@@ -45,11 +45,7 @@ class MessageViewModel {
             .newMatchRowSection(title: "Section 1", items: [.newMatchRowItem()]),
             .messageUsersSection(title: "Section 2", items: [.messageUsersItem(user: User(name: "taku", location: "japan", avatarUrl: "https://developers.cyberagent.co.jp/blog/wp-content/uploads/2017/01/chateau_top.jpg"))])
         ]
-        
-        self.messageUsers.asObservable()
-            .bindTo(sections.value[1] = )
-            .addD
-                
+
         self.itemDidSelect.subscribe(
             onNext: {[weak self] indexPath in
                 print("item selected")
