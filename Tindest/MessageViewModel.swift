@@ -71,8 +71,11 @@ class MessageViewModel {
     }
     
     func addUser() {
-        self.messageUsers.batchUpdate({ (data) in
-            data.append(User(id: 13, name: "takutkuatkau"))
+//        self.messageUsers.batchUpdate({ (data) in
+//            data.append(User(id: 13, name: "takutkuatkau"))
+//        })
+        self.newMatchedUsers.batchUpdate({ (data) in
+            data.append(User(id: 13, name: "taku"))
         })
     }
     

@@ -90,6 +90,8 @@ extension MessageViewController: UICollectionViewDataSource {
             cell.name.text = viewModel.newMatchedUsers[indexPath.item].name
             if let thumbnail = viewModel.newMatchedUsers[indexPath.item].avatarUrl {
                 cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+            }  else {
+                cell.thumbnail.image = UIImage(named: "profile_picture.png")
             }
         return cell
     }
