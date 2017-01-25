@@ -30,18 +30,17 @@ class MessageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "MessageCollectionView", bundle: nil), forCellReuseIdentifier: "MessageCollectionView")
-        tableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
+        self.tableView.register(UINib(nibName: "MessageCollectionView", bundle: nil), forCellReuseIdentifier: "MessageCollectionView")
+        self.tableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
         
-        view.backgroundColor = UIColor.white
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         
-        tableView.backgroundColor = UIColor.white
-        tableView.dataSource = self
-        tableView.delegate = self
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, -20, 0);
         
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, -20, 0);
+        self.tableView.rx.itemSelected
+            .bindTo(self.viewModel.itemDidSelect)
+            .addDisposableTo(self.disposeBag)
         
         let _ = viewModel.messageUsers.observeNext { [weak self] e in
             switch e.change {
@@ -90,7 +89,7 @@ extension MessageViewController: UICollectionViewDataSource {
             cell.name.text = viewModel.newMatchedUsers[indexPath.item].name
             if let thumbnail = viewModel.newMatchedUsers[indexPath.item].avatarUrl {
                 cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
-            }  else {
+            } else {
                 cell.thumbnail.image = UIImage(named: "profile_picture.png")
             }
         return cell
@@ -113,6 +112,7 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         if indexPath.section == 0 {
+            self.tableView.rowHeight = 120
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageCollectionView", for: indexPath) as! MessageCollectionView
 
             cell.collectionView.dataSource = self
@@ -123,18 +123,17 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
             return cell
             
         } else{
+            self.tableView.rowHeight = 100
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell", for: indexPath) as! MessageTableViewCell
             cell.name.text = self.viewModel.messageUsers[indexPath.item].name
             cell.message.text = self.viewModel.messageUsers[indexPath.item].location
             if let thumbnail = self.viewModel.messageUsers[indexPath.item].avatarUrl {
                 cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
+            } else {
+                cell.thumbnail.image = UIImage(named: "profile_picture.png")
             }
             return cell
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel.addUser()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

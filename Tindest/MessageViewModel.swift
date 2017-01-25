@@ -11,19 +11,40 @@ import RxSwift
 import RxCocoa
 import Bond
 
-class MessageViewModel {
+protocol MessageViewModelType: class {
+    
+    //Input
+    var itemDidSelect: PublishSubject<IndexPath> { get }
+    
+    // Output
+    var newMatchedUsers: MutableObservableArray<User> { get }
+    var messageUsers: MutableObservableArray<User> { get }
+
+}
+
+class MessageViewModel: MessageViewModelType {
     
     private let disposeBag = DisposeBag()
     
-    internal var newMatchedUsers = MutableObservableArray<User>([])
-    internal var messageUsers = MutableObservableArray<User>([])
+    let itemDidSelect = PublishSubject<IndexPath>()
+    
+    let newMatchedUsers = MutableObservableArray<User>([])
+    let messageUsers = MutableObservableArray<User>([])
         
     init() {
         getMessageUsers()
         getNewMatchedusers()
+        
+        itemDidSelect.asObserver()
+            .subscribe(
+                onNext: { indexPath in
+                    self.addUser()
+                }
+            )
+            .addDisposableTo(disposeBag)
     }
     
-    func getMessageUsers() {        
+    private func getMessageUsers() {
         Api.ShotRequest.getShots(10)
             .flatMap({ shots -> RxSwift.Observable<Shot> in
                 return RxSwift.Observable.from(shots)
@@ -45,7 +66,7 @@ class MessageViewModel {
             .addDisposableTo(disposeBag)
     }
     
-    func getNewMatchedusers(){
+    private func getNewMatchedusers(){
         Api.ShotRequest.getShots(100)
             .flatMap({ shots -> RxSwift.Observable<Shot> in
                 return RxSwift.Observable<Shot>.from(shots)
@@ -70,10 +91,10 @@ class MessageViewModel {
             .addDisposableTo(disposeBag)
     }
     
-    func addUser() {
-//        self.messageUsers.batchUpdate({ (data) in
-//            data.append(User(id: 13, name: "takutkuatkau"))
-//        })
+    private func addUser() {
+        self.messageUsers.batchUpdate({ (data) in
+            data.append(User(id: 13, name: "takutkuatkau"))
+        })
         self.newMatchedUsers.batchUpdate({ (data) in
             data.append(User(id: 13, name: "taku"))
         })
