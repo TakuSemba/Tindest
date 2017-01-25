@@ -17,7 +17,10 @@ class ChatViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
     }
 
+    @IBAction func tapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

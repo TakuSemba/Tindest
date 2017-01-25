@@ -40,7 +40,8 @@ class MessageViewController: UIViewController {
             .subscribe(
                 onNext: { indexPath in
                     let chat = ChatViewController.instantiateFromStoryboard()
-                    self.present(chat, animated: true, completion: nil)
+                    let navigationController = UINavigationController(rootViewController: chat)
+                    self.present(navigationController, animated: true, completion: nil)
                 }
             )
             .addDisposableTo(self.disposeBag)

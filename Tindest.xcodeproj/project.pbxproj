@@ -29,6 +29,8 @@
 		13A576941DFFFCFB00A9515B /* SwipeOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */; };
 		13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */; };
 		13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */; };
+		13C6AF441E38C54F00722A25 /* MyselfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C6AF431E38C54F00722A25 /* MyselfCell.xib */; };
+		13C6AF461E38C60C00722A25 /* OppenentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C6AF451E38C60C00722A25 /* OppenentCell.xib */; };
 		13D06BA71E09867F003CDCBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D06BA61E09867F003CDCBB /* User.swift */; };
 		13D06BA91E0987B2003CDCBB /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D06BA81E0987B2003CDCBB /* MessageViewModel.swift */; };
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
@@ -93,6 +95,8 @@
 		13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeOverlayView.xib; sourceTree = "<group>"; };
 		13AC0C151DFEC11200EFE2BA /* MessageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCollectionView.swift; sourceTree = "<group>"; };
 		13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCollectionView.xib; sourceTree = "<group>"; };
+		13C6AF431E38C54F00722A25 /* MyselfCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyselfCell.xib; sourceTree = "<group>"; };
+		13C6AF451E38C60C00722A25 /* OppenentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OppenentCell.xib; sourceTree = "<group>"; };
 		13D06BA61E09867F003CDCBB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		13D06BA81E0987B2003CDCBB /* MessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,6 +360,8 @@
 			children = (
 				13E683FC1E386E62009340FA /* ChatViewController.swift */,
 				13E683FE1E386E6E009340FA /* Chat.storyboard */,
+				13C6AF431E38C54F00722A25 /* MyselfCell.xib */,
+				13C6AF451E38C60C00722A25 /* OppenentCell.xib */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -496,6 +502,7 @@
 				13E683FF1E386E6E009340FA /* Chat.storyboard in Resources */,
 				13DE7D4D1DF8008A006C07C5 /* Profile.storyboard in Resources */,
 				13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */,
+				13C6AF461E38C60C00722A25 /* OppenentCell.xib in Resources */,
 				13A576941DFFFCFB00A9515B /* SwipeOverlayView.xib in Resources */,
 				13DE7D191DF7D91E006C07C5 /* Assets.xcassets in Resources */,
 				13DE7D171DF7D91E006C07C5 /* Main.storyboard in Resources */,
@@ -505,6 +512,7 @@
 				13A433B61E0BE92D002079F5 /* Detail.storyboard in Resources */,
 				13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */,
 				13DE7D4B1DF80082006C07C5 /* Swipe.storyboard in Resources */,
+				13C6AF441E38C54F00722A25 /* MyselfCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
