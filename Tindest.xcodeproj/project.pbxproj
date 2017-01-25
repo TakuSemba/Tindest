@@ -48,6 +48,8 @@
 		13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D541DF8391D006C07C5 /* TabItemCell.swift */; };
 		13E38F621E260E4D00FE790F /* SwipeToDetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E38F611E260E4D00FE790F /* SwipeToDetailTransition.swift */; };
 		13E38F641E2633DE00FE790F /* MovableUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E38F631E2633DE00FE790F /* MovableUIButton.swift */; };
+		13E683FD1E386E62009340FA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E683FC1E386E62009340FA /* ChatViewController.swift */; };
+		13E683FF1E386E6E009340FA /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E683FE1E386E6E009340FA /* Chat.storyboard */; };
 		49FFA0CE1CA71531EB1E8106 /* Pods_Tindest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +118,8 @@
 		13DE7D541DF8391D006C07C5 /* TabItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemCell.swift; sourceTree = "<group>"; };
 		13E38F611E260E4D00FE790F /* SwipeToDetailTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeToDetailTransition.swift; sourceTree = "<group>"; };
 		13E38F631E2633DE00FE790F /* MovableUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovableUIButton.swift; sourceTree = "<group>"; };
+		13E683FC1E386E62009340FA /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		13E683FE1E386E6E009340FA /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		AD7B8CF32455B4FC5CAD6374 /* Pods_Tindest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE0E4EB18B390D8F8A50AC7 /* Pods-Tindest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.release.xcconfig"; sourceTree = "<group>"; };
 		F45F37F78CF7F5F37003FA2B /* Pods-Tindest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindest/Pods-Tindest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,8 +162,8 @@
 		1357FC871DFEB8DE00DAD45E /* Swipe */ = {
 			isa = PBXGroup;
 			children = (
-				13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */,
 				13DE7D431DF7FF8C006C07C5 /* SwipeViewController.swift */,
+				13DE7D4A1DF80082006C07C5 /* Swipe.storyboard */,
 				13558E231DFB182800E0CC6B /* CustomKolodaView.swift */,
 				13A576911DFFFC7800A9515B /* SwipeOverlayView.swift */,
 				13A576931DFFFCFB00A9515B /* SwipeOverlayView.xib */,
@@ -330,6 +334,7 @@
 				13DE7D521DF8388F006C07C5 /* TabItemCell.xib */,
 				13DE7D541DF8391D006C07C5 /* TabItemCell.swift */,
 				1357FC891DFEB8F600DAD45E /* Message */,
+				13E683F91E386E25009340FA /* Chat */,
 				1357FC881DFEB8EB00DAD45E /* Profile */,
 				1357FC871DFEB8DE00DAD45E /* Swipe */,
 				13A433B41E0BE90C002079F5 /* Detail */,
@@ -344,6 +349,15 @@
 				13E38F631E2633DE00FE790F /* MovableUIButton.swift */,
 			);
 			name = Animation;
+			sourceTree = "<group>";
+		};
+		13E683F91E386E25009340FA /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				13E683FC1E386E62009340FA /* ChatViewController.swift */,
+				13E683FE1E386E6E009340FA /* Chat.storyboard */,
+			);
+			name = Chat;
 			sourceTree = "<group>";
 		};
 		36F75EFFA009CD0AA85DBD55 /* Pods */ = {
@@ -479,6 +493,7 @@
 				132AF6151DFDA250005B549E /* MatchCollectionViewCell.xib in Resources */,
 				13DE7D1C1DF7D91E006C07C5 /* LaunchScreen.storyboard in Resources */,
 				1357FC8D1DFEB99100DAD45E /* MessageSectionHeaderView.xib in Resources */,
+				13E683FF1E386E6E009340FA /* Chat.storyboard in Resources */,
 				13DE7D4D1DF8008A006C07C5 /* Profile.storyboard in Resources */,
 				13558E221DFAFF9100E0CC6B /* CardView.xib in Resources */,
 				13A576941DFFFCFB00A9515B /* SwipeOverlayView.xib in Resources */,
@@ -584,6 +599,7 @@
 				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,
 				13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */,
 				13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */,
+				13E683FD1E386E62009340FA /* ChatViewController.swift in Sources */,
 				13A433AD1E0AAD38002079F5 /* ShotRequest.swift in Sources */,
 				13DE7D481DF7FFA0006C07C5 /* MessageViewController.swift in Sources */,
 				13AC0C161DFEC11200EFE2BA /* MessageCollectionView.swift in Sources */,

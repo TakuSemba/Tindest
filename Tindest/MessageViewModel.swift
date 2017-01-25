@@ -14,7 +14,7 @@ import Bond
 protocol MessageViewModelType: class {
     
     //Input
-    var itemDidSelect: PublishSubject<IndexPath> { get }
+    var collectionItemDidSelect: PublishSubject<IndexPath> { get }
     
     // Output
     var newMatchedUsers: MutableObservableArray<User> { get }
@@ -26,16 +26,17 @@ class MessageViewModel: MessageViewModelType {
     
     private let disposeBag = DisposeBag()
     
-    let itemDidSelect = PublishSubject<IndexPath>()
+    let collectionItemDidSelect = PublishSubject<IndexPath>()
     
     let newMatchedUsers = MutableObservableArray<User>([])
     let messageUsers = MutableObservableArray<User>([])
+    
         
     init() {
         getMessageUsers()
         getNewMatchedusers()
         
-        itemDidSelect.asObserver()
+        self.collectionItemDidSelect.asObserver()
             .subscribe(
                 onNext: { indexPath in
                     self.addUser()
@@ -93,7 +94,7 @@ class MessageViewModel: MessageViewModelType {
     
     private func addUser() {
         self.messageUsers.batchUpdate({ (data) in
-            data.append(User(id: 13, name: "takutkuatkau"))
+            data.append(User(id: 13, name: "taku"))
         })
         self.newMatchedUsers.batchUpdate({ (data) in
             data.append(User(id: 13, name: "taku"))

@@ -26,8 +26,6 @@ class MessageViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var collectionView: UICollectionView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "MessageCollectionView", bundle: nil), forCellReuseIdentifier: "MessageCollectionView")
@@ -39,7 +37,12 @@ class MessageViewController: UIViewController {
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, -20, 0);
         
         self.tableView.rx.itemSelected
-            .bindTo(self.viewModel.itemDidSelect)
+            .subscribe(
+                onNext: { indexPath in
+                    let chat = ChatViewController.instantiateFromStoryboard()
+                    self.present(chat, animated: true, completion: nil)
+                }
+            )
             .addDisposableTo(self.disposeBag)
         
         let _ = viewModel.messageUsers.observeNext { [weak self] e in
@@ -52,15 +55,6 @@ class MessageViewController: UIViewController {
             }
         }
         
-        let _ = viewModel.newMatchedUsers.observeNext { [weak self] e in
-            switch e.change {
-                case .endBatchEditing:
-                    self?.collectionView.reloadData()
-                    break
-                default:
-                    break
-            }
-        }
     
     }
 
@@ -116,7 +110,21 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageCollectionView", for: indexPath) as! MessageCollectionView
 
             cell.collectionView.dataSource = self
-            collectionView = cell.collectionView
+            
+            let _ = viewModel.newMatchedUsers.observeNext { e in
+                switch e.change {
+                case .endBatchEditing:
+                    cell.collectionView.reloadData()
+                    break
+                default:
+                    break
+                }
+            }
+            
+            cell.collectionView.rx.itemSelected
+                .bindTo(self.viewModel.collectionItemDidSelect)
+                .addDisposableTo(self.disposeBag)
+            
             
             let nib = UINib(nibName: "MatchCollectionViewCell", bundle: nil)
             cell.collectionView.register(nib, forCellWithReuseIdentifier: "MatchCollectionViewCell")
