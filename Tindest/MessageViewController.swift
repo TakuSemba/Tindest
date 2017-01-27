@@ -46,16 +46,14 @@ class MessageViewController: UIViewController {
             )
             .addDisposableTo(self.disposeBag)
         
-        let _ = viewModel.messageUsers.observeNext { [weak self] e in
-            switch e.change {
-            case .endBatchEditing:
-                self?.tableView.reloadData()
-                break
-            default:
-                break
-            }
-        }
-        
+        viewModel.messageUsers
+            .asObservable()
+            .subscribe(
+                onNext: { [weak self] users in
+                    self?.tableView.reloadData()
+                }
+            )
+            .addDisposableTo(disposeBag)
     
     }
 
@@ -71,7 +69,7 @@ extension MessageViewController: IndicatorInfoProvider{
 extension MessageViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.newMatchedUsers.count
+        return viewModel.newMatchedUsers.value.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -81,8 +79,8 @@ extension MessageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MatchCollectionViewCell", for: indexPath as IndexPath) as! MatchCollectionViewCell
-            cell.name.text = viewModel.newMatchedUsers[indexPath.item].name
-            if let thumbnail = viewModel.newMatchedUsers[indexPath.item].avatarUrl {
+            cell.name.text = viewModel.newMatchedUsers.value[indexPath.item].name
+            if let thumbnail = viewModel.newMatchedUsers.value[indexPath.item].avatarUrl {
                 cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
             } else {
                 cell.thumbnail.image = UIImage(named: "profile_picture.png")
@@ -99,7 +97,7 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
             sectionNum = 1
         } else if section == 1{
-            sectionNum = self.viewModel.messageUsers.count
+            sectionNum = self.viewModel.messageUsers.value.count
         }
         
         return sectionNum
@@ -112,15 +110,14 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
 
             cell.collectionView.dataSource = self
             
-            let _ = viewModel.newMatchedUsers.observeNext { e in
-                switch e.change {
-                case .endBatchEditing:
-                    cell.collectionView.reloadData()
-                    break
-                default:
-                    break
-                }
-            }
+            viewModel.newMatchedUsers
+                .asObservable()
+                .subscribe(
+                    onNext: {users in
+                        cell.collectionView.reloadData()
+                    }
+                )
+                .addDisposableTo(disposeBag)
             
             cell.collectionView.rx.itemSelected
                 .bindTo(self.viewModel.collectionItemDidSelect)
@@ -134,9 +131,9 @@ extension MessageViewController : UITableViewDataSource, UITableViewDelegate {
         } else{
             self.tableView.rowHeight = 100
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell", for: indexPath) as! MessageTableViewCell
-            cell.name.text = self.viewModel.messageUsers[indexPath.item].name
-            cell.message.text = self.viewModel.messageUsers[indexPath.item].location
-            if let thumbnail = self.viewModel.messageUsers[indexPath.item].avatarUrl {
+            cell.name.text = self.viewModel.messageUsers.value[indexPath.item].name
+            cell.message.text = self.viewModel.messageUsers.value[indexPath.item].location
+            if let thumbnail = self.viewModel.messageUsers.value[indexPath.item].avatarUrl {
                 cell.thumbnail.sd_setImage(with: URL(string: thumbnail)!)
             } else {
                 cell.thumbnail.image = UIImage(named: "profile_picture.png")

@@ -10,8 +10,13 @@ import UIKit
 import XLPagerTabStrip
 import Koloda
 import Pulsator
+import RxSwift
+import RxCocoa
+import Bond
 
 class SwipeViewController: UIViewController{
+    
+    fileprivate let disposeBag = DisposeBag()
     
     internal let viewModel = SwipeViewModel()
     
@@ -41,15 +46,14 @@ class SwipeViewController: UIViewController{
         pulsator.numPulse = 3
         startPulse()
         
-        let _ = viewModel.swipableUsers.observeNext { [weak self] e in
-            switch e.change {
-            case .endBatchEditing:
-                self?.kolodaView.reloadData()
-                break
-            default:
-                break
-            }
-        }
+        viewModel.swipableUsers
+            .asObservable()
+            .subscribe(
+                onNext: {[weak self] users in
+                    self?.kolodaView.reloadData()
+                }
+            )
+            .addDisposableTo(disposeBag)
     }
     
     internal func startPulse(){
@@ -92,12 +96,12 @@ extension SwipeViewController: IndicatorInfoProvider {
 extension SwipeViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return viewModel.swipableUsers.count
+        return viewModel.swipableUsers.value.count
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         let cardView: CardView = UINib(nibName: "CardView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! CardView
-        cardView.user = viewModel.swipableUsers[index]
+        cardView.user = viewModel.swipableUsers.value[index]
         return cardView
     }
     
@@ -111,7 +115,7 @@ extension SwipeViewController: KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         
         let detail = DetailViewController.instantiateFromStoryboard()
-        detail.user = viewModel.swipableUsers[index]
+        detail.user = viewModel.swipableUsers.value[index]
         selectedImage = (koloda.viewForCard(at: index) as! CardView).image
         self.present(detail, animated: true, completion: nil)
     }
@@ -121,7 +125,7 @@ extension SwipeViewController: KolodaViewDelegate {
     }
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        viewModel.getSwipableUsers()
+        self.viewModel.cardDidRunOut.onNext()
     }
 }
 

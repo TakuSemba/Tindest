@@ -11,33 +11,51 @@ import RxSwift
 import RxCocoa
 import Bond
 
-class SwipeViewModel {
+protocol SwipeViewModelType: class {
+    
+    // Input
+    var cardDidRunOut: PublishSubject<Void> { get }
+    
+    // Output
+    var swipableUsers: Variable<[User]> { get }
+    
+}
+
+class SwipeViewModel: SwipeViewModelType {
     
     private let disposeBag = DisposeBag()
     
-    internal var swipableUsers = MutableObservableArray<User>([])
+    // Input
+    let cardDidRunOut = PublishSubject<Void>()
+    
+    // Output
+    let swipableUsers = Variable<[User]>([])
     
     init() {
         getSwipableUsers()
+        
+        cardDidRunOut.asObserver()
+            .subscribe(
+                onNext: { indexPath in
+                    self.getSwipableUsers()
+                }
+            )
+            .addDisposableTo(disposeBag)
     }
     
-    func getSwipableUsers() {
+    private func getSwipableUsers() {
         Api.ShotRequest.getShots(10)
             .flatMap({ shots -> RxSwift.Observable<Shot> in
                 return RxSwift.Observable.from(shots)
             })
             .map({ shot in
-                return shot.user
+                return shot.user!
             })
             .toArray()
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] users in
-                    self?.swipableUsers.batchUpdate({ (data) in
-                        for user in users {
-                            data.append(user!)
-                        }
-                    })
+                    self?.swipableUsers.value.append(contentsOf: users)
                 }
             )
             .addDisposableTo(disposeBag)

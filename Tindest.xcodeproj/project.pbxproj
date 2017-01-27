@@ -31,6 +31,9 @@
 		13AC0C181DFEC11C00EFE2BA /* MessageCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */; };
 		13C6AF441E38C54F00722A25 /* MyselfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C6AF431E38C54F00722A25 /* MyselfCell.xib */; };
 		13C6AF461E38C60C00722A25 /* OppenentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C6AF451E38C60C00722A25 /* OppenentCell.xib */; };
+		13C6AF491E3A189000722A25 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C6AF481E3A189000722A25 /* ChatViewModel.swift */; };
+		13C6AF4B1E3A18CC00722A25 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C6AF4A1E3A18CC00722A25 /* Message.swift */; };
+		13C6AF4D1E3A1DAB00722A25 /* MyselfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C6AF4C1E3A1DAB00722A25 /* MyselfCell.swift */; };
 		13D06BA71E09867F003CDCBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D06BA61E09867F003CDCBB /* User.swift */; };
 		13D06BA91E0987B2003CDCBB /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D06BA81E0987B2003CDCBB /* MessageViewModel.swift */; };
 		13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DE7D111DF7D91E006C07C5 /* AppDelegate.swift */; };
@@ -97,6 +100,9 @@
 		13AC0C171DFEC11C00EFE2BA /* MessageCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCollectionView.xib; sourceTree = "<group>"; };
 		13C6AF431E38C54F00722A25 /* MyselfCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyselfCell.xib; sourceTree = "<group>"; };
 		13C6AF451E38C60C00722A25 /* OppenentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OppenentCell.xib; sourceTree = "<group>"; };
+		13C6AF481E3A189000722A25 /* ChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		13C6AF4A1E3A18CC00722A25 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		13C6AF4C1E3A1DAB00722A25 /* MyselfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyselfCell.swift; sourceTree = "<group>"; };
 		13D06BA61E09867F003CDCBB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		13D06BA81E0987B2003CDCBB /* MessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		13DE7D0E1DF7D91E006C07C5 /* Tindest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,8 +197,8 @@
 			children = (
 				13DE7D471DF7FFA0006C07C5 /* MessageViewController.swift */,
 				13DE7D4E1DF80091006C07C5 /* Message.storyboard */,
-				132AF6141DFDA250005B549E /* MatchCollectionViewCell.xib */,
 				132AF6161DFDAA25005B549E /* MatchCollectionViewCell.swift */,
+				132AF6141DFDA250005B549E /* MatchCollectionViewCell.xib */,
 				132AF6181DFDC465005B549E /* MessageTableViewCell.swift */,
 				132AF6191DFDC465005B549E /* MessageTableViewCell.xib */,
 				1357FC8A1DFEB98400DAD45E /* MessageSectionHeaderView.swift */,
@@ -225,6 +231,7 @@
 				13D06BA61E09867F003CDCBB /* User.swift */,
 				13A433B01E0AB340002079F5 /* Shot.swift */,
 				13A433B21E0ABA0C002079F5 /* Image.swift */,
+				13C6AF4A1E3A18CC00722A25 /* Message.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -255,9 +262,18 @@
 			name = Detail;
 			sourceTree = "<group>";
 		};
+		13C6AF471E3A187F00722A25 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				13C6AF481E3A189000722A25 /* ChatViewModel.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
 		13D06BA41E09821B003CDCBB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				13C6AF471E3A187F00722A25 /* Chat */,
 				139462631E1B9D9300091218 /* Swipe */,
 				139462621E1B9D8000091218 /* Message */,
 			);
@@ -360,6 +376,7 @@
 			children = (
 				13E683FC1E386E62009340FA /* ChatViewController.swift */,
 				13E683FE1E386E6E009340FA /* Chat.storyboard */,
+				13C6AF4C1E3A1DAB00722A25 /* MyselfCell.swift */,
 				13C6AF431E38C54F00722A25 /* MyselfCell.xib */,
 				13C6AF451E38C60C00722A25 /* OppenentCell.xib */,
 			);
@@ -592,11 +609,13 @@
 				13A433B11E0AB340002079F5 /* Shot.swift in Sources */,
 				13558E201DFAFF8300E0CC6B /* CardView.swift in Sources */,
 				13A433AF1E0AAD43002079F5 /* UserRequest.swift in Sources */,
+				13C6AF491E3A189000722A25 /* ChatViewModel.swift in Sources */,
 				13DE7D121DF7D91E006C07C5 /* AppDelegate.swift in Sources */,
 				13A433B31E0ABA0C002079F5 /* Image.swift in Sources */,
 				13E38F641E2633DE00FE790F /* MovableUIButton.swift in Sources */,
 				13A433AB1E0AACDE002079F5 /* Api.swift in Sources */,
 				132AF61A1DFDC465005B549E /* MessageTableViewCell.swift in Sources */,
+				13C6AF4B1E3A18CC00722A25 /* Message.swift in Sources */,
 				13558E241DFB182800E0CC6B /* CustomKolodaView.swift in Sources */,
 				13A433B81E0BE950002079F5 /* DetailViewController.swift in Sources */,
 				13A576921DFFFC7800A9515B /* SwipeOverlayView.swift in Sources */,
@@ -604,6 +623,7 @@
 				13D06BA71E09867F003CDCBB /* User.swift in Sources */,
 				1357FC8B1DFEB98400DAD45E /* MessageSectionHeaderView.swift in Sources */,
 				13E38F621E260E4D00FE790F /* SwipeToDetailTransition.swift in Sources */,
+				13C6AF4D1E3A1DAB00722A25 /* MyselfCell.swift in Sources */,
 				13DE7D461DF7FF97006C07C5 /* ProfileViewController.swift in Sources */,
 				13558E1D1DFAE08600E0CC6B /* UIColorExtension.swift in Sources */,
 				13DE7D551DF8391D006C07C5 /* TabItemCell.swift in Sources */,

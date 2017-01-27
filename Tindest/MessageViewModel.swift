@@ -17,8 +17,8 @@ protocol MessageViewModelType: class {
     var collectionItemDidSelect: PublishSubject<IndexPath> { get }
     
     // Output
-    var newMatchedUsers: MutableObservableArray<User> { get }
-    var messageUsers: MutableObservableArray<User> { get }
+    var newMatchedUsers: Variable<[User]> { get }
+    var messageUsers: Variable<[User]> { get }
 
 }
 
@@ -26,17 +26,20 @@ class MessageViewModel: MessageViewModelType {
     
     private let disposeBag = DisposeBag()
     
+    //Input
     let collectionItemDidSelect = PublishSubject<IndexPath>()
     
-    let newMatchedUsers = MutableObservableArray<User>([])
-    let messageUsers = MutableObservableArray<User>([])
+    // Output
+    let newMatchedUsers = Variable<[User]>([])
+    let messageUsers = Variable<[User]>([])
     
         
     init() {
         getMessageUsers()
         getNewMatchedusers()
         
-        self.collectionItemDidSelect.asObserver()
+        self.collectionItemDidSelect
+            .asObserver()
             .subscribe(
                 onNext: { indexPath in
                     self.addUser()
@@ -51,17 +54,13 @@ class MessageViewModel: MessageViewModelType {
                 return RxSwift.Observable.from(shots)
             })
             .map({ shot in
-                return shot.user
+                return shot.user!
             })
             .toArray()
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] users in
-                    self?.messageUsers.batchUpdate({ (data) in
-                        for user in users {
-                            data.append(user!)
-                        }
-                    })
+                    self?.messageUsers.value.append(contentsOf: users)
                 }
             )
             .addDisposableTo(disposeBag)
@@ -73,29 +72,24 @@ class MessageViewModel: MessageViewModelType {
                 return RxSwift.Observable<Shot>.from(shots)
             })
             .map({ shot in
-                return shot.user
+                return shot.user!
             })
             .filter({ (user) -> Bool in
-                return (user!.name?.characters.count)! < 6
+                return (user.name?.characters.count)! < 6
             })
             .toArray()
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] users in
-                    self?.newMatchedUsers.batchUpdate({ (data) in
-                        for user in users {
-                            data.append(user!)
-                        }
-                    })
+                    self?.newMatchedUsers.value.append(contentsOf: users)
                 }
             )
             .addDisposableTo(disposeBag)
     }
     
     private func addUser() {
-        self.newMatchedUsers.batchUpdate({ (data) in
-            data.append(User(id: 13, name: "taku"))
-        })
+//        self.newMatchedUsers.value.append(User(id: 13, name: "taku"))
+        self.newMatchedUsers.value.removeLast()
     }
     
 }
